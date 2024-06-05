@@ -113,7 +113,7 @@
                                         <p class="m-0">Nữ</p>
                                     </div>
                                     <div>
-                                        <input class="form-check-input" type="radio" name="gender">
+                                        <input class="form-check-input" value="0" checked type="radio" name="gender">
                                     </div>
                                 </label>
                             </div>
@@ -123,7 +123,7 @@
                                         <p class="m-0">Nam</p>
                                     </div>
                                     <div>
-                                        <input class="form-check-input" type="radio" name="gender">
+                                        <input class="form-check-input" value="1" type="radio" name="gender">
                                     </div>
                                 </label>
                             </div>
@@ -133,7 +133,7 @@
                                         <p class="m-0">Khác</p>
                                     </div>
                                     <div>
-                                        <input class="form-check-input" type="radio" name="gender">
+                                        <input class="form-check-input" value="2" type="radio" name="gender">
                                     </div>
                                 </label>
                             </div>

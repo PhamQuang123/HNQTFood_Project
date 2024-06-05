@@ -28,7 +28,7 @@ public class UsersRepositoryImp implements UsersRepository {
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
                 users.setAddress(rs.getString("address"));
-                users.setGender(rs.getBoolean("gender"));
+                users.setGender(rs.getInt("gender"));
                 users.setBirthday(rs.getDate("birthday").toString());
                 users.setPhoneNumber(rs.getString("phoneNumber"));
                 users.setEmail(rs.getString("email"));
@@ -48,6 +48,8 @@ public class UsersRepositoryImp implements UsersRepository {
         return listUsers;
     }
 
+
+
     @Override
     public boolean save(Users users) {
         boolean result = false;
@@ -57,7 +59,7 @@ public class UsersRepositoryImp implements UsersRepository {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(UsersSQL.save_users);
             callSt.setString(1, users.getFullName());
-            callSt.setBoolean(2, users.isGender());
+            callSt.setInt(2, users.isGender());
             callSt.setString(3, users.getBirthday());
             callSt.setString(4, users.getPhoneNumber());
             callSt.setString(5, users.getEmail());
@@ -84,7 +86,7 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt.setString(2, users.getFullName());
             callSt.setString(3, users.getAvatar());
             callSt.setString(4, users.getAddress());
-            callSt.setBoolean(5, users.isGender());
+            callSt.setInt(5, users.isGender());
             callSt.setString(6, users.getBirthday());
             callSt.setString(7, users.getPhoneNumber());
             callSt.setString(8, users.getPass());
@@ -130,7 +132,7 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt.setString(2, users.getFullName());
             callSt.setString(3, users.getAvatar());
             callSt.setString(4, users.getAddress());
-            callSt.setBoolean(5, users.isGender());
+            callSt.setInt(5, users.isGender());
             callSt.setString(6, users.getBirthday());
             callSt.setString(7, users.getPhoneNumber());
             callSt.setString(8, users.getPass());
@@ -164,7 +166,75 @@ public class UsersRepositoryImp implements UsersRepository {
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
                 users.setAddress(rs.getString("address"));
-                users.setGender(rs.getBoolean("gender"));
+                users.setGender(rs.getInt("gender"));
+                users.setBirthday(rs.getDate("birthday").toString());
+                users.setPhoneNumber(rs.getString("phoneNumber"));
+                users.setEmail(rs.getString("email"));
+                users.setPass(rs.getString("pass"));
+                users.setRoleUser(rs.getInt("roleUser"));
+                users.setUserStatus(rs.getBoolean("userStatus"));
+                users.setRememberAccount(rs.getBoolean("rememberAccount"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return users;
+    }
+
+    @Override
+    public Users findUserByEmail(String email) {
+        CallableStatement callSt = null;
+        Users users = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(UsersSQL.find_users_by_email);
+            callSt.setString(1, email);
+            ResultSet rs = callSt.executeQuery();
+            users = new Users();
+            if (rs.next()) {
+                users.setId(rs.getInt("id"));
+                users.setFullName(rs.getString("fullName"));
+                users.setAvatar(rs.getString("avatar"));
+                users.setAddress(rs.getString("address"));
+                users.setGender(rs.getInt("gender"));
+                users.setBirthday(rs.getDate("birthday").toString());
+                users.setPhoneNumber(rs.getString("phoneNumber"));
+                users.setEmail(rs.getString("email"));
+                users.setPass(rs.getString("pass"));
+                users.setRoleUser(rs.getInt("roleUser"));
+                users.setUserStatus(rs.getBoolean("userStatus"));
+                users.setRememberAccount(rs.getBoolean("rememberAccount"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return users;
+    }
+
+    @Override
+    public Users findUserByPhone(String phone) {
+        CallableStatement callSt = null;
+        Users users = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(UsersSQL.find_users_by_phone);
+            callSt.setString(1, phone);
+            ResultSet rs = callSt.executeQuery();
+            users = new Users();
+            if (rs.next()) {
+                users.setId(rs.getInt("id"));
+                users.setFullName(rs.getString("fullName"));
+                users.setAvatar(rs.getString("avatar"));
+                users.setAddress(rs.getString("address"));
+                users.setGender(rs.getInt("gender"));
                 users.setBirthday(rs.getDate("birthday").toString());
                 users.setPhoneNumber(rs.getString("phoneNumber"));
                 users.setEmail(rs.getString("email"));
@@ -199,7 +269,7 @@ public class UsersRepositoryImp implements UsersRepository {
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
                 users.setAddress(rs.getString("address"));
-                users.setGender(rs.getBoolean("gender"));
+                users.setGender(rs.getInt("gender"));
                 users.setBirthday(rs.getDate("birthday").toString());
                 users.setPhoneNumber(rs.getString("phoneNumber"));
                 users.setEmail(rs.getString("email"));
@@ -235,7 +305,7 @@ public class UsersRepositoryImp implements UsersRepository {
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
                 users.setAddress(rs.getString("address"));
-                users.setGender(rs.getBoolean("gender"));
+                users.setGender(rs.getInt("gender"));
                 users.setBirthday(rs.getDate("birthday").toString());
                 users.setPhoneNumber(rs.getString("phoneNumber"));
                 users.setEmail(rs.getString("email"));
