@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface UsersService {
     List<Users> findAll();
-    void save(Users users);
-    void update(Users users);
-    void delete(int id);
+    boolean save(Users users);
+    boolean update(Users users);
+    boolean delete(int id);
+    Users findByEmailAndPass(String email, String pass);
     Users findUsersById(int id);
     List<Users> findUserNameByName(String userName);
 }

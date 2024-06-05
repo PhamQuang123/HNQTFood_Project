@@ -12,17 +12,18 @@ public class CategoryServiceImp implements CategoryService {
     }
 
     @Override
-    public void save(Category category) {
-
+    public boolean save(Category category) {
+        return false;
     }
 
     @Override
-    public void update(Category category) {
-
+    public boolean update(Category category) {
+        return false;
     }
 
     @Override
-    public void delete(int id) {
+    public boolean delete(int id) {
+        return false;
 
     }
 

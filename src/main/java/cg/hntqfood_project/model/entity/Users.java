@@ -1,5 +1,6 @@
 package cg.hntqfood_project.model.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Users {
@@ -7,8 +8,8 @@ public class Users {
     private String fullName;
     private String avatar;
     private String address;
-    private boolean gender;
-    private Date birthday;
+    private int gender;
+    private String birthday;
     private String phoneNumber;
     private String email;
     private String pass;
@@ -19,7 +20,7 @@ public class Users {
     public Users() {
     }
 
-    public Users(int id, String fullName, String avatar, String address, boolean gender, Date birthday, String phoneNumber, String email, String pass, int roleUser, boolean userStatus, boolean rememberAccount) {
+    public Users(int id, String fullName, String avatar, String address, int gender, String birthday, String phoneNumber, String email, String pass, int roleUser, boolean userStatus, boolean rememberAccount) {
         this.id = id;
         this.fullName = fullName;
         this.avatar = avatar;
@@ -82,19 +83,28 @@ public class Users {
         this.address = address;
     }
 
-    public boolean isGender() {
+    public int isGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public Users(String fullName, int gender, String birthday, String phoneNumber, String email, String pass) {
+        this.fullName = fullName;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.pass = pass;
+    }
+
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

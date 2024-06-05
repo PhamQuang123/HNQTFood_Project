@@ -12,4 +12,5 @@ public interface ProductRepository {
     void delete(int id);
     Product findProductById(int id);
     List<Product> findProductByName(String productName);
+    int sumProduct();
 }

@@ -10,5 +10,6 @@ public interface ProductService {
     void update(Product product);
     void delete(int id);
     Product findProductById(int id);
+    int sumProduct();
     List<Product> findProductByName(String productName);
 }
