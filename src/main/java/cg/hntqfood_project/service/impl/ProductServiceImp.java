@@ -32,6 +32,12 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
+    public int sumProduct() {
+
+        return 0;
+    }
+
+    @Override
     public List<Product> findProductByName(String productName) {
         return null;
     }

@@ -1,29 +1,43 @@
 package cg.hntqfood_project.service.impl;
 
 import cg.hntqfood_project.model.entity.Users;
+import cg.hntqfood_project.repository.UsersRepository;
+import cg.hntqfood_project.repository.impl.UsersRepositoryImp;
 import cg.hntqfood_project.service.UsersService;
 
 import java.util.List;
 
 public class UsersServiceImp implements UsersService {
+    private UsersRepository usersRepository;
+    public UsersServiceImp(){
+        usersRepository = new UsersRepositoryImp();
+    }
+
+
     @Override
-    public List<Users> findAll() {
+    public Users findByEmailAndPass(String email, String pass) {
         return null;
     }
 
     @Override
-    public void save(Users users) {
+    public List<Users> findAll() {
 
+        return null;
     }
 
     @Override
-    public void update(Users users) {
-
+    public boolean save(Users users) {
+        return false;
     }
 
     @Override
-    public void delete(int id) {
+    public boolean update(Users users) {
+        return false;
+    }
 
+    @Override
+    public boolean delete(int id) {
+        return false;
     }
 
     @Override

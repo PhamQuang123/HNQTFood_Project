@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface UsersRepository {
     List<Users> findAll();
-    void save(Users users);
-    void update(Users users);
-    void delete(int id);
+    boolean save(Users users);
+    boolean update(Users users);
+    boolean delete(int id);
+    boolean adminUpdate(Users users);
     Users findUsersById(int id);
     List<Users> findUserNameByName(String userName);
+    Users findByEmailAndPass(String email, String pass);
 }
