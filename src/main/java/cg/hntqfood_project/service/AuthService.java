@@ -12,5 +12,5 @@ public interface AuthService {
 
     void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException;
 
-    void logout(HttpServletRequest request, HttpServletResponse response);
+    void register(HttpServletRequest request, HttpServletResponse response);
 }

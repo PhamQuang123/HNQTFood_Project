@@ -21,7 +21,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void renderSignIn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       response.sendRedirect("/views/access/sigIn.jsp");
+       response.sendRedirect("/views/access/signIn.jsp");
     }
 
     @Override
@@ -31,8 +31,8 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String email = request.getParameter("email");
-        String pass = request.getParameter("pass");
+        String email = request.getParameter("username");
+        String pass = request.getParameter("password");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
 
         Users users = checkEmailAndPAss(email, pass);
@@ -67,9 +67,13 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public void logout(HttpServletRequest request, HttpServletResponse response) {
+    public void register(HttpServletRequest request, HttpServletResponse response) {
+        String firstName = request.getParameter("first_name");
+        String lastName = request.getParameter("last_name");
+        String fullName = firstName + " " + lastName;
 
     }
+
 
     public Users checkEmailAndPAss(String email, String pass) {
         return usersService.findByEmailAndPass(email, pass);

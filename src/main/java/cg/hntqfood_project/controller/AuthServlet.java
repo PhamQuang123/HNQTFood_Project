@@ -38,7 +38,11 @@ public class AuthServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String url = request.getPathInfo();
         switch (url){
-            case "":
+            case "/sign_in":
+                authService.login(request,response);
+                break;
+            case "/sign_up":
+                authService.register(request,response);
                 break;
         }
     }
