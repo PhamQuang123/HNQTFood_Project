@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 public class AccountValidate {
     private UsersRepository usersRepository;
-    private String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-](\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+    private String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
     private String regexPass = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d){8,}$";
     private String regexPhone = "^(84|0[3|5|7|8|9])+([0-9]{8})$";
 
@@ -24,9 +24,9 @@ public class AccountValidate {
         boolean result = false;
         if (Pattern.matches(regexEmail, email)) {
             if (user != null) {
-                result = true;
-            } else {
                 result = false;
+            } else {
+                result = true;
             }
         }
         return result;
@@ -44,16 +44,16 @@ public class AccountValidate {
         boolean result = false;
         if (Pattern.matches(regexPhone,phone)) {
             if (user != null) {
-                result = true;
-            } else {
                 result = false;
+            } else {
+                result = true;
             }
         }
         return result;
     }
 
     public boolean checkBirthday(String birthday){
-        SimpleDateFormat sdf = new SimpleDateFormat();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         boolean result = false;
         String year = "";
         String preYear = "";

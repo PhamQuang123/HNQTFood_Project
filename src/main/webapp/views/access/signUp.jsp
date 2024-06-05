@@ -6,23 +6,29 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <link rel="stylesheet" href="./css/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand -logo" href="/HNQTFood.com.vn/home_page" style="color: #F96222">HNQTFood</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,17 +38,21 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đồ Ăn</a>
-                    </li><li class="nav-item">
-                    <a class="nav-link" href="#">Đồ uống</a>
-                </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đồ uống</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
                             Dropdown
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
@@ -75,32 +85,44 @@
                         <form action="/HNQTFood.com.vn/sign_up" method="post" class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="mb-2">
-                                    <input type="text" name="first_name" class="form-control py-2" placeholder="Họ">
+                                    <input type="text" name="first_name" value="${first_name}" class="form-control py-2"
+                                           placeholder="Họ">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="mb-2">
-                                    <input type="text" name="last_name"class="form-control py-2" placeholder="Tên">
+                                    <input type="text" name="last_name" value="${last_name}" class="form-control py-2"
+                                           placeholder="Tên">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-2">
-                                    <input type="text" name="email" class="form-control py-2" placeholder="Email">
+                                    <input type="text" name="email" value="${email}" class="form-control py-2"
+                                           placeholder="Email">
+                                    <small>${errEmail}</small>
+
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-2">
-                                    <input type="text" name="phone" class="form-control py-2" placeholder="Phone">
+                                    <input type="text" name="phone" value="${phone}" class="form-control py-2"
+                                           placeholder="Phone">
+                                    <small>${errPhone}</small>
+
                                 </div>
                             </div>
                             <div class="col-12 -password">
                                 <div class="mb-2">
-                                    <input type="password"name="pass" class="form-control py-2" placeholder="Mật khẩu mới">
+                                    <input type="password" name="pass" value="${pass}" class="form-control py-2"
+                                           placeholder="Mật khẩu mới">
+                                    <small>${errPass}</small>
+
                                 </div>
                             </div>
                             <div class="col-12 -password">
                                 <div class="mb-2">
-                                    <input type="password"name="reconfirm_pass" class="form-control py-2" placeholder="Xác nhận lại mật khẩu">
+                                    <input type="password" name="reconfirm_pass" class="form-control py-2"
+                                           placeholder="Xác nhận lại mật khẩu">
                                 </div>
                             </div>
 
@@ -123,7 +145,7 @@
                                         <p class="m-0">Nam</p>
                                     </div>
                                     <div>
-                                        <input class="form-check-input" value="1" type="radio" name="gender">
+                                        <input class="form-check-input" value="1" type="radio" name="gender"/>
                                     </div>
                                 </label>
                             </div>
@@ -133,7 +155,7 @@
                                         <p class="m-0">Khác</p>
                                     </div>
                                     <div>
-                                        <input class="form-check-input" value="2" type="radio" name="gender">
+                                        <input class="form-check-input" value="2" type="radio" name="gender"/>
                                     </div>
                                 </label>
                             </div>
@@ -142,7 +164,9 @@
                                 <small>Ngày sinh</small>
                             </div>
                             <div class="col-12 ">
-                                <input  class="p-2 border rounded col-12" type="date" id="birthday" name="birthday">
+                                <input class="p-2 border rounded col-12" type="date" id="birthday" name="birthday"
+                                       value="${birthday}"/>
+                                <small>${errBirthday}</small>
                             </div>
 
                             <div class="col-12 text-center">
@@ -151,7 +175,8 @@
                                         Đăng Ký
                                     </button>
                                 </div>
-                                <div class="mt-2"><a href="/HNQTFood.com.vn/sign_in" class="text-decoration-none text-primary">
+                                <div class="mt-2"><a href="/HNQTFood.com.vn/sign_in"
+                                                     class="text-decoration-none text-primary">
                                     Đã có tài khoản?
                                 </a>
                                 </div>

@@ -34,11 +34,12 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String email = request.getParameter("username");
-        String pass = request.getParameter("password");
+        String email = request.getParameter("email");
+        String pass = request.getParameter("pass");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
 
         Users users = checkEmailAndPAss(email, pass);
+        users.setRememberAccount(rememberAccount);
         Cookie emailCookie = new Cookie("email", users.getEmail());
         HttpSession session = request.getSession();
         emailCookie.setPath("/");
@@ -53,20 +54,25 @@ public class AuthServiceImpl implements AuthService {
                 }
             }
         }
-
-
         if (users != null || emailCo != null) {
             response.addCookie(emailCookie);
-
             session.setAttribute("users", users);
-
         } else {
-            response.sendRedirect("/HNQTFood.com.vn/sign_in");
+            request.setAttribute("err", MessageError.errEmailOrPass);
+            request.getRequestDispatcher("/views/access/signIn.jsp").forward(request, response);
         }
         if (rememberAccount) {
             emailCookie.setMaxAge(24 * 60 * 60);
         }
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
+    }
+
+    @Override
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Cookie emailCookie = new Cookie("email", "");
+        emailCookie.setMaxAge(0);
+        response.sendRedirect("/HNQTFood.com.vn/sign_in");
+
     }
 
     @Override
@@ -95,28 +101,39 @@ public class AuthServiceImpl implements AuthService {
 
             if (checkEmail) {
                 request.setAttribute("email", email);
-            }else {
-                request.setAttribute("email", MessageError.errEmailInv);
+                request.setAttribute("errEmail", "");
+
+            } else {
+                request.setAttribute("email", "");
+                request.setAttribute("errEmail", MessageError.errEmailInv);
             }
             if (checkPass) {
                 request.setAttribute("pass", pass);
-            }{
-                request.setAttribute("pass", MessageError.errPassInv);
+                request.setAttribute("errPass", "");
+
+            } else {
+                request.setAttribute("pass", "");
+                request.setAttribute("errPass", MessageError.errPassInv);
 
             }
             if (checkPhone) {
                 request.setAttribute("phone", phone);
-            }else {
-                request.setAttribute("phone", MessageError.errPhoneInv);
+                request.setAttribute("errPhone", "");
+
+            } else {
+                request.setAttribute("phone", "");
+                request.setAttribute("errPhone", MessageError.errPhoneInv);
 
             }
             if (checkBirthday) {
                 request.setAttribute("birthday", birthday);
-            }else {
-                request.setAttribute("birthday", MessageError.errBirthdayInv);
+                request.setAttribute("errBirthday", "");
+            } else {
+                request.setAttribute("birthday", "");
+                request.setAttribute("errBirthday", MessageError.errBirthdayInv);
 
             }
-            request.getRequestDispatcher("/views/access/signUp.jsp").forward(request,response);
+            request.getRequestDispatcher("/views/access/signUp.jsp").forward(request, response);
         }
 
     }

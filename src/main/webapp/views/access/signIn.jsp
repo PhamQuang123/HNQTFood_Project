@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,13 +73,15 @@
                     <div class="card-body">
                         <form action="/HNQTFood.com.vn/home_page" method="post">
                             <div class="form-group">
-                                <label for="username">Username:</label>
-                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username">
+                                <label for="email">Username:</label>
+                                <input type="text" id="email" name="email" class="form-control" placeholder="Enter username">
+                                <small>${err}</small>
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+                                <input type="password" id="password" name="pass" class="form-control" placeholder="Enter password">
+                                <small>${err}</small>
                             </div>
 
                             <div class="form-check">

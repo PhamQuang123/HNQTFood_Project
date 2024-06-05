@@ -18,7 +18,7 @@ public class UsersRepositoryImp implements UsersRepository {
         List<Users> listUsers = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_all_users);
+            callSt = conn.prepareCall(UsersSQL.users_find_all);
             listUsers = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
 
@@ -57,7 +57,7 @@ public class UsersRepositoryImp implements UsersRepository {
         int check = 0;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.save_users);
+            callSt = conn.prepareCall(UsersSQL.users_save);
             callSt.setString(1, users.getFullName());
             callSt.setInt(2, users.isGender());
             callSt.setString(3, users.getBirthday());
@@ -81,7 +81,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.update_users);
+            callSt = conn.prepareCall(UsersSQL.users_update);
             callSt.setInt(1, users.getId());
             callSt.setString(2, users.getFullName());
             callSt.setString(3, users.getAvatar());
@@ -107,7 +107,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.delete_users);
+            callSt = conn.prepareCall(UsersSQL.users_delete);
             callSt.setInt(1, id);
 
             callSt.executeUpdate();
@@ -160,8 +160,8 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt = conn.prepareCall(UsersSQL.find_users_by_name);
             callSt.setInt(1, id);
             ResultSet rs = callSt.executeQuery();
-            users = new Users();
             if (rs.next()) {
+                users = new Users();
                 users.setId(rs.getInt("id"));
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
@@ -194,8 +194,8 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt = conn.prepareCall(UsersSQL.find_users_by_email);
             callSt.setString(1, email);
             ResultSet rs = callSt.executeQuery();
-            users = new Users();
             if (rs.next()) {
+                users = new Users();
                 users.setId(rs.getInt("id"));
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
@@ -228,8 +228,8 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt = conn.prepareCall(UsersSQL.find_users_by_phone);
             callSt.setString(1, phone);
             ResultSet rs = callSt.executeQuery();
-            users = new Users();
             if (rs.next()) {
+                users = new Users();
                 users.setId(rs.getInt("id"));
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
@@ -259,7 +259,7 @@ public class UsersRepositoryImp implements UsersRepository {
         List<Users> listUsers = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_all_users);
+            callSt = conn.prepareCall(UsersSQL.users_find_all);
             callSt.setString(1, userName);
             ResultSet rs = callSt.executeQuery();
             listUsers = new ArrayList<>();
