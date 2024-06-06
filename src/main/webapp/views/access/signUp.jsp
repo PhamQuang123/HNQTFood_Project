@@ -8,8 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<<<<<<< HEAD
+=======
 <!DOCTYPE html>
 <html lang="en">
+>>>>>>> Q_update_full_sign_in_up
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -68,6 +71,7 @@
         </div>
     </nav>
 </header>
+
 <section>
     <div class="container bg-primary-emphasis mt-5">
         <div class="row justify-content-center mt-5">
@@ -99,15 +103,15 @@
                                 <div class="mb-2">
                                     <input type="text" name="email" value="${email}" class="form-control py-2"
                                            placeholder="Email">
-                                    <small>${errEmail}</small>
+                                    <small class="text-danger">${errEmail}</small>
 
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-2">
                                     <input type="text" name="phone" value="${phone}" class="form-control py-2"
-                                           placeholder="Phone">
-                                    <small>${errPhone}</small>
+                                           placeholder="Số điện thoại">
+                                    <small class="text-danger">${errPhone}</small>
 
                                 </div>
                             </div>
@@ -115,7 +119,7 @@
                                 <div class="mb-2">
                                     <input type="password" name="pass" value="${pass}" class="form-control py-2"
                                            placeholder="Mật khẩu mới">
-                                    <small>${errPass}</small>
+                                    <small class="text-danger">${errPass}</small>
 
                                 </div>
                             </div>
@@ -166,7 +170,7 @@
                             <div class="col-12 ">
                                 <input class="p-2 border rounded col-12" type="date" id="birthday" name="birthday"
                                        value="${birthday}"/>
-                                <small>${errBirthday}</small>
+                                <small  class="text-danger">${errBirthday}</small>
                             </div>
 
                             <div class="col-12 text-center">
@@ -189,7 +193,48 @@
     </div>
 
 </section>
-<footer>
+<footer class="p-5">
+    <div class="footer1">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>HNQTFood</h3>
+                <p>Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Chính sách cửa hàng</h3>
+                <p><a href="#" class="text-reset text-decoration-none">Dịch vụ</a> </p>
+                <p><a href="#" class="text-reset text-decoration-none">Ưu đãi</a></p>
+                <p><a href="#" class="text-reset text-decoration-none">Giải quyết khiếu nại</a></p>
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Liên  hệ với chúng tôi</h3>
+                <ul>
+                    <li><a href="" class="fa-brands fa-facebook"></a> </li>
+                    <li><a href="" class="fa-brands fa-twitter"></a></li>
+                    <li><a href="" class="fa-brands fa-instagram"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Địa chỉ cửa hàng</h3>
+                <p>Nhà số 23, Lô TT-01, Khu đô thị MonCity, P. Hàm Nghi, Hà Nội </p>
+                <p>Số điện thoại: 0123456789</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </body>
