@@ -12,18 +12,18 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
-    public void save(Product product) {
-
+    public boolean save(Product product) {
+        return false;
     }
 
     @Override
-    public void update(Product product) {
-
+    public boolean update(Product product) {
+        return false;
     }
 
     @Override
-    public void delete(int id) {
-
+    public boolean delete(int id) {
+        return false;
     }
 
     @Override
@@ -33,7 +33,6 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     public int productTotal() {
-
         return 0;
     }
 

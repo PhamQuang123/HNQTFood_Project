@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> findAll();
-    void save(Product product);
-    void update(Product product);
-    void delete(int id);
+    boolean save(Product product);
+    boolean update(Product product);
+    boolean delete(int id);
     Product findProductById(int id);
     int productTotal();
     List<Product> findProductByName(String productName);
