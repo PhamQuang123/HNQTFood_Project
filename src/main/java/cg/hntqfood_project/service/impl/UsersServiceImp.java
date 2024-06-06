@@ -16,7 +16,7 @@ public class UsersServiceImp implements UsersService {
 
     @Override
     public Users findByEmailAndPass(String email, String pass) {
-        return null;
+        return usersRepository.findByEmailAndPass(email,pass);
     }
 
     @Override

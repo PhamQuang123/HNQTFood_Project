@@ -16,19 +16,19 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-       authService = new AuthServiceImpl();
+        authService = new AuthServiceImpl();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String url = request.getPathInfo();
-        switch (url){
+        switch (url) {
             case "/sign_in":
-                authService.renderSignIn(request,response);
+                authService.renderSignIn(request, response);
                 break;
             case "/sign_up":
-                authService.renderSignUp(request,response);
+                authService.renderSignUp(request, response);
                 break;
         }
     }
@@ -37,12 +37,12 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String url = request.getPathInfo();
-        switch (url){
-            case "/sign_in":
-                authService.login(request,response);
-                break;
+        switch (url) {
             case "/sign_up":
-                authService.register(request,response);
+                authService.register(request, response);
+                break;
+            case "/sign_in":
+                authService.login(request, response);
                 break;
         }
     }
