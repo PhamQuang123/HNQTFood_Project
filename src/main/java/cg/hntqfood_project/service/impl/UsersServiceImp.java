@@ -27,7 +27,8 @@ public class UsersServiceImp implements UsersService {
 
     @Override
     public boolean save(Users users) {
-        return false;
+
+        return usersRepository.save(users);
     }
 
     @Override

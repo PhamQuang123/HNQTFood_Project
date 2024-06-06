@@ -73,7 +73,7 @@
                         <h1 class="card-title text-center">Đăng nhập</h1>
                     </div>
                     <div class="card-body">
-                        <form action="/HNQTFood.com.vn/home_page" method="post">
+                        <form action="/HNQTFood.com.vn/sign_in" method="post">
                             <div class="form-group">
                                 <label for="email">Username:</label>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter username">
@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" name="rememberAccount" type="checkbox" value="true" id="flexCheckDefault">
+                                <input class="form-check-input" name="rememberAccount" type="checkbox" value="false" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Nhớ mật khẩu
                                 </label>
