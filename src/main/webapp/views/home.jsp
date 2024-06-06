@@ -9,17 +9,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./css/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css"/>
 </head>
 <body>
 <header class="fixed-top">
@@ -75,7 +76,7 @@
     </nav>
 </header>
 <section>
-    <div>
+    <div class="slide-show">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="100">
@@ -102,10 +103,284 @@
             </button>
         </div>
     </div>
+
+    <div class="container py-5">
+        <div class="category1">
+            <h1 class="text-center">BÁN CHẠY</h1>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category1">
+            <h1 class="text-center">ĐỒ ĂN</h1>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="category">
+            <h1 class="text-center">ĐỒ UỐNG</h1>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                            <h5 class="card-title">Bánh mì pate</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h3>30.000 vnđ</h3>
+                            <button type="button" class="btn btn-primary"><i class="fa-solid fa-basket-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </section>
-
-
-<footer class="p-5">
+<footer class="">
     <div class="footer1">
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
@@ -141,13 +416,12 @@
     </div>
 
     <div class="footer2">
-        <div class="container">
-            <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
-                <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
-            </div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+            <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
 
 </body>
 </html>
