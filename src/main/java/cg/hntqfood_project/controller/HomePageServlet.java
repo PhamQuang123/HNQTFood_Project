@@ -22,8 +22,17 @@ public class HomePageServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String url = request.getPathInfo();
         switch (url) {
-            case "home_page":
-                homePageService.renderHomePage(request,response);
+            case "/home_page":
+                homePageService.renderHomePage(request, response);
+                break;
+            case "/sign_up":
+                homePageService.renderFormSignUp(request,response);
+                break;
+            case "/sign_in":
+                homePageService.renderFormSignIn(request,response);
+                break;
+            case "/logout":
+                homePageService.logout(request,response);
                 break;
         }
     }

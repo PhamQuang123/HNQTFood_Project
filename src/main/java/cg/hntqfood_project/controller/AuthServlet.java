@@ -1,9 +1,7 @@
 package cg.hntqfood_project.controller;
 
 import cg.hntqfood_project.service.AuthService;
-import cg.hntqfood_project.service.UsersService;
 import cg.hntqfood_project.service.impl.AuthServiceImpl;
-import cg.hntqfood_project.service.impl.UsersServiceImp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -7,5 +7,8 @@ import java.io.IOException;
 
 public interface HomePageService {
     void renderHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    void renderFormSignUp(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    void renderFormSignIn(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    void    logout(HttpServletRequest request, HttpServletResponse response) throws IOException;
     void renderShoppingCart(HttpServletRequest request, HttpServletResponse response);
 }

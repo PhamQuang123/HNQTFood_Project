@@ -77,4 +77,9 @@ public class AccountValidate {
         }
         return result;
     }
+
+    public Users checkEmailAndPAss(String email, String pass) {
+        return usersRepository.findByEmailAndPass(email, pass);
+
+    }
 }

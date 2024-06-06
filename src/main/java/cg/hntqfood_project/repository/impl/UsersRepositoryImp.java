@@ -298,8 +298,8 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt.setString(1, email);
             callSt.setString(2, pass);
             ResultSet rs = callSt.executeQuery();
-            users = new Users();
             if (rs.next()) {
+                users = new Users();
                 users.setId(rs.getInt("id"));
                 users.setFullName(rs.getString("fullName"));
                 users.setAvatar(rs.getString("avatar"));
