@@ -90,7 +90,7 @@ public class AuthServiceImpl implements AuthService {
         boolean checkPass = accountValidate.checkPass(pass);
         boolean checkPhone = accountValidate.checkPhone(phone);
         boolean checkBirthday = accountValidate.checkBirthday(birthday);
-        if (checkEmail && checkPass && checkPhone && checkBirthday) {
+        if (checkEmail && checkPass && checkPhone && checkBirthday && pass.equals(reconfirmPass)) {
             Users users = new Users(fullName, gender, birthday, phone, email, pass);
             usersService.save(users);
         } else {
@@ -135,12 +135,17 @@ public class AuthServiceImpl implements AuthService {
             }
             request.getRequestDispatcher("/views/access/signUp.jsp").forward(request, response);
         }
+        response.sendRedirect("/HNQTFood.com.vn/sign_in");
 
     }
 
 
     public Users checkEmailAndPAss(String email, String pass) {
         return usersService.findByEmailAndPass(email, pass);
+
+    }
+
+    public  void userSave(HttpServletRequest request, HttpServletResponse response){
 
     }
 }

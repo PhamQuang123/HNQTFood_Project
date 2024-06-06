@@ -54,7 +54,6 @@ public class UsersRepositoryImp implements UsersRepository {
     public boolean save(Users users) {
         boolean result = false;
         CallableStatement callSt = null;
-        int check = 0;
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(UsersSQL.users_save);
@@ -157,7 +156,7 @@ public class UsersRepositoryImp implements UsersRepository {
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_users_by_name);
+            callSt = conn.prepareCall(UsersSQL.find_users_by_id);
             callSt.setInt(1, id);
             ResultSet rs = callSt.executeQuery();
             if (rs.next()) {
@@ -259,7 +258,7 @@ public class UsersRepositoryImp implements UsersRepository {
         List<Users> listUsers = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.users_find_all);
+            callSt = conn.prepareCall(UsersSQL.find_users_by_name);
             callSt.setString(1, userName);
             ResultSet rs = callSt.executeQuery();
             listUsers = new ArrayList<>();
