@@ -18,7 +18,7 @@ public class UsersRepositoryImp implements UsersRepository {
         List<Users> listUsers = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.users_find_all);
+            callSt = conn.prepareCall(UsersSQL.USERS_FIND_ALL);
             listUsers = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
 
@@ -56,7 +56,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.users_save);
+            callSt = conn.prepareCall(UsersSQL.USERS_SAVE);
             callSt.setString(1, users.getFullName());
             callSt.setInt(2, users.isGender());
             callSt.setString(3, users.getBirthday());
@@ -80,7 +80,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.users_update);
+            callSt = conn.prepareCall(UsersSQL.USERS_UPDATE);
             callSt.setInt(1, users.getId());
             callSt.setString(2, users.getFullName());
             callSt.setString(3, users.getAvatar());
@@ -106,7 +106,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.users_delete);
+            callSt = conn.prepareCall(UsersSQL.USERS_DELETE);
             callSt.setInt(1, id);
 
             callSt.executeUpdate();
@@ -126,7 +126,7 @@ public class UsersRepositoryImp implements UsersRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.admin_update_users);
+            callSt = conn.prepareCall(UsersSQL.ADMIN_USERS_UPDATE);
             callSt.setInt(1, users.getId());
             callSt.setString(2, users.getFullName());
             callSt.setString(3, users.getAvatar());
@@ -156,7 +156,7 @@ public class UsersRepositoryImp implements UsersRepository {
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_users_by_id);
+            callSt = conn.prepareCall(UsersSQL.FIND_USERS_BY_ID);
             callSt.setInt(1, id);
             ResultSet rs = callSt.executeQuery();
             if (rs.next()) {
@@ -190,7 +190,7 @@ public class UsersRepositoryImp implements UsersRepository {
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_users_by_email);
+            callSt = conn.prepareCall(UsersSQL.FIND_USERS_BY_EMAIL);
             callSt.setString(1, email);
             ResultSet rs = callSt.executeQuery();
             if (rs.next()) {
@@ -219,12 +219,12 @@ public class UsersRepositoryImp implements UsersRepository {
     }
 
     @Override
-    public Users findUserByPhone(String phone) {
+    public Users findUserByPhoneNumber(String phone) {
         CallableStatement callSt = null;
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_users_by_phone);
+            callSt = conn.prepareCall(UsersSQL.FIND_USERS_BY_PHONE_NUMBER);
             callSt.setString(1, phone);
             ResultSet rs = callSt.executeQuery();
             if (rs.next()) {
@@ -253,12 +253,12 @@ public class UsersRepositoryImp implements UsersRepository {
     }
 
     @Override
-    public List<Users> findUserNameByName(String userName) {
+    public List<Users> findUserNameByFullName(String userName) {
         CallableStatement callSt = null;
         List<Users> listUsers = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_users_by_name);
+            callSt = conn.prepareCall(UsersSQL.FIND_USERS_BY_FULL_NAME);
             callSt.setString(1, userName);
             ResultSet rs = callSt.executeQuery();
             listUsers = new ArrayList<>();
@@ -294,7 +294,7 @@ public class UsersRepositoryImp implements UsersRepository {
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.find_by_email_and_pass);
+            callSt = conn.prepareCall(UsersSQL.FIND_BY_EMAIL_AND_PASS);
             callSt.setString(1, email);
             callSt.setString(2, pass);
             ResultSet rs = callSt.executeQuery();

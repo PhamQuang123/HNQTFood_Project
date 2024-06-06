@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 
 public class AccountValidate {
     private UsersRepository usersRepository;
-    private String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-    private String regexPass = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{6,32}$";
-    private String regexPhone = "^(84|0[3|5|7|8|9])+([0-9]{8})$";
+    private String REGEX_Email = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+    private String REGEX_Pass = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@#$%^&+=])[a-zA-Z\\d@#$%^&+=]{6,32}$";
+    private String REGEX_PHONE = "^(84|0[3|5|7|8|9])+([0-9]{8})$";
 
     public AccountValidate() {
         usersRepository = new UsersRepositoryImp();
@@ -21,7 +21,8 @@ public class AccountValidate {
 
     public boolean checkEmail(String email) {
         boolean result = false;
-        if (Pattern.matches(regexEmail, email)) {
+
+        if (Pattern.matches(REGEX_Email, email)) {
             Users user = usersRepository.findUserByEmail(email);
             if (user != null) {
                 result = false;
@@ -33,7 +34,7 @@ public class AccountValidate {
     }
 
     public boolean checkPass(String pass) {
-        if (Pattern.matches(regexPass, pass)) {
+        if (Pattern.matches(REGEX_Pass, pass)) {
             return true;
         }
         return false;
@@ -41,12 +42,14 @@ public class AccountValidate {
 
     public boolean checkPhone(String phone) {
         boolean result = false;
-        if (Pattern.matches(regexPhone, phone)) {
+
+        if (Pattern.matches(REGEX_PHONE,phone)) {
             String b = "";
-            if (phone.length() == 10) {
-                b += phone.substring(1);
-            }
-            Users user = usersRepository.findUserByPhone(b);
+           if (phone.length() == 10){
+               b+= phone.substring(1);
+           }
+            Users user = usersRepository.findUserByPhoneNumber(b);
+
             if (user != null) {
                 result = false;
             } else {

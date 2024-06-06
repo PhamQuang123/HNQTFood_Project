@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Orders {
     private int id;
-    private Date timeOrder;
+    private String timeOrder;
     private double totalPrice;
-    private String quantity;
+    private int quantity;
     private Users users;
     private int orderStatus;
 
     public Orders() {
     }
 
-    public Orders(int id, Date timeOrder, double totalPrice, String quantity, Users users, int orderStatus) {
+    public Orders(int id, String timeOrder, double totalPrice, int quantity, Users users, int orderStatus) {
         this.id = id;
         this.timeOrder = timeOrder;
         this.totalPrice = totalPrice;
@@ -30,11 +30,11 @@ public class Orders {
         this.id = id;
     }
 
-    public Date getTimeOrder() {
+    public String getTimeOrder() {
         return timeOrder;
     }
 
-    public void setTimeOrder(Date timeOrder) {
+    public void setTimeOrder(String timeOrder) {
         this.timeOrder = timeOrder;
     }
 
@@ -46,11 +46,11 @@ public class Orders {
         this.totalPrice = totalPrice;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
