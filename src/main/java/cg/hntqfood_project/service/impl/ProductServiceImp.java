@@ -32,7 +32,7 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
-    public int sumProduct() {
+    public int productTotal() {
 
         return 0;
     }

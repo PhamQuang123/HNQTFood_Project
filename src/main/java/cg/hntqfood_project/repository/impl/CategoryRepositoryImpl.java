@@ -18,7 +18,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         List<Category> listCategories = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.find_all_category);
+            callSt = conn.prepareCall(CategorySQL.CATEGORY_FIND_ALL);
             listCategories = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
 
@@ -44,7 +44,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.save_category);
+            callSt = conn.prepareCall(CategorySQL.CATEGORY_SAVE);
             callSt.setString(1, category.getCategoryName());
             callSt.executeUpdate();
         } catch (SQLException e) {
@@ -63,7 +63,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.save_category);
+            callSt = conn.prepareCall(CategorySQL.CATEGORY_UPDATE);
             callSt.setInt(1, category.getId());
             callSt.setString(2, category.getCategoryName());
             callSt.executeUpdate();
@@ -83,7 +83,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         CallableStatement callSt = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.delete_category);
+            callSt = conn.prepareCall(CategorySQL.CATEGORY_DELETE);
             callSt.setInt(1, id);
             callSt.executeUpdate();
         } catch (SQLException e) {
@@ -102,7 +102,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         Category category = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.find_category_by_id);
+            callSt = conn.prepareCall(CategorySQL.FIND_CATEGORY_BY_ID);
             callSt.setInt(1, id);
             ResultSet rs = callSt.executeQuery();
             Category categories = new Category();
@@ -127,7 +127,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         List<Category> listCategory = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(CategorySQL.find_category_by_id);
+            callSt = conn.prepareCall(CategorySQL.FIND_CATEGORY_NAME_BY_NAME);
             callSt.setString(1, categoryName);
             ResultSet rs = callSt.executeQuery();
             listCategory = new ArrayList<>();
