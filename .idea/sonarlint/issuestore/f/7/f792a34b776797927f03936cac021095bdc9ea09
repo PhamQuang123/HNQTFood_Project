@@ -1,0 +1,23 @@
+
+‡
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+7	java:S131""Add a default case to this switch.(õ‡Îë
+a
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(õ‡Îë
+|
+java:S1989"fHandle the following exceptions that could be thrown by "renderSignIn": ServletException, IOException.(µô²³
+i
+java:S1989"SHandle the following exception that could be thrown by "renderSignUp": IOException.(ì€«¹
+‡
+java:S1989&"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+7	java:S131(""Add a default case to this switch.(õ‡Îë
+a
+java:S1301("KReplace this "switch" statement by "if" statements to increase readability.(õ‡Îë
+u
+java:S1989*"_Handle the following exceptions that could be thrown by "login": IOException, ServletException.(—ìÔ½
+x
+java:S1989-"bHandle the following exceptions that could be thrown by "register": ServletException, IOException.(Û’’Û
+`
+java:S1128"ERemove this unused import 'cg.hntqfood_project.service.UsersService'.(«ÿ˜Ùûÿÿÿÿ
+h
+java:S1128"MRemove this unused import 'cg.hntqfood_project.service.impl.UsersServiceImp'.(Ôé¡üÿÿÿÿ

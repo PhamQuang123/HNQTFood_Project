@@ -11,3 +11,7 @@ s
 Csrc/main/java/cg/hntqfood_project/service/impl/AuthServiceImpl.java,e\b\ebd7b1a957f4690535515110ba89cc79c6de8883
 N
 src/main/webapp/views/home.jsp,a\9\a93066194534f868b161f9d1281331cfd104e2d3
+m
+=src/main/java/cg/hntqfood_project/controller/AuthServlet.java,f\7\f792a34b776797927f03936cac021095bdc9ea09
+q
+Asrc/main/java/cg/hntqfood_project/controller/HomeFoodServlet.java,1\0\10eb6e4914dee1248b065646a1a5aa6026358f50
