@@ -11,5 +11,4 @@ public class UsersSQL {
     public static final String USERS_UPDATE = "call users_update(?,?,?,?,?,?,?,?,?)";
     public static final String ADMIN_USERS_UPDATE = "cal admin_users_update(?,?,?,?,?,?,?,?,?,?,?,?)";
     public static final String USERS_DELETE = "call users_delete(?,?)";
-
 }
