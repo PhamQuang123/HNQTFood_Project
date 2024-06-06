@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface OrdersRepository {
     List<Orders> findAll();
-    void save(Orders orders);
-    void update(Orders orders);
-    void delete(int id);
+    boolean save(Orders orders);
+    boolean update(Orders orders);
+    boolean delete(int id);
     Orders findOrdersById(int id);
 
 }

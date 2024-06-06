@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ShoppingCartService {
     List<ShoppingCart> findAll();
-    void save(ShoppingCart shoppingCart);
-    void update(ShoppingCart shoppingCart);
-    void delete(int id);
+    boolean save(ShoppingCart shoppingCart);
+    boolean update(ShoppingCart shoppingCart);
+    boolean delete(int id);
 }
