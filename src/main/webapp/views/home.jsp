@@ -41,6 +41,11 @@
                     <li class="nav-item fw-bold fs-5">
                         <a class="nav-link" href="#">Đồ uống</a>
                     </li>
+                    <c:if test="${sessionScope.users.roleUser == 0}">
+                        <li class="nav-item fw-bold fs-5">
+                            <a class="nav-link" href="/HNQTFood.com.vn/v1/">Manager</a>
+                        </li>
+                    </c:if>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,9 +64,9 @@
                        </li>
                    </c:if>
 
-                    <c:if test="${sessionScope.user != null}">
+                    <c:if test="${sessionScope.users != null}">
                         <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood.com.vn/v1/logout">logout</a>
+                            <a class="nav-link" href="/HNQTFood.com.vn/v1/log_out">logout</a>
                         </li>
                     </c:if>
                     <li class="nav-item fw-bold fs-5">
@@ -79,18 +84,21 @@
     <div class="slide-show">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="100">
-                    <img src="./images/banner2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./images/banner1.jpeg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/banner3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/banner4jpg.jpg" class="d-block w-100" alt="...">
-                </div>
+                <c:forEach items="${listProduct}" var="prod">
+                    <div class="carousel-item active" data-bs-interval="100">
+                        <img src=".././image/${prod.image}" class="d-block w-100" alt="...">
+                    </div>
+                </c:forEach>
+
+<%--                <div class="carousel-item" data-bs-interval="2000">--%>
+<%--                    <img src=".././images/banner1.jpeg" class="d-block w-100" alt="...">--%>
+<%--                </div>--%>
+<%--                <div class="carousel-item">--%>
+<%--                    <img src=".././images/banner3.jpg" class="d-block w-100" alt="...">--%>
+<%--                </div>--%>
+<%--                <div class="carousel-item">--%>
+<%--                    <img src=".././images/banner4jpg.jpg" class="d-block w-100" alt="...">--%>
+<%--                </div>--%>
 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -111,7 +119,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src="../image/products/prod1.jpg" class="card-img-top" alt="..."  >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -125,7 +133,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src="../image/banner2.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -139,7 +147,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -153,7 +161,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -167,7 +175,7 @@
 
                 <div  class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -181,7 +189,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -201,7 +209,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -215,7 +223,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -229,7 +237,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -243,7 +251,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -257,7 +265,7 @@
 
                 <div  class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -271,7 +279,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -293,7 +301,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -307,7 +315,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -321,7 +329,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -335,7 +343,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -349,7 +357,7 @@
 
                 <div  class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -363,7 +371,7 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img src="./images/products/prod1.jpg" class="card-img-top" alt="..." >
+                        <img src=".././images/products/prod1.jpg" class="card-img-top" alt="..." >
                         <div class="card-body">
                             <h5 class="card-title">Bánh mì pate</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

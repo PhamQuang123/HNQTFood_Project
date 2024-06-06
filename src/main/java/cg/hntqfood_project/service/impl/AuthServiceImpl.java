@@ -39,34 +39,23 @@ public class AuthServiceImpl implements AuthService {
         String pass = request.getParameter("pass");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
         Users users = accountValidate.checkEmailAndPAss(email, pass);
-        if (users != null){
+        if (users != null) {
             users.setRememberAccount(rememberAccount);
-        }
+            Cookie emailCookie = new Cookie("email", users.getEmail());
+            HttpSession session = request.getSession();
+            emailCookie.setPath("/");
 
-        Cookie emailCookie = new Cookie("email", users.getEmail());
-        HttpSession session = request.getSession();
-        emailCookie.setPath("/");
-        Cookie[] cookies = request.getCookies();
-        String emailCo = "";
-        if (cookies.length != 0) {
-            for (Cookie c : cookies
-            ) {
-                if (c.getName().equals("email")) {
-                    emailCo = c.getValue();
-                    break;
-                }
-            }
-        }
-        if (users != null || emailCo != null) {
-            response.addCookie(emailCookie);
+
             session.setAttribute("users", users);
+            if (rememberAccount) {
+                emailCookie.setMaxAge(24 * 60 * 60);
+            }
+            response.addCookie(emailCookie);
         } else {
             request.setAttribute("err", MessageError.errEmailOrPass);
             request.getRequestDispatcher("/views/access/signIn.jsp").forward(request, response);
         }
-        if (rememberAccount) {
-            emailCookie.setMaxAge(24 * 60 * 60);
-        }
+
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
 
