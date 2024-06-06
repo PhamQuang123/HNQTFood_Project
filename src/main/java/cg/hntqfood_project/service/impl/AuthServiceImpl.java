@@ -2,8 +2,9 @@ package cg.hntqfood_project.service.impl;
 
 import cg.hntqfood_project.exception.MessageError;
 import cg.hntqfood_project.model.entity.Users;
+import cg.hntqfood_project.repository.UsersRepository;
+import cg.hntqfood_project.repository.impl.UsersRepositoryImp;
 import cg.hntqfood_project.service.AuthService;
-import cg.hntqfood_project.service.UsersService;
 import cg.hntqfood_project.validation.account.AccountValidate;
 
 import javax.servlet.ServletException;
@@ -14,11 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class AuthServiceImpl implements AuthService {
-    private UsersService usersService;
+    private UsersRepository usersRepository;
     private AccountValidate accountValidate;
 
     public AuthServiceImpl() {
-        usersService = new UsersServiceImp();
+        usersRepository = new UsersRepositoryImp();
         accountValidate = new AccountValidate();
     }
 
@@ -37,9 +38,11 @@ public class AuthServiceImpl implements AuthService {
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
+        Users users = accountValidate.checkEmailAndPAss(email, pass);
+        if (users != null){
+            users.setRememberAccount(rememberAccount);
+        }
 
-        Users users = checkEmailAndPAss(email, pass);
-        users.setRememberAccount(rememberAccount);
         Cookie emailCookie = new Cookie("email", users.getEmail());
         HttpSession session = request.getSession();
         emailCookie.setPath("/");
@@ -69,9 +72,6 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Cookie emailCookie = new Cookie("email", "");
-        emailCookie.setMaxAge(0);
-        response.sendRedirect("/HNQTFood.com.vn/sign_in");
 
     }
 
@@ -92,7 +92,7 @@ public class AuthServiceImpl implements AuthService {
         boolean checkBirthday = accountValidate.checkBirthday(birthday);
         if (checkEmail && checkPass && checkPhone && checkBirthday && pass.equals(reconfirmPass)) {
             Users users = new Users(fullName, gender, birthday, phone, email, pass);
-            usersService.save(users);
+            usersRepository.save(users);
             response.sendRedirect("/HNQTFood.com.vn/sign_in");
 
         } else {
@@ -134,23 +134,13 @@ public class AuthServiceImpl implements AuthService {
                 request.setAttribute("birthday", "");
                 request.setAttribute("errBirthday", MessageError.errBirthdayInv);
             }
-            if (pass.equals(reconfirmPass)){
-                request.setAttribute("errReconfirmPass","");
-            }else {
-                request.setAttribute("errReconfirmPass",MessageError.errReconfirmPass);
+            if (pass.equals(reconfirmPass)) {
+                request.setAttribute("errReconfirmPass", "");
+            } else {
+                request.setAttribute("errReconfirmPass", MessageError.errReconfirmPass);
             }
             request.getRequestDispatcher("/views/access/signUp.jsp").forward(request, response);
         }
-
-    }
-
-
-    public Users checkEmailAndPAss(String email, String pass) {
-        return usersService.findByEmailAndPass(email, pass);
-
-    }
-
-    public  void userSave(HttpServletRequest request, HttpServletResponse response){
 
     }
 }
