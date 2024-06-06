@@ -71,6 +71,7 @@
         </div>
     </nav>
 </header>
+
 <section>
     <div class="container bg-primary-emphasis mt-5">
         <div class="row justify-content-center mt-5">
@@ -102,15 +103,15 @@
                                 <div class="mb-2">
                                     <input type="text" name="email" value="${email}" class="form-control py-2"
                                            placeholder="Email">
-                                    <small>${errEmail}</small>
+                                    <small class="text-danger">${errEmail}</small>
 
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-2">
                                     <input type="text" name="phone" value="${phone}" class="form-control py-2"
-                                           placeholder="Phone">
-                                    <small>${errPhone}</small>
+                                           placeholder="Số điện thoại">
+                                    <small class="text-danger">${errPhone}</small>
 
                                 </div>
                             </div>
@@ -118,7 +119,7 @@
                                 <div class="mb-2">
                                     <input type="password" name="pass" value="${pass}" class="form-control py-2"
                                            placeholder="Mật khẩu mới">
-                                    <small>${errPass}</small>
+                                    <small class="text-danger">${errPass}</small>
 
                                 </div>
                             </div>
@@ -169,7 +170,7 @@
                             <div class="col-12 ">
                                 <input class="p-2 border rounded col-12" type="date" id="birthday" name="birthday"
                                        value="${birthday}"/>
-                                <small>${errBirthday}</small>
+                                <small  class="text-danger">${errBirthday}</small>
                             </div>
 
                             <div class="col-12 text-center">

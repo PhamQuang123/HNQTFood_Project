@@ -78,13 +78,13 @@
                             <div class="form-group">
                                 <label for="email">Username:</label>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter username">
-                                <small>${err}</small>
+                                <small class="text-danger">${err}</small>
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Password:</label>
                                 <input type="password" id="password" name="pass" class="form-control" placeholder="Enter password">
-                                <small>${err}</small>
+                                <small class="text-danger">${err}</small>
                             </div>
 
                             <div class="form-check">
