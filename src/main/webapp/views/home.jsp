@@ -64,7 +64,7 @@
                         </li>
                     </c:if>
                     <li class="nav-item fw-bold fs-5">
-                        <p>${fullName}</p>
+                        <p>${users.fullName}</p>
                     </li>
                     <li class="nav-item fw-bold fs-5">
                         <img src="#" alt="avatar" width="50" height="50">
