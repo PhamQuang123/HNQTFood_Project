@@ -18,7 +18,7 @@ public class HomePageServiceImpl implements HomePageService {
     private CategoryRepository categoryRepository;
     private ProductRepository productRepository;
     private OrdersRepository ordersRepository;
-    private ShoppingCartRepository shoppingCartRepository;
+    private TransactionHistoryRepository shoppingCartRepository;
 
 
 
@@ -27,7 +27,7 @@ public class HomePageServiceImpl implements HomePageService {
         productRepository = new ProductRepositoryImp();
         categoryRepository = new CategoryRepositoryImpl();
         ordersRepository = new OrdersRepositoryImp();
-        shoppingCartRepository = new ShoppingCartRepositoryImp();
+        shoppingCartRepository = new TransactionHistoryRepositoryImp();
 
     }
 
