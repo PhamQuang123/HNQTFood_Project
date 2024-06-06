@@ -13,4 +13,10 @@ public interface ProductRepository {
     Product findProductById(int id);
     List<Product> findProductByName(String productName);
     int productTotal();
+    List<Product> findBestSeller();
+    List<Product> findPriceAsc();
+    List<Product> findPriceDesc();
+    List<Product> findAllLimit(int offset);
+    List<Product> findByCategoryId(int categoryId);
+    int totalByCategoryId(int categoryId);;
 }

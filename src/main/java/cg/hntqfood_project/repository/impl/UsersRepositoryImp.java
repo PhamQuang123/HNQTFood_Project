@@ -294,7 +294,7 @@ public class UsersRepositoryImp implements UsersRepository {
         Users users = null;
         try {
             conn = ConnectionDB.openConnection();
-            callSt = conn.prepareCall(UsersSQL.FIND_BY_EMAIL_AND_PASS);
+            callSt = conn.prepareCall(UsersSQL.FIND_USERS_BY_EMAIL_AND_PASS);
             callSt.setString(1, email);
             callSt.setString(2, pass);
             ResultSet rs = callSt.executeQuery();
