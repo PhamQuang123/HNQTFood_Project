@@ -38,9 +38,11 @@ public class AuthServiceImpl implements AuthService {
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
-
         Users users = accountValidate.checkEmailAndPAss(email, pass);
-        users.setRememberAccount(rememberAccount);
+        if (users != null){
+            users.setRememberAccount(rememberAccount);
+        }
+
         Cookie emailCookie = new Cookie("email", users.getEmail());
         HttpSession session = request.getSession();
         emailCookie.setPath("/");
@@ -139,11 +141,6 @@ public class AuthServiceImpl implements AuthService {
             }
             request.getRequestDispatcher("/views/access/signUp.jsp").forward(request, response);
         }
-
-    }
-
-
-    public void userSave(HttpServletRequest request, HttpServletResponse response) {
 
     }
 }

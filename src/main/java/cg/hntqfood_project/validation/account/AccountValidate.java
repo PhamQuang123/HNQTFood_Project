@@ -19,7 +19,7 @@ public class AccountValidate {
         usersRepository = new UsersRepositoryImp();
     }
 
-    public  boolean checkEmail(String email) {
+    public boolean checkEmail(String email) {
         boolean result = false;
         if (Pattern.matches(regexEmail, email)) {
             Users user = usersRepository.findUserByEmail(email);
@@ -41,11 +41,11 @@ public class AccountValidate {
 
     public boolean checkPhone(String phone) {
         boolean result = false;
-        if (Pattern.matches(regexPhone,phone)) {
+        if (Pattern.matches(regexPhone, phone)) {
             String b = "";
-           if (phone.length() == 10){
-               b+= phone.substring(1);
-           }
+            if (phone.length() == 10) {
+                b += phone.substring(1);
+            }
             Users user = usersRepository.findUserByPhone(b);
             if (user != null) {
                 result = false;
@@ -56,19 +56,19 @@ public class AccountValidate {
         return result;
     }
 
-    public boolean checkBirthday(String birthday){
+    public boolean checkBirthday(String birthday) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         boolean result = false;
         String year = "";
         String preYear = "";
         try {
-            if (!birthday.equals("")){
+            if (!birthday.equals("")) {
                 Date b = sdf.parse(birthday);
                 Date presentYear = new Date();
                 sdf.applyPattern("yyyy");
                 year = sdf.format(b);
                 preYear = sdf.format(presentYear);
-                if (Integer.parseInt(year) <= (Integer.parseInt(preYear) - 16) ){
+                if (Integer.parseInt(year) <= (Integer.parseInt(preYear) - 16)) {
                     result = true;
                 }
             }
@@ -79,7 +79,12 @@ public class AccountValidate {
     }
 
     public Users checkEmailAndPAss(String email, String pass) {
-        return usersRepository.findByEmailAndPass(email, pass);
-
+        Users users = new Users();
+        if (email.equals("") || pass.equals("")) {
+            users = null;
+        } else {
+            users = usersRepository.findByEmailAndPass(email, pass);
+        }
+        return users;
     }
 }

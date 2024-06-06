@@ -23,8 +23,6 @@ public class HomePageServiceImpl implements HomePageService {
 
 
     public HomePageServiceImpl() {
-
-
         usersRepository =new UsersRepositoryImp();
         productRepository = new ProductRepositoryImp();
         categoryRepository = new CategoryRepositoryImpl();
