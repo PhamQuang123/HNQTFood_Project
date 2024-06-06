@@ -193,7 +193,48 @@
     </div>
 
 </section>
-<footer>
+<footer class="p-5">
+    <div class="footer1">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>HNQTFood</h3>
+                <p>Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Chính sách cửa hàng</h3>
+                <p><a href="#" class="text-reset text-decoration-none">Dịch vụ</a> </p>
+                <p><a href="#" class="text-reset text-decoration-none">Ưu đãi</a></p>
+                <p><a href="#" class="text-reset text-decoration-none">Giải quyết khiếu nại</a></p>
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Liên  hệ với chúng tôi</h3>
+                <ul>
+                    <li><a href="" class="fa-brands fa-facebook"></a> </li>
+                    <li><a href="" class="fa-brands fa-twitter"></a></li>
+                    <li><a href="" class="fa-brands fa-instagram"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Địa chỉ cửa hàng</h3>
+                <p>Nhà số 23, Lô TT-01, Khu đô thị MonCity, P. Hàm Nghi, Hà Nội </p>
+                <p>Số điện thoại: 0123456789</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </body>
