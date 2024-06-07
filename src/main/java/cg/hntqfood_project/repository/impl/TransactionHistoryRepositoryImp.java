@@ -2,7 +2,6 @@ package cg.hntqfood_project.repository.impl;
 
 import cg.hntqfood_project.config.ConnectionDB;
 import cg.hntqfood_project.model.entity.*;
-import cg.hntqfood_project.querysql.ProductSQL;
 import cg.hntqfood_project.querysql.TransactionHistorySQL;
 import cg.hntqfood_project.repository.OrdersRepository;
 import cg.hntqfood_project.repository.ProductRepository;
