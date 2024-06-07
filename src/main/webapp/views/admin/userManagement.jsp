@@ -94,7 +94,7 @@
                                <td name="name">${account.fullName}</td>
                                <td name="image" ><img class="user-image" src="${account.avatar}"/></td>
                                <td name="address">${account.address}</td>
-                               <td name="gender">${account.gender?"Nam":"Nữ"}</td>
+                               <td name="gender">${account.gender == 1?"Nam":"Nữ"}</td>
                                <td name="birth">${account.birthday}</td>
                                <td name="phone">${account.phoneNumber} </td>
                                <td name="mail">${account.email}</td>
