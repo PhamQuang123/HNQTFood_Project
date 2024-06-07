@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "HomeFoodServlet", value = "/HNQTFood.com.vn/v1/*")
+@WebServlet(name = "HomeFoodServlet", value = "/HNQTFood/v1/*")
 public class HomePageServlet extends HttpServlet {
     private HomePageService homePageService;
 

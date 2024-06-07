@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AuthServlet", value = "/HNQTFood.com.vn/*")
+@WebServlet(name = "AuthServlet", value = "/HNQTFood/*")
 public class AuthServlet extends HttpServlet {
     private AuthService authService;
 

@@ -82,7 +82,7 @@ public class AuthServiceImpl implements AuthService {
         if (checkEmail && checkPass && checkPhone && checkBirthday && pass.equals(reconfirmPass)) {
             Users users = new Users(fullName, gender, birthday, phone, email, pass);
             usersRepository.save(users);
-            response.sendRedirect("/HNQTFood.com.vn/sign_in");
+            response.sendRedirect("/HNQTFood/sign_in");
 
         } else {
 

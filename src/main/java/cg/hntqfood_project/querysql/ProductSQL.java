@@ -8,7 +8,7 @@ public class ProductSQL {
     public static String PRODUCT_FIND_BY_CATEGORY_ID="call product_find_by_category_id(?)";
     public static String PRODUCT_FIND_PRICE_ASC="call product_find_price_asc()";
     public static String PRODUCT_FIND_PRICE_DESC="call product_find_price_desc()";
-    public static String PRODUCT_FIND_BEST_SELLER="call product_find_best_best()";
+    public static String PRODUCT_FIND_BEST_SELLER="call product_find_best_seller()";
     public static String PRODUCT_SAVE = "call product_save(?,?,?,?,?,?)";
     public static String PRODUCT_UPDATE = "call product_update(?,?,?,?,?,?,?)";
     public static String PRODUCT_DELETE = "call product_delete(?)";

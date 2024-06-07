@@ -20,7 +20,7 @@ public class HomePageServiceImpl implements HomePageService {
     private CategoryRepository categoryRepository;
     private ProductRepository productRepository;
     private OrdersRepository ordersRepository;
-    private ShoppingCartRepository shoppingCartRepository;
+    private TransactionHistoryRepository shoppingCartRepository;
 
 
     public HomePageServiceImpl() {
@@ -28,15 +28,20 @@ public class HomePageServiceImpl implements HomePageService {
         productRepository = new ProductRepositoryImp();
         categoryRepository = new CategoryRepositoryImpl();
         ordersRepository = new OrdersRepositoryImp();
-        shoppingCartRepository = new ShoppingCartRepositoryImp();
+        shoppingCartRepository = new TransactionHistoryRepositoryImp();
 
     }
 
     @Override
     public void renderHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> listProduct = productRepository.findAll();
-//        List<Product> listFood = productRepository.
-        request.setAttribute("listProduct", listProduct);
+//        List<Product> listProduct = productRepository.findAll();
+        List<Product> listBestSeller = productRepository.findBestSeller();
+        List<Product> listFood = productRepository.findByCategoryId(1);
+        List<Product> listDrink = productRepository.findByCategoryId(2);
+//        request.setAttribute("listProduct", listProduct);
+        request.setAttribute("listFood", listFood);
+        request.setAttribute("listDrink", listDrink);
+        request.setAttribute("listBestSeller",listBestSeller);
         HttpSession session = request.getSession();
         Cookie[] cookies = request.getCookies();
         String emailCo = null;
@@ -63,12 +68,12 @@ public class HomePageServiceImpl implements HomePageService {
 
     @Override
     public void renderFormSignUp(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/HNQTFood.com.vn/sign_up");
+        response.sendRedirect("/HNQTFood/sign_up");
     }
 
     @Override
     public void renderFormSignIn(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/HNQTFood.com.vn/sign_in");
+        response.sendRedirect("/HNQTFood/sign_in");
     }
 
     @Override
@@ -76,7 +81,7 @@ public class HomePageServiceImpl implements HomePageService {
         Cookie emailCookie = new Cookie("email", "");
         response.addCookie(emailCookie);
         emailCookie.setMaxAge(0);
-        response.sendRedirect("/HNQTFood.com.vn/sign_in");
+        response.sendRedirect("/HNQTFood/sign_in");
 
     }
 
