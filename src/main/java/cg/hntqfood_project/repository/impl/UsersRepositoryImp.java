@@ -83,12 +83,12 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt = conn.prepareCall(UsersSQL.USERS_UPDATE);
             callSt.setInt(1, users.getId());
             callSt.setString(2, users.getFullName());
-            callSt.setString(3, users.getAvatar());
-            callSt.setString(4, users.getAddress());
-            callSt.setInt(5, users.isGender());
-            callSt.setString(6, users.getBirthday());
-            callSt.setString(7, users.getPhoneNumber());
-            callSt.setString(8, users.getPass());
+            callSt.setString(3, users.getAddress());
+            callSt.setInt(4, users.isGender());
+            callSt.setString(5, users.getBirthday());
+            callSt.setString(6, users.getPhoneNumber());
+            callSt.setString(7, users.getPass());
+            callSt.setString(8, users.getAvatar());
             callSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -129,15 +129,13 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt = conn.prepareCall(UsersSQL.ADMIN_USERS_UPDATE);
             callSt.setInt(1, users.getId());
             callSt.setString(2, users.getFullName());
-            callSt.setString(3, users.getAvatar());
-            callSt.setString(4, users.getAddress());
-            callSt.setInt(5, users.isGender());
-            callSt.setString(6, users.getBirthday());
-            callSt.setString(7, users.getPhoneNumber());
-            callSt.setString(8, users.getPass());
-            callSt.setInt(9, users.getRoleUser());
-            callSt.setBoolean(10, users.isUserStatus());
-            callSt.setBoolean(11, users.isRememberAccount());
+            callSt.setString(3, users.getAddress());
+            callSt.setInt(4, users.isGender());
+            callSt.setString(5, users.getBirthday());
+            callSt.setString(6, users.getPhoneNumber());
+            callSt.setString(7, users.getPass());
+            callSt.setInt(8, users.getRoleUser());
+            callSt.setString(9, users.getAvatar());
             callSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

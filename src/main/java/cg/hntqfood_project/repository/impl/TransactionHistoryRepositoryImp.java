@@ -55,4 +55,37 @@ public class TransactionHistoryRepositoryImp implements TransactionHistoryReposi
         }
         return transactionHistoryList;
     }
+
+    @Override
+    public List<TransactionHistory> findByEmail() {
+        CallableStatement callSt = null;
+        List<TransactionHistory> transactionHistoryList = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(TransactionHistorySQL.TRANSACTION_HISTORY_FIND_BY_EMAIL);
+            transactionHistoryList = new ArrayList<>();
+            ResultSet rs = callSt.executeQuery();
+
+            while (rs.next()) {
+                TransactionHistory transactionHistory = new TransactionHistory();
+                transactionHistory.setId(rs.getInt("id"));
+                transactionHistory.setEmail(rs.getString("email"));
+                transactionHistory.setFullName(rs.getString("fullName"));
+                transactionHistory.setProductName(rs.getString("productName"));
+                transactionHistory.setPrice(rs.getInt("price"));
+                transactionHistory.setQuantity( rs.getInt("quantity"));
+                transactionHistory.setTotalPrice(rs.getDouble("totalPrice"));
+                transactionHistory.setTimeOrder(rs.getString("timeOrder"));
+                transactionHistory.setImage(rs.getString("image"));
+                transactionHistoryList.add(transactionHistory);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return transactionHistoryList;
+    }
 }
