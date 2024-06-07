@@ -9,6 +9,7 @@ import cg.hntqfood_project.service.ShoppingCartService;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,23 +24,32 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public boolean add(HttpServletRequest request, HttpServletResponse response) {
         List<ShoppingCart> shoppingCartList = new ArrayList();
         String email = findEmailOnline(request, response);
+        HttpSession session = request.getSession(true);
         if (email != null) {
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             int idProduct = Integer.parseInt(request.getParameter("idProduct"));
             Product product = productRepository.findProductById(idProduct);
-            double totalPrice = quantity * product.getPrice();
-            ShoppingCart cart = new ShoppingCart();
-            int quantityProduct = findTotalProduct(request, response);
-            cart.setId(quantityProduct + 1);
-            cart.setTotalPrice(totalPrice);
-            cart.setQuantity(quantity);
-            cart.setProduct(product);
-            shoppingCartList.add(cart);
-            Cookie newCookie = new Cookie(email, shoppingCartList.toString());
-            newCookie.setMaxAge(60 * 60 * 24 * 30);
-            newCookie.setPath("/");
-            response.addCookie(newCookie);
-            return true;
+            if (checkProductInCart(request, response)){
+                double totalPrice = quantity * product.getPrice();
+                ShoppingCart cart = new ShoppingCart();
+                int quantityProduct = findTotalProduct(request, response);
+                cart.setId(quantityProduct + 1);
+                cart.setTotalPrice(totalPrice);
+                cart.setQuantity(quantity);
+                cart.setProduct(product);
+                shoppingCartList.add(cart);
+                session.setAttribute(email,shoppingCartList);
+                return true;
+            }else {
+                shoppingCartList = (List<ShoppingCart>) session.getAttribute(email);
+                for (ShoppingCart cart : shoppingCartList){
+                    if (cart.getProduct().getProductName().equals(product.getProductName())){
+                        cart.setQuantity(cart.getQuantity() + quantity);
+                        cart.setTotalPrice(cart.getTotalPrice() + (quantity*product.getPrice()));
+                    }
+                }
+                return true;
+            }
         } else {
             return false;
         }
@@ -49,6 +59,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public boolean checkProductInCart(HttpServletRequest request, HttpServletResponse response) {
         String email = findEmailOnline(request, response);
+        String product = null;
         List<ShoppingCart> shoppingCartList = new ArrayList();
         if (email != null) {
             String shoppingCart = null;
@@ -61,15 +72,18 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             String[] parts = shoppingCart.split(";");
             for (String part : parts) {
                 String[] partList = part.split(",");
-                int id = Integer.parseInt(partList[0]);
-                int quantity = Integer.parseInt(partList[1]);
-                double totalPrice = Double.parseDouble(partList[2]);
-
+                product = partList[3];
+            }
+            int idProduct = Integer.parseInt(request.getParameter("idProduct"));
+            Product productNew = productRepository.findProductById(idProduct);
+            if (product.equals(productNew.toString())){
+                return true;
+            }else {
+                return false;
             }
         } else {
             return false;
         }
-        return true;
     }
 
     @Override

@@ -11,7 +11,7 @@ public interface ProductRepository {
     boolean update(Product product);
     boolean delete(int id);
     Product findProductById(int id);
-    List<Product> findProductByName(String productName);
+    Product findProductByName(String productName);
     int productTotal();
     List<Product> findBestSeller();
     List<Product> findPriceAsc();
@@ -20,5 +20,5 @@ public interface ProductRepository {
     List<Product> findByCategoryId(int categoryId);
     int totalByCategoryId(int categoryId);
     List<Product> findByCategoryIdLimit(int categoryId);
-    Product searchProductByName(String productName);
+    List<Product> searchProductByName(String productName);
 }
