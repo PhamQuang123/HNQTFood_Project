@@ -60,11 +60,6 @@ public class AuthServiceImp implements AuthService {
     }
 
     @Override
-    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-    }
-
-    @Override
     public void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName = request.getParameter("first_name");
         String lastName = request.getParameter("last_name");
