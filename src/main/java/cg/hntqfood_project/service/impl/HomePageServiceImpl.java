@@ -35,7 +35,7 @@ public class HomePageServiceImpl implements HomePageService {
     @Override
     public void renderHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> listProduct = productRepository.findAll();
-//        List<Product> listFood = productRepositor
+//        List<Product> listFood = productRepository.
         request.setAttribute("listProduct", listProduct);
         HttpSession session = request.getSession();
         Cookie[] cookies = request.getCookies();
