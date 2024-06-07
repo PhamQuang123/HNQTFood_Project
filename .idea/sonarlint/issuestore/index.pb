@@ -23,3 +23,5 @@ Z
 .src/main/webapp/views/admin/usermanagement.jsp,6\d\6de6d0c6ee553bf1c65c28adc53a299bb28d1db5
 ^
 .src/main/webapp/views/admin/userManagement.jsp,7\6\765ac479fb323bdc6c901bf104d7ba9f64ad475a
+X
+(src/main/webapp/views/detail/product.jsp,d\f\dff713978e94c47d61c08c6a996c2981242b5350

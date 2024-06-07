@@ -12,7 +12,6 @@
 =======
 <!DOCTYPE html>
 <html lang="en">
->>>>>>> Q_update_full_sign_in_up
 <html>
 <head>
     <meta charset="utf-8"/>
