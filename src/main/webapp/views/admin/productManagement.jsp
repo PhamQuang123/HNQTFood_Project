@@ -33,16 +33,19 @@
       <div class="col-md-8">
       </div>
       <div class="col-md-3 d-flex justify-content-end mx-auto p-2">
-        <input type="search" class="form-control" placeholder="Tìm kiếm">
-        <button type="button" name="search" class="btn btn-success ms-2" >
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <form action="#" method="post">
+          <input type="search" class="search-input form-check-input mt-0 border border-dark-subtle" placeholder="Tìm kiếm">
+          <button type="submit" name="search" class="btn btn-success ms-2" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
       </div>
       <div class="col-md-1 mx-auto p-2">
         <button type="button" class="btn btn-success">
           <i class="fa-solid fa-plus"></i>Thêm
         </button>
       </div>
+
     </div>
   </div>
 
@@ -50,7 +53,7 @@
   <div class="container-fluid">
     <div class="row">
 
-      <!--SIDEBAR &TABLE-->
+      <!--SIDEBAR-->
       <div class=" sidebar-magane col-md-2 p-1 fw-bold text end" >
         <p><a href="#" >Đồ ăn/ đồ uống</a></p>
         <hr>
@@ -61,9 +64,9 @@
         <a href="#" >Lịch sử đơn hàng</a>
         <hr>
       </div>
-      <!--SIDEBAR &TABLE-->
+      <!-- SIDEBAR-->
 
-
+      <!--MAIN TABLE-->
       <div class="col-md-10 mx-auto">
         <div class="container-fluid  ">
           <table class="table  table-hover" >
@@ -124,6 +127,8 @@
 
             </tbody>
           </table>
+          <!--  END TABLE-->
+
         </div>
       </div>
     </div>

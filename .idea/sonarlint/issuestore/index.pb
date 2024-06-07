@@ -19,3 +19,7 @@ Asrc/main/java/cg/hntqfood_project/controller/HomeFoodServlet.java,1\0\10eb6e49
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 Z
 *src/main/webapp/views/admin/management.jsp,2\4\244d0b64a55e67c3c631e3617b95cc8123f80f09
+^
+.src/main/webapp/views/admin/usermanagement.jsp,6\d\6de6d0c6ee553bf1c65c28adc53a299bb28d1db5
+^
+.src/main/webapp/views/admin/userManagement.jsp,7\6\765ac479fb323bdc6c901bf104d7ba9f64ad475a
