@@ -35,6 +35,7 @@ public class HomePageServiceImpl implements HomePageService {
     @Override
     public void renderHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> listProduct = productRepository.findAll();
+//        List<Product> listFood = productRepositor
         request.setAttribute("listProduct", listProduct);
         HttpSession session = request.getSession();
         Cookie[] cookies = request.getCookies();
@@ -77,6 +78,16 @@ public class HomePageServiceImpl implements HomePageService {
         emailCookie.setMaxAge(0);
         response.sendRedirect("/HNQTFood.com.vn/sign_in");
 
+    }
+
+    @Override
+    public void search(HttpServletRequest request, HttpServletResponse response) {
+        String productName = request.getParameter("productName");
+        List<Product> listProduct = productRepository.findProductByName(productName);
+        if (listProduct.size() > 0){
+            request.setAttribute("search", 1);
+            request.setAttribute("listProduct",listProduct);
+        }
     }
 
     @Override

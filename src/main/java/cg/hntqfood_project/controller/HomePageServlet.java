@@ -34,6 +34,9 @@ public class HomePageServlet extends HttpServlet {
             case "/log_out":
                 homePageService.logout(request,response);
                 break;
+            case "search":
+                homePageService.search(request,response);
+                break;
         }
     }
 
