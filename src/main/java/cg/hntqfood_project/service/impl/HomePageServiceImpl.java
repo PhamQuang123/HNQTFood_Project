@@ -88,7 +88,7 @@ public class HomePageServiceImpl implements HomePageService {
     @Override
     public void search(HttpServletRequest request, HttpServletResponse response) {
         String productName = request.getParameter("productName");
-        List<Product> listProduct = productRepository.findProductByName(productName);
+        List<Product> listProduct = productRepository.searchProductByName(productName);
         if (listProduct.size() > 0){
             request.setAttribute("search", 1);
             request.setAttribute("listProduct",listProduct);

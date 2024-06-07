@@ -63,11 +63,9 @@ public class OrdersRepositoryImp implements OrdersRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(OrdersSQL.ORDERS_SAVE);
-            callSt.setString(1, orders.getTimeOrder());
-            callSt.setDouble(2, orders.getTotalPrice());
-            callSt.setInt(3,orders.getQuantity());
-            callSt.setInt(4,orders.getUsers().getId());
-            callSt.setInt(5, orders.getOrderStatus());
+            callSt.setDouble(1, orders.getTotalPrice());
+            callSt.setInt(2,orders.getQuantity());
+            callSt.setInt(3,orders.getUsers().getId());
             callSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -86,7 +84,7 @@ public class OrdersRepositoryImp implements OrdersRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(OrdersSQL.ORDERS_UPDATE);
-            callSt.setString(1, orders.getTimeOrder());
+            callSt.setInt(1,orders.getId());
             callSt.setDouble(2, orders.getTotalPrice());
             callSt.setInt(3,orders.getQuantity());
             callSt.setInt(4,orders.getUsers().getId());
