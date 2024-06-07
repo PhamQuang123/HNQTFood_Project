@@ -42,6 +42,24 @@ public class HomePageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+       request.setCharacterEncoding("UTF-8");
+        String url = request.getPathInfo();
+        switch (url) {
+            case "/home_page":
+                homePageService.renderHomePage(request, response);
+                break;
+            case "/sign_up":
+                homePageService.renderFormSignUp(request,response);
+                break;
+            case "/sign_in":
+                homePageService.renderFormSignIn(request,response);
+                break;
+            case "/log_out":
+                homePageService.logout(request,response);
+                break;
+            case "search":
+                homePageService.search(request,response);
+                break;
+        }
     }
 }
