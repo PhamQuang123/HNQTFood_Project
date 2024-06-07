@@ -19,9 +19,8 @@ public class UsersRepositoryImp implements UsersRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(UsersSQL.USERS_FIND_ALL);
-            listUsers = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
-
+            listUsers = new ArrayList<>();
             while (rs.next()) {
                 Users users = new Users();
                 users.setId(rs.getInt("id"));
