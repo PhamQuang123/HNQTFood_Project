@@ -10,5 +10,6 @@ public interface HomePageService {
     void renderFormSignUp(HttpServletRequest request, HttpServletResponse response) throws IOException;
     void renderFormSignIn(HttpServletRequest request, HttpServletResponse response) throws IOException;
     void    logout(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    void search(HttpServletRequest request, HttpServletResponse response);
     void renderShoppingCart(HttpServletRequest request, HttpServletResponse response);
 }

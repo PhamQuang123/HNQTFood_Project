@@ -20,4 +20,5 @@ public interface ProductRepository {
     List<Product> findByCategoryId(int categoryId);
     int totalByCategoryId(int categoryId);
     List<Product> findByCategoryIdLimit(int categoryId);
+    Product searchProductByName(String productName);
 }

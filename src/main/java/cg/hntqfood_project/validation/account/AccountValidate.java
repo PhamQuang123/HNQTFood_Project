@@ -43,13 +43,14 @@ public class AccountValidate {
     public boolean checkPhone(String phone) {
         boolean result = false;
 
+
+
         if (Pattern.matches(REGEX_PHONE,phone)) {
             String b = "";
            if (phone.length() == 10){
                b+= phone.substring(1);
            }
             Users user = usersRepository.findUserByPhoneNumber(b);
-
             if (user != null) {
                 result = false;
             } else {

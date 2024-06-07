@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryRepositoryImpl implements CategoryRepository {
+public class CategoryRepositoryImp implements CategoryRepository {
     private Connection conn;
 
     @Override

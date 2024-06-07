@@ -3,9 +3,7 @@ package cg.hntqfood_project.repository.impl;
 import cg.hntqfood_project.config.ConnectionDB;
 import cg.hntqfood_project.model.entity.Category;
 import cg.hntqfood_project.model.entity.Product;
-import cg.hntqfood_project.model.entity.Users;
 import cg.hntqfood_project.querysql.ProductSQL;
-import cg.hntqfood_project.querysql.UsersSQL;
 import cg.hntqfood_project.repository.CategoryRepository;
 import cg.hntqfood_project.repository.ProductRepository;
 
@@ -14,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepositoryImp implements ProductRepository {
-    private CategoryRepository categoryRepository = new CategoryRepositoryImpl();
+    private CategoryRepository categoryRepository = new CategoryRepositoryImp();
     private Connection conn;
     public ProductRepositoryImp(){
         conn = ConnectionDB.openConnection();
@@ -422,5 +420,36 @@ public class ProductRepositoryImp implements ProductRepository {
             ConnectionDB.closeConnection(conn, callSt);
         }
         return listProduct;
+    }
+
+    @Override
+    public Product searchProductByName(String productName) {
+        CallableStatement callSt = null;
+        Product product = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(ProductSQL.SEARCH_PRODUCT_BY_NAME);
+            callSt.setString(1,productName);
+            ResultSet rs = callSt.executeQuery();
+            if (rs.next()) {
+                product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setProductName(rs.getString("productName"));
+                product.setPrice(rs.getDouble("price"));
+                product.setProductStatus(rs.getInt("productStatus"));
+                product.setDescriptions(rs.getString("descriptions"));
+                product.setImage(rs.getString("image"));
+                int categoryId = rs.getInt("category_id");
+                Category category = categoryRepository.findCategoryById(categoryId);
+                product.setCategory(category);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return product;
     }
 }

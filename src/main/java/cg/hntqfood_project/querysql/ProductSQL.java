@@ -15,4 +15,5 @@ public class ProductSQL {
     public static String PRODUCT_DELETE = "call product_delete(?)";
     public static String FIND_PRODUCT_BY_ID="call find_product_by_id(?)";
     public static String FIND_PRODUCT_BY_NAME="call find_product_by_name(?)";
+    public static String SEARCH_PRODUCT_BY_NAME="call search_product_by_name(%?%)";
 }
