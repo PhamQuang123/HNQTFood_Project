@@ -28,12 +28,26 @@ public class AdminServlet extends HttpServlet {
             case "/product":
                 adminService.renderProductManagement(request, response);
                 break;
+            case "/category":
+                break;
+            case "/order":
+                break;
             case "/edit_account":
                 adminService.editAccount(request, response);
                 break;
-            case "/edit_product":
-                adminService.editProduct(request,response);
+            case "/delete_account":
                 break;
+            case "/new_product":
+                adminService.renderFormCreateProduct(request, response);
+                break;
+
+            case "/edit_product":
+                adminService.editProduct(request, response);
+                break;
+            case "/delete_product":
+                adminService.deleteProduct(request, response);
+                break;
+
         }
     }
 
@@ -43,7 +57,18 @@ public class AdminServlet extends HttpServlet {
         String url = request.getPathInfo();
         switch (url) {
             case "/update_account_admin":
-                adminService.adminUpdateAccount(request,response);
+                adminService.adminUpdateAccount(request, response);
+                break;
+            case "/search_account":
+                break;
+            case "/create_product":
+                adminService.createProduct(request, response);
+                break;
+            case "/update_product":
+                adminService.updateProduct(request, response);
+                break;
+            case "/search_product":
+
                 break;
         }
     }

@@ -8,11 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<<<<<<< HEAD
-=======
+
 <!DOCTYPE html>
 <html lang="en">
->>>>>>> Q_update_full_sign_in_up
 <html>
 <head>
     <meta charset="utf-8"/>

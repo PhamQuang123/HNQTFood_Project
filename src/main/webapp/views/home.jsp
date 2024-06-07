@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="../../css/style.css"/>
 </head>
 <body>
+
+<%--START HEADER--%>
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
@@ -38,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold fs-5" aria-current="page" href="/HNQTFood/v1/home_page">Trang chủ</a>
+                        <a class="nav-link active fw-bold fs-5" aria-current="page" href="/HNQTFood/home/home_page">Trang chủ</a>
                     </li>
                     <li class="nav-item fw-bold fs-5">
                         <a class="nav-link" href="#">Đồ Ăn</a>
@@ -48,7 +50,7 @@
                     </li>
                     <c:if test="${sessionScope.users.roleUser == 0}">
                         <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/v1/">Manager</a>
+                            <a class="nav-link" href="/HNQTFood/admin/product">Quản lý</a>
                         </li>
                     </c:if>
                 </ul>
@@ -71,7 +73,7 @@
 
                     <c:if test="${sessionScope.users != null}">
                         <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/v1/log_out">logout</a>
+                            <a class="nav-link" href="/HNQTFood/home/log_out">logout</a>
                         </li>
                     </c:if>
                     <c:if test="${sessionScope.users != null}">
@@ -88,7 +90,9 @@
     </nav>
 </header>
 
-<%--START CONTENT BODY--%>
+<%--END HEADER--%>
+
+<%--START MAIN--%>
 <section>
     <div class="slide-show">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -196,7 +200,6 @@
         </div>
     </div>
 </section>
-<%--END CONTENT BODY--%>
 
 <%--START FOOTER--%>
 <footer class="">
@@ -240,7 +243,7 @@
         </div>
     </div>
 </footer>
-
+<%--END FOOTER--%>
 
 </body>
 </html>

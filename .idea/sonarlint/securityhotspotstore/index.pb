@@ -15,3 +15,7 @@ m
 =src/main/java/cg/hntqfood_project/controller/AuthServlet.java,f\7\f792a34b776797927f03936cac021095bdc9ea09
 q
 Asrc/main/java/cg/hntqfood_project/controller/HomeFoodServlet.java,1\0\10eb6e4914dee1248b065646a1a5aa6026358f50
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+Z
+*src/main/webapp/views/admin/management.jsp,2\4\244d0b64a55e67c3c631e3617b95cc8123f80f09

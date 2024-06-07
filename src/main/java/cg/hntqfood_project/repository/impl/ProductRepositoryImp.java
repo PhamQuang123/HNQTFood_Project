@@ -150,17 +150,17 @@ public class ProductRepositoryImp implements ProductRepository {
     }
 
     @Override
-    public List<Product> findProductByName(String productName) {
+    public Product findProductByName(String productName) {
         CallableStatement callSt = null;
-        List<Product> listProduct = null;
+        Product product = null;
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.FIND_PRODUCT_BY_NAME);
             callSt.setString(1,productName);
             ResultSet rs = callSt.executeQuery();
-            listProduct = new ArrayList<>();
+
             while (rs.next()) {
-                Product product = new Product();
+                product = new Product();
                 product.setId(rs.getInt("id"));
                 product.setProductName(rs.getString("productName"));
                 product.setPrice(rs.getDouble("price"));
@@ -170,7 +170,6 @@ public class ProductRepositoryImp implements ProductRepository {
                 int categoryId = rs.getInt("category_id");
                 Category category = categoryRepository.findCategoryById(categoryId);
                 product.setCategory(category);
-                listProduct.add(product);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -179,7 +178,7 @@ public class ProductRepositoryImp implements ProductRepository {
         } finally {
             ConnectionDB.closeConnection(conn, callSt);
         }
-        return listProduct;
+        return product;
     }
 
     @Override
