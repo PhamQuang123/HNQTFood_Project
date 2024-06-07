@@ -13,9 +13,9 @@ public class Users {
     private String phoneNumber;
     private String email;
     private String pass;
-    private int roleUser;
-    private boolean userStatus;
-    private boolean rememberAccount;
+    private int roleUser = 1;
+    private boolean userStatus = true;
+    private boolean rememberAccount = false;
 
     public Users() {
     }
