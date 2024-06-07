@@ -31,7 +31,7 @@ public class HomePageServlet extends HttpServlet {
             case "/sign_in":
                 homePageService.renderFormSignIn(request,response);
                 break;
-            case "/logout":
+            case "/log_out":
                 homePageService.logout(request,response);
                 break;
         }

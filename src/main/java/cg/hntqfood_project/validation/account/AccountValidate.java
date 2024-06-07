@@ -84,7 +84,7 @@ public class AccountValidate {
     public Users checkEmailAndPAss(String email, String pass) {
         Users users = new Users();
         if (email.equals("") || pass.equals("")) {
-            users = null;
+          return  null;
         } else {
             users = usersRepository.findByEmailAndPass(email, pass);
         }

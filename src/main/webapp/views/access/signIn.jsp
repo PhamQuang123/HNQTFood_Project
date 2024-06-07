@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" name="rememberAccount" type="checkbox" value="false" id="flexCheckDefault">
+                                <input class="form-check-input" name="rememberAccount" value="false" type="checkbox"  id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Nhớ mật khẩu
                                 </label>
@@ -155,6 +155,15 @@
         </div>
     </div>
 </footer>
+<script>
+    document.getElementById('flexCheckDefault').addEventListener('click', function() {
+        if (this.checked) {
+            this.value = 'true';
+        } else {
 
+            this.value = 'false';}
+        console.log(document.getElementById('flexCheckDefault').value)
+    });
+</script>
 </body>
 </html>
