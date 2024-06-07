@@ -18,5 +18,6 @@ public interface ProductRepository {
     List<Product> findPriceDesc();
     List<Product> findAllLimit(int offset);
     List<Product> findByCategoryId(int categoryId);
-    int totalByCategoryId(int categoryId);;
+    int totalByCategoryId(int categoryId);
+    List<Product> findByCategoryIdLimit(int categoryId);
 }

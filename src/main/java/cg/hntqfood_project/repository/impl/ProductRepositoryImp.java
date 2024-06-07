@@ -390,4 +390,37 @@ public class ProductRepositoryImp implements ProductRepository {
         }
         return sum;
     }
+
+    @Override
+    public List<Product> findByCategoryIdLimit(int categoryId) {
+        CallableStatement callSt = null;
+        List<Product> listProduct = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(ProductSQL.PRODUCT_FIND_BY_CATEGORY_ID_LIMIT);
+            callSt.setInt(1, categoryId);
+            listProduct = new ArrayList<>();
+            ResultSet rs = callSt.executeQuery();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setProductName(rs.getString("productName"));
+                product.setPrice(rs.getDouble("price"));
+                product.setProductStatus(rs.getInt("productStatus"));
+                product.setDescriptions(rs.getString("descriptions"));
+                product.setImage(rs.getString("image"));
+                Category category = categoryRepository.findCategoryById(categoryId);
+                product.setCategory(category);
+                listProduct.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return listProduct;
+    }
 }
