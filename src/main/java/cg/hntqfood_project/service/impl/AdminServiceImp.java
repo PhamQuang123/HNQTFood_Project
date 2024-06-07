@@ -38,14 +38,14 @@ public class AdminServiceImp implements AdminService {
     public void renderAccountManagement(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         List<Users> listAccount = usersRepository.findAll();
         request.setAttribute("listAccount", listAccount);
-        request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/userManagement.jsp").forward(request, response);
     }
 
     @Override
     public void renderProductManagement(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> listProduct = productRepository.findAll();
         request.setAttribute("listProduct", listProduct);
-        request.getRequestDispatcher("/views/admin/product.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/productManagement.jsp").forward(request, response);
     }
 
     @Override
