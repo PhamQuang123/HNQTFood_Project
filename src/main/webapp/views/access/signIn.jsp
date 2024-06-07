@@ -155,6 +155,17 @@
         </div>
     </div>
 </footer>
-
 </body>
+
+<script>
+    document.getElementById('flexCheckDefault').addEventListener('click', function() {
+        if (this.checked) {
+            this.value = 'true';
+        } else {
+
+            this.value = 'false';}
+        console.log(document.getElementById('flexCheckDefault').value)
+    });
+</script>
+
 </html>
