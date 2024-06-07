@@ -1,7 +1,7 @@
 package cg.hntqfood_project.controller;
 
 import cg.hntqfood_project.service.AuthService;
-import cg.hntqfood_project.service.impl.AuthServiceImpl;
+import cg.hntqfood_project.service.impl.AuthServiceImp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,7 +14,7 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        authService = new AuthServiceImpl();
+        authService = new AuthServiceImp();
     }
 
     @Override

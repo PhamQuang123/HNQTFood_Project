@@ -9,5 +9,7 @@ public interface AdminService {
     void renderAccountManagement(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException;
     void renderProductManagement(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
     void editAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
-    void updateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    void adminUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    void usersUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    void editProduct(HttpServletRequest request, HttpServletResponse response);
 }

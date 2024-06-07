@@ -1,20 +1,20 @@
 package cg.hntqfood_project.controller;
 
 import cg.hntqfood_project.service.AdminService;
-import cg.hntqfood_project.service.impl.AdminServiceImpl;
+import cg.hntqfood_project.service.impl.AdminServiceImp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AdminServlet", value = "/HNQTFood/*")
+@WebServlet(name = "AdminServlet", value = "/HNQTFood/admin/*")
 public class AdminServlet extends HttpServlet {
     private AdminService adminService;
 
     @Override
     public void init() throws ServletException {
-        adminService = new AdminServiceImpl();
+        adminService = new AdminServiceImp();
     }
 
     @Override
@@ -31,6 +31,9 @@ public class AdminServlet extends HttpServlet {
             case "/edit_account":
                 adminService.editAccount(request, response);
                 break;
+            case "/edit_product":
+                adminService.editProduct(request,response);
+                break;
         }
     }
 
@@ -39,8 +42,8 @@ public class AdminServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String url = request.getPathInfo();
         switch (url) {
-            case "/update_account":
-                adminService.updateAccount(request,response);
+            case "/update_account_admin":
+                adminService.adminUpdateAccount(request,response);
                 break;
         }
     }

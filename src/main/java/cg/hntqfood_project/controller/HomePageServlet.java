@@ -1,7 +1,7 @@
 package cg.hntqfood_project.controller;
 
 import cg.hntqfood_project.service.HomePageService;
-import cg.hntqfood_project.service.impl.HomePageServiceImpl;
+import cg.hntqfood_project.service.impl.HomePageServiceImp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,7 +14,7 @@ public class HomePageServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        homePageService = new HomePageServiceImpl();
+        homePageService = new HomePageServiceImp();
     }
 
     @Override

@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class AdminServiceImpl implements AdminService {
+public class AdminServiceImp implements AdminService {
     private UsersRepository usersRepository;
     private ProductRepository productRepository;
     private AccountValidate accountValidate;
 
-    public AdminServiceImpl() {
+    public AdminServiceImp() {
         usersRepository = new UsersRepositoryImp();
         productRepository = new ProductRepositoryImp();
         accountValidate = new AccountValidate();
@@ -91,5 +91,10 @@ public class AdminServiceImpl implements AdminService {
         }else {
             response.sendRedirect("/HNQTFood/admin/edit?id="+ id);
         }
+    }
+
+    @Override
+    public void editProduct(HttpServletRequest request, HttpServletResponse response) {
+
     }
 }

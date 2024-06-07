@@ -35,6 +35,38 @@ public class Users {
         this.rememberAccount = rememberAccount;
     }
 
+    public Users(String fullName, int gender, String birthday, String phoneNumber, String email, String pass) {
+        this.fullName = fullName;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.pass = pass;
+    }
+
+    public Users(int id, String fullName, String avatar, String address, int gender, String birthday, String phoneNumber, String pass, boolean userStatus) {
+        this.id = id;
+        this.fullName = fullName;
+        this.avatar = avatar;
+        this.address = address;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.pass = pass;
+        this.userStatus = userStatus;
+    }
+
+    public Users(int id, String fullName, String avatar, String address, int gender, String birthday, String phoneNumber, String pass) {
+        this.id = id;
+        this.fullName = fullName;
+        this.avatar = avatar;
+        this.address = address;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.pass = pass;
+    }
+
     public boolean isRememberAccount() {
         return rememberAccount;
     }
@@ -87,14 +119,6 @@ public class Users {
         return gender;
     }
 
-    public Users(String fullName, int gender, String birthday, String phoneNumber, String email, String pass) {
-        this.fullName = fullName;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.pass = pass;
-    }
 
     public void setGender(int gender) {
         this.gender = gender;

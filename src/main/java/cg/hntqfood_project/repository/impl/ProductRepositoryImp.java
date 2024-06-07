@@ -3,9 +3,7 @@ package cg.hntqfood_project.repository.impl;
 import cg.hntqfood_project.config.ConnectionDB;
 import cg.hntqfood_project.model.entity.Category;
 import cg.hntqfood_project.model.entity.Product;
-import cg.hntqfood_project.model.entity.Users;
 import cg.hntqfood_project.querysql.ProductSQL;
-import cg.hntqfood_project.querysql.UsersSQL;
 import cg.hntqfood_project.repository.CategoryRepository;
 import cg.hntqfood_project.repository.ProductRepository;
 
@@ -14,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepositoryImp implements ProductRepository {
-    private CategoryRepository categoryRepository = new CategoryRepositoryImpl();
+    private CategoryRepository categoryRepository = new CategoryRepositoryImp();
     private Connection conn;
     public ProductRepositoryImp(){
         conn = ConnectionDB.openConnection();
