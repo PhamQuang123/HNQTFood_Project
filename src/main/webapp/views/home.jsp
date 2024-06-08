@@ -22,72 +22,170 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
 
 <%--START HEADER--%>
+
 <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand -logo fw-bold fs-1" href="/HNQTFood/home/home_page" style="color: #F96222">HNQTFood</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active fw-bold fs-5" aria-current="page" href="/HNQTFood/home/home_page">Trang chủ</a>
-                    </li>
-                    <li class="nav-item fw-bold fs-5">
-                        <a class="nav-link" href="#">Đồ Ăn</a>
-                    </li>
-                    <li class="nav-item fw-bold fs-5">
-                        <a class="nav-link" href="#">Đồ uống</a>
-                    </li>
-                    <c:if test="${sessionScope.users.roleUser == 0}">
-                        <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/admin/product">Quản lý</a>
-                        </li>
-                    </c:if>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    <div class="container text-center">
+        <div class="row">
+
+            <div class="col-2">
+                <div id="logo">
+                    <div class="img-logo">
+                        <img src="css/image/LogoHeader.png.png" height="130" width="130"/>
+                    </div>
+                    <h4 class="h3-logo">HNQT FOOD</h4>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="d-flex">
+                    <div class="menu1 col mb-1">
+                        <a href="">Trang chủ</a>
+                    </div>
+
+                    <div class="menu2 col mb-1">
+                        <a href="">Đồ Ăn</a>
+                    </div>
+
+                    <div class="menu3 col mb-1">
+                        <a href="">Đồ Uống</a>
+                    </div>
+
+                    <div class="menu4 col mb-1">
+                        <a href="">Hỗ Trợ</a>
+                    </div>
                     <c:if test="${sessionScope.users == null}">
-                        <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/sign_up">Đăng ký</a>
-                        </li>
+                        <div class="menu5 col mb-1">
+                            <a href="">Quản Lý</a>
+                        </div>
                     </c:if>
 
-                    <c:if test="${sessionScope.users == null}">
-                        <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/sign_in">Đăng nhập</a>
-                        </li>
-                    </c:if>
+                </div>
+            </div>
 
-                    <c:if test="${sessionScope.users != null}">
-                        <li class="nav-item fw-bold fs-5">
-                            <a class="nav-link" href="/HNQTFood/home/log_out">logout</a>
-                        </li>
-                    </c:if>
-                    <c:if test="${sessionScope.users != null}">
-                        <li class="nav-item fw-bold fs-5">
-                            <p>${users.fullName}</p>
-                        </li>
-                        <li class="nav-item fw-bold fs-5">
-                            <img src="${users.avatar}" alt="avatar" width="50" height="50">
-                        </li>
-                    </c:if>
-                </ul>
+
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="btn-user" onclick="">
+                            <img src="css/image/LogoUser.png" height="32" width="32"/>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="btn-cart" onclick="">
+                            <img src="css/image/LogoCart.png" height="35" width="35"/>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="btn-logout" onclick="">
+                            <img src="css/image/LogoLogOut.png" height="32    " width="32"/></div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="btn-menu">
+                            <div class="menu-icon" onclick="toggleSidebar()">
+                                <img src="css/image/LogoMenu.png" height="30" width="30"/></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <div>
+        <div id="mySidebar" class="sidebar">
+            <div id="categoryItems">
+                <div class="logo-menu">
+                    <img src="css/image/imageLOGO.png.png" height="82" width="82"/>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <div class="menu-bar">
+                <h4 class="text-white text-center">Danh Mục</h4>
+                <a href="">Gà rán</a>
+                <a href="">Đồ ăn</a>
+                <a href="">Đồ Uống</a>
+                <a href="">Món tráng miệng</a>
+            </div>
+
+            <div class="border-bottom"></div>
+            <div class="row" id="body-menu">
+                <div>
+                    <h3 class="text-white text-center">HNQT Food</h3>
+                    <p class="text-white text-center">Nhanh, Ngon, Tiện</p>
+                    <p class="text-white text-center"> Đầy Đủ Hương Vị Mỗi Ngày! </p>
+                </div>
+            </div>
+
+
+            <div class="row" id="footer-menu">
+                <p class="text-white text-center">Liên Hệ Với Chúng Tôi</p>
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                        <li><a href="" class="fa-brands fa-facebook"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                        <li><a href="" class="fa-brands fa-twitter"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                        <li><a href="" class="fa-brands fa-instagram"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                        <li><a href="" class="fa-brands fa-youtube"></a></li>
+                    </ul>
+                </div>
+
+                <div class="border-bottom"></div>
+
+                <div class="text-white text-center">
+                    <span>Copyright © 2023 KFC Vietnam</span>
+                </div>
+            </div>
+
+            <script>
+                function toggleSidebar() {
+                    let sidebar = document.getElementById("mySidebar");
+                    if (sidebar.style.width === "250px") {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "250px";
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
 </header>
+
+<div>
+    <div class="row">
+        <div class="col-12">
+            <div class="search-container ">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 <%--END HEADER--%>
 
@@ -110,12 +208,14 @@
                 </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleInterval"
                     data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleInterval"
                     data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -170,7 +270,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <a class="nav-link" onclick="load" >Xem thêm</a>
+            <a class="nav-link" onclick="load">Xem thêm</a>
         </div>
 
         <div class="category">

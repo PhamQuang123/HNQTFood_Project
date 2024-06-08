@@ -1,0 +1,23 @@
+
+‡
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+7	java:S131""Add a default case to this switch.(õ‡Îë
+~
+java:S1989"hHandle the following exceptions that could be thrown by "renderHomePage": ServletException, IOException.(ĞÏúÀ
+m
+java:S1989"WHandle the following exception that could be thrown by "renderFormSignUp": IOException.(Ç©òı
+r
+java:S1989 "WHandle the following exception that could be thrown by "renderFormSignIn": IOException.(÷ì³†ıÿÿÿÿ
+c
+java:S1989#"MHandle the following exception that could be thrown by "logout": IOException.(ßáŸ¯
+‡
+java:S1989-"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+7	java:S131/""Add a default case to this switch.(õ‡Îë
+~
+java:S19891"hHandle the following exceptions that could be thrown by "renderHomePage": ServletException, IOException.(ĞÏúÀ
+m
+java:S19894"WHandle the following exception that could be thrown by "renderFormSignUp": IOException.(Ç©òı
+r
+java:S19897"WHandle the following exception that could be thrown by "renderFormSignIn": IOException.(÷ì³†ıÿÿÿÿ
+c
+java:S1989:"MHandle the following exception that could be thrown by "logout": IOException.(ßáŸ¯
