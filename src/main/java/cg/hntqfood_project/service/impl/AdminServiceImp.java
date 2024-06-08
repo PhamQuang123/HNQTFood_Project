@@ -106,15 +106,17 @@ public class AdminServiceImp implements AdminService {
 
 
     @Override
-    public void renderFormCreateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/views/admin/formProduct.jsp");
+    public void renderFormCreateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        List<Category> listCate = categoryRepository.findAll();
+        request.setAttribute("listCate",listCate);
+       request.getRequestDispatcher("/views/activity/createProd.jsp").forward(request,response);
     }
 
     @Override
     public void createProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+
         String productName = request.getParameter("productName");
-        double price = Double.parseDouble("price");
+        double price = Double.parseDouble(request.getParameter("price"));
         int productStatus = Integer.parseInt(request.getParameter("productStatus"));
         String descriptions = request.getParameter("descriptions");
         String image = request.getParameter("image");
@@ -122,7 +124,7 @@ public class AdminServiceImp implements AdminService {
         Category category = categoryRepository.findCategoryById(categoryId);
         boolean checkProductName = productValidate.checkProductName(productName);
         if (checkProductName && price > 0) {
-            Product product = new Product(id, productName, price, productStatus, descriptions, image, category);
+            Product product = new Product( productName, price, productStatus, descriptions, image, category);
             productRepository.save(product);
             response.sendRedirect("/HNQTFood/admin/product");
         } else {
@@ -135,14 +137,14 @@ public class AdminServiceImp implements AdminService {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = productRepository.findProductById(id);
         request.setAttribute("product", product);
-        request.getRequestDispatcher("/views/admin/updateProduct.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/activity/updateProd.jsp").forward(request, response);
     }
 
     @Override
     public void updateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String productName = request.getParameter("productName");
-        double price = Double.parseDouble("price");
+        double price = Double.parseDouble(request.getParameter("price"));
         int productStatus = Integer.parseInt(request.getParameter("productStatus"));
         String descriptions = request.getParameter("descriptions");
         String image = request.getParameter("image");
@@ -151,7 +153,7 @@ public class AdminServiceImp implements AdminService {
         boolean checkProductName = productValidate.checkProductName(productName);
         if (checkProductName) {
             Product product = new Product(id, productName, price, productStatus, descriptions, image, category);
-            productRepository.save(product);
+            productRepository.update(product);
             response.sendRedirect("/HNQTFood/admin/product");
         } else {
             response.sendRedirect("/HNQTFood/admin/edit_product?id=" + id);

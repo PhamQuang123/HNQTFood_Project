@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-1 mx-auto p-2">
                 <button type="button" class="btn btn-success">
-                    <i class="fa-solid fa-plus"></i>Thêm
+                    <a href="/HNQTFood/admin/new_product"><i class="fa-solid fa-plus"></i>Thêm</a>
                 </button>
             </div>
 
@@ -70,50 +70,50 @@
                     <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>
                     <hr>
                 </div>
-                <!-- SIDEBAR-->
+            </div>
+            <!-- SIDEBAR-->
 
-                <!--MAIN TABLE-->
-                <div class="col-md-10 mx-auto">
-                    <div class="container-fluid  ">
-                        <table class="table  table-hover">
-                            <thead id="title" class=" table table-light">
+            <!--MAIN TABLE-->
+            <div class="col-md-10 mx-auto">
+                <div class="container-fluid  ">
+                    <table class="table  table-hover">
+                        <thead id="title" class=" table table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tên món ăn/đồ uống</th>
+                            <th scope="col">Đơn giá(vnđ)</th>
+                            <th scope="col">Trạng thái</th>
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Ảnh minh họa</th>
+                            <th scope="col">Danh mục</th>
+                            <th scope="col">Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody class=" table-group-divider">
+                        <c:forEach items="${listProduct}" var="prod">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Tên món ăn/đồ uống</th>
-                                <th scope="col">Đơn giá(vnđ)</th>
-                                <th scope="col">Trạng thái</th>
-                                <th scope="col">Mô tả</th>
-                                <th scope="col">Ảnh minh họa</th>
-                                <th scope="col">Danh mục</th>
-                                <th scope="col">Thao tác</th>
+                                <th scope="row">${prod.id}</th>
+                                <td>${prod.productName}</td>
+                                <td>${prod.price}</td>
+                                <td>${prod.productStatus == 0? "Còn hàng":"Hết hàng"}</td>
+                                <td>${prod.descriptions}</td>
+                                <td><img class="image" src="${prod.image}"></td>
+                                <td>${prod.category.categoryName}</td>
+                                <td>
+                                    <a href="/HNQTFood/admin/edit_product?id=${prod.id}">
+                                        <button type="button" name="edit" class="btn btn-warning"><i
+                                                class="fa-solid fa-pen-to-square"></i></button>
+                                    </a>
+                                    <a href="/HNQTFood/admin/delete_product?id=${prod.id}">
+                                        <button type="button" name="delete" class="btn btn-danger"><i
+                                                class="fa-solid fa-trash-can"></i></button>
+                                    </a>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody class=" table-group-divider">
-                            <c:forEach items="${listProduct}" var="prod">
-                                <tr>
-                                    <th scope="row">${prod.id}</th>
-                                    <td>${prod.productName}</td>
-                                    <td>${prod.price}</td>
-                                    <td>${prod.productStatus == 0? "Còn hàng":"Hết hàng"}</td>
-                                    <td>${prod.descriptions}</td>
-                                    <td><img class="image" src="${prod.image}"></td>
-                                    <td>${prod.category.categoryName}</td>
-                                    <td>
-                                        <a href="/HNQTFood/admin/edit_product?id=${prod.id}">
-                                            <button type="button" name="edit" class="btn btn-warning"><i
-                                                    class="fa-solid fa-pen-to-square"></i></button>
-                                        </a>
-                                        <a href="/HNQTFood/admin/delete_product?id=${prod.id}">
-                                            <button type="button" name="delete" class="btn btn-danger"><i
-                                                    class="fa-solid fa-trash-can"></i></button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <!--  END TABLE-->
-                    </div>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <!--  END TABLE-->
                 </div>
             </div>
         </div>

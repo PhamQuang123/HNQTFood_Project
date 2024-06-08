@@ -26,8 +26,8 @@ public class ProductRepositoryImp implements ProductRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.PRODUCT_FIND_ALL);
-            listProduct = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
+            listProduct = new ArrayList<>();
 
             while (rs.next()) {
                 Product product = new Product();
