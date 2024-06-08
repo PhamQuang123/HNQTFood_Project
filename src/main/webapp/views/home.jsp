@@ -27,11 +27,13 @@
     <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
-<header class="fixed-top">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
+<header class="fixed-top">
     <div class="container text-center">
         <div class="row">
-
             <div class="col-2">
                 <div id="logo">
                     <a>
@@ -67,11 +69,29 @@
 
                 </div>
             </div>
-
-
             <div class="col-2">
                 <div class="row">
                     <div class="col-3">
+<<<<<<< HEAD
+                       <a><div class="btn-user" onclick="">
+                           <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                       </div></a>
+                    </div>
+
+                    <div class="col-3">
+                        <a><div class="btn-cart" onclick="">
+                            <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                        </div></a>
+
+                    </div>
+
+                    <div class="col-3">
+                        <a><div class="btn-logout" onclick="">
+                            <img src="../../image/icon/LogoLogOut.png" height="32    " width="32"/></div></a>
+
+                    </div>
+
+=======
                         <c:if test="${sessionScope.users != null}">
                             <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
                                 <div class="btn-user" onclick="">
@@ -101,11 +121,17 @@
                             </a>
                         </div>
                     </c:if>
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
                 </div>
             </div>
         </div>
     </div>
 
+<<<<<<< HEAD
+    </div>
+</header>
+
+=======
     <div>
         <div id="mySidebar" class="sidebar">
             <div id="categoryItems">
@@ -148,14 +174,17 @@
             </div>
         </div>
     </div>
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
 
-</div>
 
 
 <%--END HEADER--%>
 
 <%--START MAIN--%>
 <section class="py-5">
+
+    <div class="container-fluid">
+        <div class="row">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -183,6 +212,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div>
+        </div>
     </div>
 
     <div class="container py-5">

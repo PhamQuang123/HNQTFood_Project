@@ -26,18 +26,23 @@
 </head>
 <body>
 
+<<<<<<< HEAD
+
+
+=======
 <a href="/HNQTFood/home/home_page">
     <div
             class="img-logo text-center">
         <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
     </div>
 </a>
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
 <!--START BODY-->
 <section class="pt-5">
     <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid mx-auto p-5">
         <div class="row">
             <div class="col-md-8">
             </div>
