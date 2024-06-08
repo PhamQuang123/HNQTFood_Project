@@ -109,7 +109,6 @@ public class CategoryRepositoryImp implements CategoryRepository {
             if (rs.next()) {
                 category.setId(rs.getInt("id"));
                 category.setCategoryName(rs.getString("categoryName"));
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

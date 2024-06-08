@@ -33,7 +33,7 @@
                     <form action="/HNQTFood/admin/update_product" method="post">
                         <div class="form-group mb-3">
                             <label for="exampleInputName">Mã sản phẩm</label>
-                            <input type="text" name="id" value="${product.productId}" class="form-control" readonly/>
+                            <input type="text" name="id" value="${product.id}" class="form-control" readonly/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="exampleInputName">Tên món mới</label>

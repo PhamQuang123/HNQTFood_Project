@@ -33,16 +33,15 @@ public class ShoppingCartServiceImp implements ShoppingCartService {
         String email = findEmailOnline(request, response);
         HttpSession session = request.getSession();
         if (email != null) {
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
             int idProduct = Integer.parseInt(request.getParameter("idProduct"));
             Product product = productRepository.findProductById(idProduct);
-            if (checkProductInCart(request, response)){
-                double totalPrice = quantity * product.getPrice();
+            if (!checkProductInCart(request, response)){
+                double totalPrice = product.getPrice();
                 ShoppingCart cart = new ShoppingCart();
                 int quantityProduct = findTotalProduct(request, response);
                 cart.setId(quantityProduct + 1);
                 cart.setTotalPrice(totalPrice);
-                cart.setQuantity(quantity);
+                cart.setQuantity(1);
                 cart.setProduct(product);
                 shoppingCartList.add(cart);
                 session.setAttribute(email,shoppingCartList);
@@ -52,8 +51,8 @@ public class ShoppingCartServiceImp implements ShoppingCartService {
                 shoppingCartList = (List<ShoppingCart>) session.getAttribute(email);
                 for (ShoppingCart cart : shoppingCartList){
                     if (cart.getProduct().getProductName().equals(product.getProductName())){
-                        cart.setQuantity(cart.getQuantity() + quantity);
-                        cart.setTotalPrice(cart.getTotalPrice() + (quantity*product.getPrice()));
+                        cart.setQuantity(cart.getQuantity() + 1);
+                        cart.setTotalPrice(cart.getTotalPrice() + product.getPrice());
                         session.setAttribute(email,shoppingCartList);
                         session.setMaxInactiveInterval(60*60*24*30);
                     }
