@@ -1,12 +1,11 @@
 package cg.hntqfood_project.service;
 
-import cg.hntqfood_project.model.entity.ShoppingCart;
-
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public interface ShoppingCartService {
-    List<ShoppingCart> findAll();
-    void save(ShoppingCart shoppingCart);
-    void update(ShoppingCart shoppingCart);
-    void delete(int id);
+    boolean add(HttpServletRequest request, HttpServletResponse response);
+    boolean checkProductInCart(HttpServletRequest request, HttpServletResponse response);
+    int findTotalProduct(HttpServletRequest request, HttpServletResponse response);
+    String findEmailOnline(HttpServletRequest request, HttpServletResponse response);
 }

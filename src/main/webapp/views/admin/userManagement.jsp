@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/productManagement"/>
 </head>
 <body>
 <header></header>
@@ -55,13 +55,13 @@
 
             <!--SIDEBAR &TABLE-->
             <div class=" sidebar-magane col-md-2 p-1 fw-bold text end" >
-                <p><a href="#" >Đồ ăn/ đồ uống</a></p>
+                <p><a href="/HNQTFood/admin/product" >Đồ ăn/ đồ uống</a></p>
                 <hr>
-                <a href="#" >Tài khoản</a>
+                <a href="/HNQTFood/admin/account" >Tài khoản</a>
                 <hr>
-                <a href="#" >Danh mục</a>
+                <a href="/HNQTFood/admin/category" >Danh mục</a>
                 <hr>
-                <a href="#" >Lịch sử đơn hàng</a>
+                <a href="/HNQTFood/admin/order" >Lịch sử đơn hàng</a>
                 <hr>
             </div>
             <!--SIDEBAR &TABLE-->
@@ -87,21 +87,23 @@
 
                         <!-- MAIN TABLE-->
                         <tbody class=" table-group-divider">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td name="name">Trung Đào</td>
-                            <td name="image" ><img class="user-image" src="images/user1.jpg"/></td>
-                            <td name="address">18,ngõ 58, Quan Hoa, Cầu Giấy, hà Nội</td>
-                            <td name="gender">Nam</td>
-                            <td name="birth">24/07/1998</td>
-                            <td name="phone">0971343398 </td>
-                            <td name="mail">trungbaizen@gmail.com</td>
-                            <td name="pass">trung123</td>
-                            <td name="status"><div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                            </div></td>
-                        </tr>
+                       <c:forEach items="" var="">
+                           <tr>
+                               <th scope="row">1</th>
+                               <td name="name">Trung Đào</td>
+                               <td name="image" ><img class="user-image" src="images/user1.jpg"/></td>
+                               <td name="address">18,ngõ 58, Quan Hoa, Cầu Giấy, hà Nội</td>
+                               <td name="gender">Nam</td>
+                               <td name="birth">24/07/1998</td>
+                               <td name="phone">0971343398 </td>
+                               <td name="mail">trungbaizen@gmail.com</td>
+                               <td name="pass">trung123</td>
+                               <td name="status"><div class="form-check form-switch">
+                                   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                   <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                               </div></td>
+                           </tr>
+                       </c:forEach>
 
                         </tbody>
                         <!--END MAIN TABLE-->

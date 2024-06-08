@@ -2,16 +2,18 @@ package cg.hntqfood_project.model.entity;
 
 public class ShoppingCart {
     private int id;
-    private Users users;
-    private Orders orders;
+    private int quantity;
+    private double totalPrice;
+    private Product product;
 
     public ShoppingCart() {
     }
 
-    public ShoppingCart(int id, Users users, Orders orders) {
+    public ShoppingCart(int id, int quantity, double totalPrice, Product product) {
         this.id = id;
-        this.users = users;
-        this.orders = orders;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
+        this.product = product;
     }
 
     public int getId() {
@@ -22,19 +24,32 @@ public class ShoppingCart {
         this.id = id;
     }
 
-    public Users getUsers() {
-        return users;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public Orders getOrders() {
-        return orders;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setOrders(Orders orders) {
-        this.orders = orders;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return id + "," + quantity + "," + totalPrice + "," + product;
     }
 }

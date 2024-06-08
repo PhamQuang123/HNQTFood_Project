@@ -8,8 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<<<<<<< HEAD
-=======
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -27,7 +26,7 @@
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand -logo" href="/HNQTFood.com.vn/home_page" style="color: #F96222">HNQTFood</a>
+            <a class="navbar-brand -logo" href="/HNQTFood/home_page" style="color: #F96222">HNQTFood</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/HNQTFood.com.vn/home_page">Trang chủ</a>
+                        <a class="nav-link active" aria-current="page" href="/HNQTFood/home_page">Trang chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đồ Ăn</a>
@@ -85,7 +84,7 @@
                         <p class="mb-0">Nhanh chóng và dễ dàng. </p>
                     </div>
                     <div class="p-3">
-                        <form action="/HNQTFood.com.vn/sign_up" method="post" class="row">
+                        <form action="/HNQTFood/sign_up" method="post" class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="mb-2">
                                     <input type="text" name="first_name" value="${first_name}" class="form-control py-2"
@@ -178,7 +177,7 @@
                                         Đăng Ký
                                     </button>
                                 </div>
-                                <div class="mt-2"><a href="/HNQTFood.com.vn/sign_in"
+                                <div class="mt-2"><a href="/HNQTFood/sign_in"
                                                      class="text-decoration-none text-primary">
                                     Đã có tài khoản?
                                 </a>

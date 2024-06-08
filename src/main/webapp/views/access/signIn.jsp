@@ -73,7 +73,7 @@
                         <h1 class="card-title text-center">Đăng nhập</h1>
                     </div>
                     <div class="card-body">
-                        <form action="/HNQTFood.com.vn/sign_in" method="post">
+                        <form action="/HNQTFood/sign_in" method="post">
                             <div class="form-group">
                                 <label for="email">Username:</label>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter username">
@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" name="rememberAccount" type="checkbox" value="false" id="flexCheckDefault">
+                                <input class="form-check-input" name="rememberAccount" value="false" type="checkbox"  id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Nhớ mật khẩu
                                 </label>
@@ -97,7 +97,7 @@
                                 <button type="submit" class="btn btn-danger btn-block " >Đăng nhập</button>
                             </div>
                             <div class="d-flex justify-content-center mt-1">
-                                <a  href="/HNQTFood.com.vn/sign_up" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" >
+                                <a  href="/HNQTFood/sign_up" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" >
                                     Đăng Ký Tài Khoản
                                 </a>/
                                 <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
@@ -155,8 +155,6 @@
         </div>
     </div>
 </footer>
-</body>
-
 <script>
     document.getElementById('flexCheckDefault').addEventListener('click', function() {
         if (this.checked) {
@@ -167,5 +165,5 @@
         console.log(document.getElementById('flexCheckDefault').value)
     });
 </script>
-
+</body>
 </html>

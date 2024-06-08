@@ -12,7 +12,7 @@ public interface UsersRepository {
     boolean adminUpdate(Users users);
     Users findUsersById(int id);
     Users findUserByEmail(String email);
-    Users findUserByPhone(String phone);
-    List<Users> findUserNameByName(String userName);
+    Users findUserByPhoneNumber(String phone);
+    List<Users> findUserNameByFullName(String userName);
     Users findByEmailAndPass(String email, String pass);
 }
