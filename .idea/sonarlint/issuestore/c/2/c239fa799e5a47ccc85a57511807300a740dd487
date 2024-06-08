@@ -1,0 +1,25 @@
+
+З
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ПсЄЙ°    
+7	java:S131""Add a default case to this switch.(їЗ╬ы
+О
+java:S1989"qHandle the following exceptions that could be thrown by "renderAccountManagement": IOException, ServletException.(З└ёЬ8Я┼ап 1
+О
+java:S1989"qHandle the following exceptions that could be thrown by "renderProductManagement": ServletException, IOException.(├и√т8б┼ап 1
+В
+java:S1989$"eHandle the following exceptions that could be thrown by "editAccount": ServletException, IOException.(│√╡п8г┼ап 1
+А
+java:S1989)"^Handle the following exception that could be thrown by "renderFormCreateProduct": IOException.(╟║рн     8е┼ап 1
+З
+java:S1989-"eHandle the following exceptions that could be thrown by "editProduct": ServletException, IOException.(Г│ │№    8з┼ап 1
+p
+java:S19890"THandle the following exception that could be thrown by "deleteProduct": IOException.(Л█╩?8и┼ап 1
+З
+java:S19898"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ПсЄЙ°    
+7	java:S131:""Add a default case to this switch.(їЗ╬ы
+Й
+java:S1989<"lHandle the following exceptions that could be thrown by "adminUpdateAccount": ServletException, IOException.(╙╠ЦЙ8п┼ап 1
+q
+java:S1989A"THandle the following exception that could be thrown by "createProduct": IOException.(∙лкЇ8▒┼ап 1
+p
+java:S1989D"THandle the following exception that could be thrown by "updateProduct": IOException.(┼кўc8▓┼ап 1

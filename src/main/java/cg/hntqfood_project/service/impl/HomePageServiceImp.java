@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-public class HomePageServiceImpl implements HomePageService {
+public class HomePageServiceImp implements HomePageService {
 
     private UsersRepository usersRepository;
     private CategoryRepository categoryRepository;
@@ -23,7 +23,7 @@ public class HomePageServiceImpl implements HomePageService {
     private TransactionHistoryRepository shoppingCartRepository;
 
 
-    public HomePageServiceImpl() {
+    public HomePageServiceImp() {
         usersRepository = new UsersRepositoryImp();
         productRepository = new ProductRepositoryImp();
         categoryRepository = new CategoryRepositoryImp();

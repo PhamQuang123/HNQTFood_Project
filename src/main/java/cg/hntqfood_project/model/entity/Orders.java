@@ -8,7 +8,7 @@ public class Orders {
     private double totalPrice;
     private int quantity;
     private Users users;
-    private int orderStatus;
+    private int orderStatus = 1;
 
     public Orders() {
     }

@@ -14,11 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class AuthServiceImpl implements AuthService {
+public class AuthServiceImp implements AuthService {
     private UsersRepository usersRepository;
     private AccountValidate accountValidate;
 
-    public AuthServiceImpl() {
+    public AuthServiceImp() {
         usersRepository = new UsersRepositoryImp();
         accountValidate = new AccountValidate();
     }
@@ -57,11 +57,6 @@ public class AuthServiceImpl implements AuthService {
         }
 
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
-    }
-
-    @Override
-    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
     }
 
     @Override

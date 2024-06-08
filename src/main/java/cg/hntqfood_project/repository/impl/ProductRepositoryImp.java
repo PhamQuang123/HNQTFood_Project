@@ -14,9 +14,11 @@ import java.util.List;
 public class ProductRepositoryImp implements ProductRepository {
     private CategoryRepository categoryRepository = new CategoryRepositoryImp();
     private Connection conn;
-    public ProductRepositoryImp(){
+
+    public ProductRepositoryImp() {
         conn = ConnectionDB.openConnection();
     }
+
     @Override
     public List<Product> findAll() {
         CallableStatement callSt = null;
@@ -59,8 +61,8 @@ public class ProductRepositoryImp implements ProductRepository {
             callSt = conn.prepareCall(ProductSQL.PRODUCT_SAVE);
             callSt.setString(1, product.getProductName());
             callSt.setDouble(2, product.getPrice());
-            callSt.setInt(3,product.getProductStatus());
-            callSt.setString(4,product.getDescriptions());
+            callSt.setInt(3, product.getProductStatus());
+            callSt.setString(4, product.getDescriptions());
             callSt.setString(5, product.getImage());
             callSt.setInt(6, product.getCategory().getId());
             callSt.executeUpdate();
@@ -84,7 +86,7 @@ public class ProductRepositoryImp implements ProductRepository {
             callSt.setInt(1, product.getId());
             callSt.setString(2, product.getProductName());
             callSt.setDouble(3, product.getPrice());
-            callSt.setInt(4,product.getProductStatus());
+            callSt.setInt(4, product.getProductStatus());
             callSt.setString(5, product.getDescriptions());
             callSt.setString(6, product.getImage());
             callSt.setInt(7, product.getCategory().getId());
@@ -150,13 +152,14 @@ public class ProductRepositoryImp implements ProductRepository {
     }
 
     @Override
+
     public List<Product> searchProductByName(String productName) {
         CallableStatement callSt = null;
         List<Product> listProduct = null;
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.SEARCH_PRODUCT_BY_NAME);
-            callSt.setString(1,productName);
+            callSt.setString(1, productName);
             ResultSet rs = callSt.executeQuery();
             listProduct = new ArrayList<>();
             while (rs.next()) {
@@ -190,8 +193,8 @@ public class ProductRepositoryImp implements ProductRepository {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.PRODUCT_TOTAL);
             callSt.registerOutParameter(1, Types.INTEGER);
-             callSt.execute();
-             sum = callSt.getInt(1);
+            callSt.execute();
+            sum = callSt.getInt(1);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
@@ -375,7 +378,7 @@ public class ProductRepositoryImp implements ProductRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.PRODUCT_TOTAL_BY_CATEGORY_ID);
-            callSt.setInt(1,categoryId);
+            callSt.setInt(1, categoryId);
             callSt.registerOutParameter(2, Types.INTEGER);
             callSt.execute();
             sum = callSt.getInt(2);
@@ -429,7 +432,7 @@ public class ProductRepositoryImp implements ProductRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.FIND_PRODUCT_BY_NAME);
-            callSt.setString(1,productName);
+            callSt.setString(1, productName);
             ResultSet rs = callSt.executeQuery();
             if (rs.next()) {
                 product = new Product();

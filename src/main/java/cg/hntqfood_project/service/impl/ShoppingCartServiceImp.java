@@ -16,12 +16,12 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCartServiceImpl implements ShoppingCartService {
+public class ShoppingCartServiceImp implements ShoppingCartService {
     private ProductRepository productRepository;
     private OrdersRepository ordersRepository;
     private OrderDetailRepository orderDetailRepository;
 
-    public ShoppingCartServiceImpl() {
+    public ShoppingCartServiceImp() {
         productRepository = new ProductRepositoryImp();
         ordersRepository = new OrdersRepositoryImp();
         orderDetailRepository = new OrderDetailRepositoryImp();

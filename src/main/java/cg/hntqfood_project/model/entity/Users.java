@@ -13,9 +13,9 @@ public class Users {
     private String phoneNumber;
     private String email;
     private String pass;
-    private int roleUser;
-    private boolean userStatus;
-    private boolean rememberAccount;
+    private int roleUser = 1;
+    private boolean userStatus = true;
+    private boolean rememberAccount = false;
 
     public Users() {
     }
@@ -33,6 +33,38 @@ public class Users {
         this.roleUser = roleUser;
         this.userStatus = userStatus;
         this.rememberAccount = rememberAccount;
+    }
+
+    public Users(String fullName, int gender, String birthday, String phoneNumber, String email, String pass) {
+        this.fullName = fullName;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.pass = pass;
+    }
+
+    public Users(int id, String fullName, String avatar, String address, int gender, String birthday, String phoneNumber, String pass, boolean userStatus) {
+        this.id = id;
+        this.fullName = fullName;
+        this.avatar = avatar;
+        this.address = address;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.pass = pass;
+        this.userStatus = userStatus;
+    }
+
+    public Users(int id, String fullName, String avatar, String address, int gender, String birthday, String phoneNumber, String pass) {
+        this.id = id;
+        this.fullName = fullName;
+        this.avatar = avatar;
+        this.address = address;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.phoneNumber = phoneNumber;
+        this.pass = pass;
     }
 
     public boolean isRememberAccount() {
@@ -87,14 +119,6 @@ public class Users {
         return gender;
     }
 
-    public Users(String fullName, int gender, String birthday, String phoneNumber, String email, String pass) {
-        this.fullName = fullName;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.pass = pass;
-    }
 
     public void setGender(int gender) {
         this.gender = gender;
