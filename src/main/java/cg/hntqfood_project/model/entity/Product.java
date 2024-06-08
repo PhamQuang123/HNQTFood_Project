@@ -4,9 +4,19 @@ public class Product {
     private int id;
     private String productName;
     private double price;
-    private int productStatus;
+    private int productStatus = 0;
     private String descriptions;
     private String image;
+
+    public Product(String productName, double price, int productStatus, String descriptions, String image, Category category) {
+        this.productName = productName;
+        this.price = price;
+        this.productStatus = productStatus;
+        this.descriptions = descriptions;
+        this.image = image;
+        this.category = category;
+    }
+
     private Category category;
 
     public Product() {

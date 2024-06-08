@@ -8,6 +8,11 @@ public class OrderDetail {
     public OrderDetail() {
     }
 
+    public OrderDetail(Product product, Orders orders) {
+        this.product = product;
+        this.orders = orders;
+    }
+
     public OrderDetail(int id, Product product, Orders orders) {
         this.id = id;
         this.product = product;

@@ -8,9 +8,15 @@ public class Orders {
     private double totalPrice;
     private int quantity;
     private Users users;
-    private int orderStatus;
+    private int orderStatus = 1;
 
     public Orders() {
+    }
+
+    public Orders(double totalPrice, int quantity, Users users) {
+        this.totalPrice = totalPrice;
+        this.quantity = quantity;
+        this.users = users;
     }
 
     public Orders(int id, String timeOrder, double totalPrice, int quantity, Users users, int orderStatus) {

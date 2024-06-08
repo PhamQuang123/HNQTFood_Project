@@ -1,0 +1,213 @@
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+}
+
+.menu-icon div {
+    background-color: #f96222;
+    height: 3px;
+    margin-left: 0px;
+}
+
+#mySidebar {
+    text-decoration-color: white ;
+    position: fixed; /* Đảm bảo sidebar luôn ở một vị trí cố định trên trang */
+    top: 0; /* Đặt sidebar ở phía trên cùng của trang */
+    right: 0; /* Đặt sidebar ở phía trái của trang */
+    width:250px; /* Chiều rộng của sidebar */
+    height: 100%; /* Chiều cao của sidebar */
+    background-color: #f96222; /* Màu nền của sidebar */
+    overflow-x: hidden; /* Ngăn ngừa việc cuộn ngang khi nội dung quá rộng */
+    z-index: 999; /* Đảm bảo sidebar hiển thị trên cùng */
+    transition: 0.5s; /* Hiệu ứng chuyển động khi mở hoặc đóng sidebar */
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f96222;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    display: none;
+}
+
+#categoryItems{
+    margin-top: 0px;
+    margin-left: 20px;
+    color: white;
+
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #c7440b;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.category h2 {
+    color: #f96222;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ffffff;
+    color: #000000;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    color: #f96222;
+    margin-left: 50px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.form-control{
+    margin-left: 400px;
+    border: none;
+    color: #ffffff;
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.form-select{
+    border: 1px #F96222;
+    margin-left: 20px;
+    width: 30px;
+    margin-top: 7px;
+}
+
+.search-container {
+    border:1px #F96222;
+    margin-right: 400px ;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    width: 600px;
+    padding: 10px;
+    border: 2px solid #f96222;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px;
+    border: 1px solid #F96222 ;
+    background-color: #f96222;
+    color: #f3e9e9;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    width: 90px;
+}
+
+.search-button:hover {
+    background-color: #ff4c00;
+}
+
+.menu-bar a:hover{
+    transition: 0.9s;
+    margin-left: 25px;
+    color: white;
+}
+
+
+.d-flex{
+    font-size: 2em;
+    margin-top: 35px;
+}
+
+.btn-cart{
+    margin-top: 40px;
+}
+
+.btn-user{
+    margin-top: 40px;
+}
+
+.btn-logout{
+    margin-top: 40px;
+}
+
+.btn-menu{
+    margin-top: 40px;
+}
+
+.d-flex a{
+    font-family: "Patua One", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+
+.d-flex a:hover{
+    color: #f96222;
+    transition: 0.9s;
+    margin-right: 25px;
+}
+
+.img-logo{
+    margin-left: 0px;
+}
+
+.logo-menu{
+    color: white;
+    margin-left: 65px;
+    margin-bottom: 20px;
+}
+
+.logo-footer{
+    margin-bottom:20px;
+}
+
+#footer-menu{
+    background: black;
+}
+
+span{
+    font-size: 0.6em;
+    text-align: center;
+}
+
+#body-menu{
+    margin-top: 50px;
+}
+

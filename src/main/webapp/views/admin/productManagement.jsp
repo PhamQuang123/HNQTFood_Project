@@ -19,12 +19,123 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/productManagement.css"/>
 </head>
 <body>
-<header></header>
+<header class="fixed-top">
+
+    <div class="container text-center">
+        <div class="row">
+
+            <div class="col-2">
+                <div id="logo">
+                    <a href="../home.jsp">
+                        <div
+                                class="img-logo text-center">
+                            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                        </div>
+                    </a>
+                    <h4 class="h3-logo">HNQT FOOD</h4>
+                </div>
+            </div>
+
+
+
+            <div class="col-8">
+                <div class="d-flex">
+                    <div class="menu1 col mb-1">
+                        <a href="">Trang chủ</a>
+                    </div>
+
+                    <div class="menu2 col mb-1">
+                        <a href="">Đồ Ăn</a>
+                    </div>
+
+                    <div class="menu3 col mb-1">
+                        <a href="">Đồ Uống</a>
+                    </div>
+
+                    <div class="menu4 col mb-1">
+                        <a href="">Hỗ Trợ</a>
+                    </div>
+
+                    <div class="menu5 col mb-1">
+                        <a href="">Quản Lý</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-3">
+                        <a><div class="btn-user" onclick="">
+                            <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                        </div></a>
+                    </div>
+
+                    <div class="col-3">
+                        <a><div class="btn-cart" onclick="">
+                            <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                        </div></a>
+
+                    </div>
+
+                    <div class="col-3">
+                        <a><div class="btn-logout" onclick="">
+                            <img src="../../image/icon/LogoLogOut.png" height="32    " width="32"/></div></a>
+
+                    </div>
+
+                    <div class="col-3">
+                        <div class="btn-menu">
+                            <a>
+                                <div class="menu-icon" onclick="toggleSidebar()">
+                                    <img src="../../image/icon/LogoMenu.png" height="30" width="30"/></div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="mySidebar" class="sidebar">
+            <div id="categoryItems">
+                <div class="logo-menu">
+                    <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <div class="menu-bar">
+                <h4 class="text-white text-center">Danh Mục</h4>
+                <a href="">Gà rán</a>
+                <a href="">Đồ ăn</a>
+                <a href="">Đồ Uống</a>
+                <a href="">Món tráng miệng</a>
+            </div>
+
+            <hr>
+
+            <script>
+                function toggleSidebar() {
+                    let sidebar = document.getElementById("mySidebar");
+                    if (sidebar.style.width === "250px") {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "250px";
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+</header>
 
 
 <!--START BODY-->
@@ -47,7 +158,7 @@
             </div>
             <div class="col-md-1 mx-auto p-2">
                 <button type="button" class="btn btn-success">
-                    <i class="fa-solid fa-plus"></i>Thêm
+                    <a href="/HNQTFood/admin/new_product"><i class="fa-solid fa-plus"></i>Thêm</a>
                 </button>
             </div>
 
@@ -59,7 +170,7 @@
         <div class="row">
 
             <!--SIDEBAR-->
-            <div class=" sidebar-magane col-md-2 p-1 fw-bold text end">
+            <div class=" sidebar-manage col-md-2 fw-bold text end">
                 <div class=" sidebar-magane col-md-2 p-1 fw-bold text end">
                     <p><a href="/HNQTFood/admin/product">Đồ ăn/ đồ uống</a></p>
                     <hr>
@@ -70,50 +181,50 @@
                     <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>
                     <hr>
                 </div>
+            </div>
                 <!-- SIDEBAR-->
 
-                <!--MAIN TABLE-->
-                <div class="col-md-10 mx-auto">
-                    <div class="container-fluid  ">
-                        <table class="table  table-hover">
-                            <thead id="title" class=" table table-light">
+            <!--MAIN TABLE-->
+            <div class="col-md-10 mx-auto">
+                <div class="container-fluid  ">
+                    <table class="table  table-hover">
+                        <thead id="title" class=" table table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tên món ăn/đồ uống</th>
+                            <th scope="col">Đơn giá(vnđ)</th>
+                            <th scope="col">Trạng thái</th>
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Ảnh minh họa</th>
+                            <th scope="col">Danh mục</th>
+                            <th scope="col">Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody class=" table-group-divider">
+                        <c:forEach items="${listProduct}" var="prod">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Tên món ăn/đồ uống</th>
-                                <th scope="col">Đơn giá(vnđ)</th>
-                                <th scope="col">Trạng thái</th>
-                                <th scope="col">Mô tả</th>
-                                <th scope="col">Ảnh minh họa</th>
-                                <th scope="col">Danh mục</th>
-                                <th scope="col">Thao tác</th>
+                                <th scope="row">${prod.id}</th>
+                                <td>${prod.productName}</td>
+                                <td>${prod.price}</td>
+                                <td>${prod.productStatus == 0? "Còn hàng":"Hết hàng"}</td>
+                                <td>${prod.descriptions}</td>
+                                <td><img class="image" src="/image/${prod.image}"></td>
+                                <td>${prod.category.categoryName}</td>
+                                <td>
+                                    <a href="/HNQTFood/admin/edit_product?id=${prod.id}">
+                                        <button type="button" name="edit" class="btn btn-warning"><i
+                                                class="fa-solid fa-pen-to-square"></i></button>
+                                    </a>
+                                    <a href="/HNQTFood/admin/delete_product?id=${prod.id}">
+                                        <button type="button" name="delete" class="btn btn-danger"><i
+                                                class="fa-solid fa-trash-can"></i></button>
+                                    </a>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody class=" table-group-divider">
-                            <c:forEach items="${listProduct}" var="prod">
-                                <tr>
-                                    <th scope="row">${prod.id}</th>
-                                    <td>${prod.productName}</td>
-                                    <td>${prod.price}</td>
-                                    <td>${prod.productStatus == 0? "Còn hàng":"Hết hàng"}</td>
-                                    <td>${prod.descriptions}</td>
-                                    <td><img class="image" src="${prod.image}"></td>
-                                    <td>${prod.category.categoryName}</td>
-                                    <td>
-                                        <a href="/HNQTFood/admin/edit_product?id=${prod.id}">
-                                            <button type="button" name="edit" class="btn btn-warning"><i
-                                                    class="fa-solid fa-pen-to-square"></i></button>
-                                        </a>
-                                        <a href="/HNQTFood/admin/delete_product?id=${prod.id}">
-                                            <button type="button" name="delete" class="btn btn-danger"><i
-                                                    class="fa-solid fa-trash-can"></i></button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <!--  END TABLE-->
-                    </div>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <!--  END TABLE-->
                 </div>
             </div>
         </div>

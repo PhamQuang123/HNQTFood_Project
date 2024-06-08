@@ -105,11 +105,10 @@ public class CategoryRepositoryImp implements CategoryRepository {
             callSt = conn.prepareCall(CategorySQL.FIND_CATEGORY_BY_ID);
             callSt.setInt(1, id);
             ResultSet rs = callSt.executeQuery();
-            Category categories = new Category();
+            category = new Category();
             if (rs.next()) {
-                categories.setId(rs.getInt("id"));
-                categories.setCategoryName(rs.getString("categoryName"));
-
+                category.setId(rs.getInt("id"));
+                category.setCategoryName(rs.getString("categoryName"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

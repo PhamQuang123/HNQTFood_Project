@@ -26,8 +26,8 @@ public class ProductRepositoryImp implements ProductRepository {
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(ProductSQL.PRODUCT_FIND_ALL);
-            listProduct = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
+            listProduct = new ArrayList<>();
 
             while (rs.next()) {
                 Product product = new Product();
@@ -454,5 +454,38 @@ public class ProductRepositoryImp implements ProductRepository {
             ConnectionDB.closeConnection(conn, callSt);
         }
         return product;
+    }
+
+    @Override
+    public List<Product> findAllProductHome() {
+        CallableStatement callSt = null;
+        List<Product> listProduct = null;
+        try {
+            conn = ConnectionDB.openConnection();
+            callSt = conn.prepareCall(ProductSQL.FIND_ALL_PRODUCT_HOME);
+            ResultSet rs = callSt.executeQuery();
+            listProduct = new ArrayList<>();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setProductName(rs.getString("productName"));
+                product.setPrice(rs.getDouble("price"));
+                product.setProductStatus(rs.getInt("productStatus"));
+                product.setDescriptions(rs.getString("descriptions"));
+                product.setImage(rs.getString("image"));
+                int categoryId = rs.getInt("category_id");
+                Category category = categoryRepository.findCategoryById(categoryId);
+                product.setCategory(category);
+                listProduct.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionDB.closeConnection(conn, callSt);
+        }
+        return listProduct;
     }
 }

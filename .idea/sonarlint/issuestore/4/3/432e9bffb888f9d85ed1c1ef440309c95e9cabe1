@@ -1,8 +1,7 @@
 
-‡	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8ÓÇõØş1J$48d02522-93cd-4ce1-942e-023d41298f0b
-pWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8ÕÇõØş1J$ea69ead8-45a1-467d-8319-108c8f958b16
-©,Web:MouseEventWithoutKeyboardEquivalentCheck)"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Çí÷ıÿÿÿÿ8×ÇõØş1J$e5ee4afe-3ce7-4d31-a85d-b316817776fb
-¥	Web:S6819)"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Çí÷ıÿÿÿÿ8ÙÇõØş1J$44dc40d3-9676-40c9-813c-d2b7e4c52881
-“	Web:S6827†"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8—“çŞş1J$543923df-1b4e-463c-bcec-b12ae8132f89
-“	Web:S6827‡"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8™“çŞş1J$65e37f99-01e9-47c6-a7a7-cbfa1a4034f2
-˜	Web:S6827ˆ"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8›“çŞş1J$6e00f706-cfcf-41c4-964c-fdd1b4223ec6
+‡	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8ÓÇõØş1J$5e0ff77c-8f62-4ec3-a1d9-1e4b81961079
+pWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8ÕÇõØş1J$7ccbb978-7838-4f69-9ce0-fdee0d6d87f7
+sWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(ŒÔ†8äà½ÿ1J$47218d8c-9f49-448d-af94-224ed6631527
+’	Web:S6827e"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8„²÷¼ÿ1J$0df22429-0e5d-4de9-bcd5-21a9a94e4929
+’	Web:S6827f"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8†²÷¼ÿ1J$70481fc5-11b4-4c41-81bd-891a8c264b26
+—	Web:S6827g"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8ˆ²÷¼ÿ1J$965aee6a-ed73-417c-9608-109e48d9833d
