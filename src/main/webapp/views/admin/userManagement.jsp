@@ -87,22 +87,24 @@
 
                         <!-- MAIN TABLE-->
                         <tbody class=" table-group-divider">
-                       <c:forEach items="" var="">
+                        <c:set var="i" value="1"/>
+                       <c:forEach items="${listAccount}" var="account">
                            <tr>
-                               <th scope="row">1</th>
-                               <td name="name">Trung Đào</td>
-                               <td name="image" ><img class="user-image" src="images/user1.jpg"/></td>
-                               <td name="address">18,ngõ 58, Quan Hoa, Cầu Giấy, hà Nội</td>
-                               <td name="gender">Nam</td>
-                               <td name="birth">24/07/1998</td>
-                               <td name="phone">0971343398 </td>
-                               <td name="mail">trungbaizen@gmail.com</td>
-                               <td name="pass">trung123</td>
+                               <th scope="row">${i}</th>
+                               <td name="name">${account.fullName}</td>
+                               <td name="image" ><img class="user-image" src="${account.avatar}"/></td>
+                               <td name="address">${account.address}</td>
+                               <td name="gender">${account.isGender() == 1? "Nam":"Nữ"}</td>
+                               <td name="birth">${account.birthday}</td>
+                               <td name="phone">${account.phoneNumber} </td>
+                               <td name="mail">${account.email}</td>
+                               <td name="pass">${account.pass}</td>
                                <td name="status"><div class="form-check form-switch">
                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
                                    <label class="form-check-label" for="flexSwitchCheckChecked"></label>
                                </div></td>
                            </tr>
+                           <c:set var="i" value="${i + 1}"/>
                        </c:forEach>
 
                         </tbody>
