@@ -97,7 +97,7 @@
                                 <td>${prod.price}</td>
                                 <td>${prod.productStatus == 0? "Còn hàng":"Hết hàng"}</td>
                                 <td>${prod.descriptions}</td>
-                                <td><img class="image" src="${prod.image}"></td>
+                                <td><img class="image" src="/image/${prod.image}"></td>
                                 <td>${prod.category.categoryName}</td>
                                 <td>
                                     <a href="/HNQTFood/admin/edit_product?id=${prod.id}">
