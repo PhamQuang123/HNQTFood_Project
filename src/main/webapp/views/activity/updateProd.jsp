@@ -47,7 +47,7 @@
                             <label>Trạng thái</label>
                             <%--                            <input type="text" class="form-control" id="exampleInputStatus"/>--%>
                             <select class="form-select" name="productStatus" aria-label="Default select example">
-                                <option>
+                                <option value="${product.productStatus}">
                                     <th>${product.productStatus == 1?"Còn bán":"Dừng bán"}</th>
                                 </option>
                                 <option value="1">Còn bán</option>
@@ -61,16 +61,15 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="exampleInputFile">Thêm link ảnh</label>
-                            <input type="text" class="form-control" value="${product.image}" name="image" id="exampleInputFile"/>
+                            <input type="file" class="form-control" value="${product.image}" name="image" id="exampleInputFile"/>
+                            <img class="image" src="/image/${product.image}" width="100" height="100">
                         </div>
                         <div class="form-group mb-3">
                             <label>Phân loại</label>
                             <select class="form-select" name="categoryId" aria-label="Default select example">
-                                <option>
-                                    <th>Chọn danh mục</th>
-                                </option>
-                                <option value="1">Đồ ăn</option>
-                                <option value="2">Đồ uống</option>
+                               <c:forEach items="${listCate}" var="listCate">
+                                   <option value="${listCate.id}">${listCate.categoryName}</option>
+                               </c:forEach>
                             </select>
                         </div>
                         <div class="row">

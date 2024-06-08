@@ -59,9 +59,9 @@
                     <div class="menu4 col mb-1">
                         <a href="">Hỗ Trợ</a>
                     </div>
-                    <c:if test="${sessionScope.users == null}">
+                    <c:if test="${sessionScope.users.roleUser == 0}">
                         <div class="menu5 col mb-1">
-                            <a href="">Quản Lý</a>
+                            <a href="/HNQTFood/admin/account">Quản Lý</a>
                         </div>
                     </c:if>
 
@@ -77,28 +77,33 @@
                        </div></a>
                     </div>
 
-                    <div class="col-3">
-                        <a><div class="btn-cart" onclick="">
-                            <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
-                        </div></a>
-
-                    </div>
-
-                    <div class="col-3">
-                        <a><div class="btn-logout" onclick="">
-                            <img src="../../image/icon/LogoLogOut.png" height="32    " width="32"/></div></a>
-
-                    </div>
-
-                    <div class="col-3">
-                        <div class="btn-menu">
-                            <a>
-                                <div class="menu-icon" onclick="toggleSidebar()">
-                                <img src="../../image/icon/LogoMenu.png" height="30" width="30"/></div>
-                            </a>
-
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="col-3">
+                            <a href="/HNQTFood/sign_in"><div class="btn-cart" onclick="">
+                                Đăng ký/Đăng nhập
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </div></a>
                         </div>
+                    </c:if >
+
+                    <div class="col-3">
+                        <a href="/HNQTFood/"><div class="btn-logout" onclick="">
+                            Giỏ hàng
+                            <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/></div></a>
+
                     </div>
+
+                   <c:if test="${sessionScope.users != null}">
+                       <div class="col-3">
+                           <div class="btn-menu">
+                               <a href="/HNQTFood/home/log_out">
+                                   <div class="menu-icon" onclick="toggleSidebar()">
+                                       Đăng xuất
+                                       <img src="../../image/icon/LogoMenu.png" height="30" width="30"/></div>
+                               </a>
+                           </div>
+                       </div>
+                   </c:if>
                 </div>
             </div>
         </div>
@@ -112,7 +117,7 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>
             <div class="menu-bar">
                 <h4 class="text-white text-center">Danh Mục</h4>
                 <a href="">Gà rán</a>

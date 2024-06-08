@@ -13,6 +13,8 @@ public interface AdminService {
 
     void editAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 
+    void blockAccount(HttpServletRequest request, HttpServletResponse response) throws IOException;
+
     void adminUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 
     void usersUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws IOException;

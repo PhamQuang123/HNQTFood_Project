@@ -57,6 +57,14 @@ public class AdminServiceImp implements AdminService {
     }
 
     @Override
+    public void blockAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Users users = usersRepository.findUsersById(id);
+        users.setUserStatus(!users.isUserStatus());
+        response.sendRedirect("/HNQTFood/admin/account");
+    }
+
+    @Override
     public void adminUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("fullName");
@@ -136,7 +144,9 @@ public class AdminServiceImp implements AdminService {
     public void editProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = productRepository.findProductById(id);
+       List<Category> listCate = categoryRepository.findAll();
         request.setAttribute("product", product);
+        request.setAttribute("listCate",listCate);
         request.getRequestDispatcher("/views/activity/updateProd.jsp").forward(request, response);
     }
 

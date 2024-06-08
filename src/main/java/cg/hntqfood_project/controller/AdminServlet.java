@@ -35,6 +35,10 @@ public class AdminServlet extends HttpServlet {
             case "/edit_account":
                 adminService.editAccount(request, response);
                 break;
+            case "/block_account":
+                String a = url;
+                adminService.blockAccount(request,response);
+                break;
             case "/delete_account":
                 break;
             case "/new_product":

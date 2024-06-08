@@ -105,11 +105,14 @@
                                 <td name="mail">${account.email}</td>
                                 <td name="pass">${account.pass}</td>
                                 <td name="status">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch"
-                                               id="flexSwitchCheckChecked" checked>
-                                        <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                    </div>
+                                        <div class="form-check form-switch">
+                                            <a href="HNQTFood/admin/block_account?id=${account.id}" id="userStatus${account.id}")>
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                   id="flexSwitchCheckChecked" ${account.userStatus?"checked":""}>
+                                            </a>
+
+                                            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        </div>
                                 </td>
                             </tr>
                             <c:set var="i" value="${i + 1}"/>
