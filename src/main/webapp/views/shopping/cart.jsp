@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,9 @@
     <link rel="stylesheet" href="../../css/cart.css">
 </head>
 <body>
+<header></header>
+<section>
+
 <div class="container mt-4">
     <div class="cart-header">
         <h5>Giỏ Hàng</h5>
@@ -53,7 +57,55 @@
         </div>
     </div>
 </div>
+</section>
 
+
+<!--START FOOTER-->
+<footer>
+    <div class="footer1">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>HNQTFood</h3>
+                <p>Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Chính sách cửa hàng</h3>
+                <p><a href="#" class="text-reset text-decoration-none">Dịch vụ</a> </p>
+                <p><a href="#" class="text-reset text-decoration-none">Ưu đãi</a></p>
+                <p><a href="#" class="text-reset text-decoration-none">Giải quyết khiếu nại</a></p>
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Liên  hệ với chúng tôi</h3>
+                <ul>
+                    <li><a href="" class="fa-brands fa-facebook"></a> </li>
+                    <li><a href="" class="fa-brands fa-twitter"></a></li>
+                    <li><a href="" class="fa-brands fa-instagram"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Địa chỉ cửa hàng</h3>
+                <p>Nhà số 23, Lô TT-01, Khu đô thị MonCity, P. Hàm Nghi, Hà Nội </p>
+                <p>Số điện thoại: 0123456789</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--END FOOTER-->
+</body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -93,5 +145,4 @@
         document.querySelector('.cart-footer p').innerText = 'Tổng Cộng: ' + grandTotal.toLocaleString() + ' VND';
     }
 </script>
-</body>
 </html>

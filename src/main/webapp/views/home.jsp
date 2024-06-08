@@ -98,9 +98,9 @@
 
             <div class="col-2">
                 <div id="logo">
-                    <div class="img-logo">
-                        <img src="css/image/LogoHeader.png.png" height="130" width="130"/>
-                    </div>
+                    <a><div class="img-logo">
+                        <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                    </div></a>
                     <h4 class="h3-logo">HNQT FOOD</h4>
                 </div>
             </div>
@@ -135,26 +135,31 @@
             <div class="col-2">
                 <div class="row">
                     <div class="col-3">
-                        <div class="btn-user" onclick="">
-                            <img src="css/image/LogoUser.png" height="32" width="32"/>
-                        </div>
+                       <a><div class="btn-user" onclick="">
+                           <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                       </div></a>
                     </div>
 
                     <div class="col-3">
-                        <div class="btn-cart" onclick="">
-                            <img src="css/image/LogoCart.png" height="35" width="35"/>
-                        </div>
+                        <a><div class="btn-cart" onclick="">
+                            <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                        </div></a>
+
                     </div>
 
                     <div class="col-3">
-                        <div class="btn-logout" onclick="">
-                            <img src="css/image/LogoLogOut.png" height="32    " width="32"/></div>
+                        <a><div class="btn-logout" onclick="">
+                            <img src="../../image/icon/LogoLogOut.png" height="32    " width="32"/></div></a>
+
                     </div>
 
                     <div class="col-3">
                         <div class="btn-menu">
-                            <div class="menu-icon" onclick="toggleSidebar()">
-                                <img src="css/image/LogoMenu.png" height="30" width="30"/></div>
+                            <a>
+                                <div class="menu-icon" onclick="toggleSidebar()">
+                                <img src="../../image/icon/LogoMenu.png" height="30" width="30"/></div>
+                            </a>
+
                         </div>
                     </div>
                 </div>

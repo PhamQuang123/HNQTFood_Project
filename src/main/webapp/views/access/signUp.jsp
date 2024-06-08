@@ -177,8 +177,7 @@
                                         Đăng Ký
                                     </button>
                                 </div>
-                                <div class="mt-2"><a href="/HNQTFood/sign_in"
-                                                     class="text-decoration-none text-primary">
+                                <div class="mt-2"><a href="/HNQTFood/sign_in" class="text-decoration-none text-primary">
                                     Đã có tài khoản?
                                 </a>
                                 </div>
