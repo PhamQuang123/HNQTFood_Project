@@ -1,6 +1,22 @@
 
-a	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8ìºÎ’ÿ1
-JWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8íºÎ’ÿ1
-“	Web:S6827à"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8ìÂª†ÿ1J$688eb51e-f200-49fc-bb80-d8791e62e6dd
-“	Web:S6827á"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8îÂª†ÿ1J$8d754220-658f-48b6-92a2-af176e5bf681
-˜	Web:S6827â"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8ğÂª†ÿ1J$bc59b8a2-487c-4ceb-9a51-5dc4f5951f71
+‡	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8ìºÎ’ÿ1J$4b0bc6fa-9b6d-491c-95f6-529d0e6587fe
+pWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8íºÎ’ÿ1J$3731d5b7-2400-4030-ab3b-42f553ca280a
+yWeb:ImgWithoutAltCheckf"%Add an "alt" attribute to this image.(¾‡’Şıÿÿÿÿ8»ß´¸ÿ1J$7f23be66-5465-4d2e-bf1f-6116cdbb2c92
+¬,Web:MouseEventWithoutKeyboardEquivalentCheckŠ"AAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <div> tag.(áã·ùÿÿÿÿ8¼ß´¸ÿ1J$85a11d09-0f92-4fa0-ab52-7fe3cc856861
+zWeb:ImgWithoutAltCheck‹"%Add an "alt" attribute to this image.(ñåìŸúÿÿÿÿ8¼ß´¸ÿ1J$ea4410cd-1b68-40da-8239-a469ee5de9a0
+§,Web:MouseEventWithoutKeyboardEquivalentCheck"AAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <div> tag.(¹ÒĞ8¼ß´¸ÿ1J$288e9a87-89c7-45f8-9da3-c7a58b27a967
+zWeb:ImgWithoutAltCheck‘"%Add an "alt" attribute to this image.(ÅÀ°‰ıÿÿÿÿ8½ß´¸ÿ1J$c7c67ad0-287b-435f-9967-e5231cd62673
+§,Web:MouseEventWithoutKeyboardEquivalentCheck–"AAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <div> tag.(¸¨ÄŒ8½ß´¸ÿ1J$4243c833-c872-42af-8f51-4d0c8354df47
+zWeb:ImgWithoutAltCheck—"%Add an "alt" attribute to this image.(¼ÊÓÿÿÿÿÿ8½ß´¸ÿ1J$b73f01de-22f8-4c4b-bee7-e5ed2aeaeb0a
+¬,Web:MouseEventWithoutKeyboardEquivalentCheckœ"AAdd a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <div> tag.(–¬†Óøÿÿÿÿ8½ß´¸ÿ1J$4b209ff0-f2a4-4c8b-8dd6-7e9d91aac4f7
+‹	Web:S6848œ"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(–¬†Óøÿÿÿÿ8¿ß´¸ÿ1J$26a53321-bdb2-428d-a4b9-a97843c7842d
+tWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(¥Ñ—V8¿ß´¸ÿ1J$35e9b7af-7ac5-499b-a79d-7e6ce23bcf53
+uWeb:ImgWithoutAltCheck©"%Add an "alt" attribute to this image.(Éê °8¿ß´¸ÿ1J$34cb3fdf-b6aa-4213-868d-5039218fa2c4
+l	Web:S6844­"*Anchor tags should not be used as buttons.(®–À8Áß´¸ÿ1J$328f2049-930e-4ba5-939f-e5b62e524f64
+“	Web:S6827Ä"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8ìÂª†ÿ1J$bef810c9-9624-452b-9d3a-256890f4df68
+“	Web:S6827Ê"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8îÂª†ÿ1J$b8f2d954-b11b-4f61-86a1-d9ac9c40d17b
+˜	Web:S6827Ğ"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8ğÂª†ÿ1J$dd448b83-644f-4bd2-892d-c13cadb80724
+’	Web:S6827Ö"PAnchors must have content and the content must be accessible by a screen reader.(›ß“p8Ãß´¸ÿ1J$4c356ee1-3ca4-488b-8f3b-0eb6b108055c
+“	Web:S6827€"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8Ãß´¸ÿ1J$ee1a45eb-8a06-43b3-bf08-c02840bd9229
+“	Web:S6827"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8Ãß´¸ÿ1J$4b4dbf92-570f-45bc-9465-1af72040c6b0
+˜	Web:S6827‚"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8Äß´¸ÿ1J$5d93c3d0-ef55-4eda-a736-22988bcee9f5

@@ -1,8 +1,8 @@
 
-a	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8»Î’ÿ1
-JWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8»Î’ÿ1
-~,Web:MouseEventWithoutKeyboardEquivalentCheck/"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(™ìéó8»Î’ÿ1
-z	Web:S6819/"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(™ìéó8‚»Î’ÿ1
-“	Web:S6827Õ"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8äÖçŞş1J$abecb822-6d5f-4563-8f2c-add56308df2f
-“	Web:S6827Ö"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8æÖçŞş1J$d72d4edd-bc0d-4363-8e95-3842b462c378
-˜	Web:S6827×"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8èÖçŞş1J$9af73336-e839-4806-8c93-e241cee1e824
+‡	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8»Î’ÿ1J$3826c978-a7f4-43ac-8aec-8777e913f537
+pWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M8»Î’ÿ1J$7df76b53-7f46-4348-9a47-823f3b094a3c
+¤,Web:MouseEventWithoutKeyboardEquivalentCheck/"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(™ìéó8»Î’ÿ1J$b0d28662-9d68-476f-a3a0-49d7b17f20e8
+ 	Web:S6819/"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(™ìéó8‚»Î’ÿ1J$80f49918-b9f2-4635-8e30-510cb7f39888
+“	Web:S6827Õ"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8äÖçŞş1J$317751c1-3570-4cdb-b800-475dc652e69b
+“	Web:S6827Ö"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8æÖçŞş1J$f25a2a5d-7d25-4afb-9cc4-6bf6f4a1c91e
+˜	Web:S6827×"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8èÖçŞş1J$e0b0b25e-00fd-4bbf-9b04-16bc8853328d

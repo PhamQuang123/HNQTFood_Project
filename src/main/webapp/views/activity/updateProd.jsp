@@ -67,7 +67,7 @@
                             <div class="col-md-3">
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-danger btn-lg"><i class="fa-solid fa-xmark"></i></i></button>
+                                <button type="button" class="btn btn-danger btn-lg"><i class="fa-solid fa-xmark"></i></button>
                             </div>
 
                             <div class="col-md-3">

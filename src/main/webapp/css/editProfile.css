@@ -1,0 +1,17 @@
+#avt{
+
+    margin-top:10px;
+    margin-left: 160px;
+    width: 200px;
+    height: 200px;
+    border-radius:50%;
+    overflow: hidden;
+}
+
+.form-select{
+    margin-top: 15px;
+}
+
+.container{
+    margin-top: 150px;
+ }

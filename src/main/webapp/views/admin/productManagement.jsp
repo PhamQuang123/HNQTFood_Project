@@ -19,9 +19,8 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="../../css/productManagement"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/productManagement.css"/>
 </head>
 <body>
 <header></header>
@@ -59,7 +58,7 @@
         <div class="row">
 
             <!--SIDEBAR-->
-            <div class=" sidebar-magane col-md-2 p-1 fw-bold text end">
+            <div class=" sidebar-manage col-md-2 fw-bold text end">
                 <div class=" sidebar-magane col-md-2 p-1 fw-bold text end">
                     <p><a href="/HNQTFood/admin/product">Đồ ăn/ đồ uống</a></p>
                     <hr>
@@ -70,6 +69,7 @@
                     <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>
                     <hr>
                 </div>
+            </div>
                 <!-- SIDEBAR-->
 
                 <!--MAIN TABLE-->
