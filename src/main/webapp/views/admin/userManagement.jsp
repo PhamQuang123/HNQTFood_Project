@@ -111,8 +111,8 @@
                                 <td name="pass">${account.pass}</td>
                                 <td name="status">
                                         <div class="form-check form-switch">
-                                            <a href="HNQTFood/admin/block_account?id=${account.id}" id="userStatus${account.id}")>
-                                            <input class="form-check-input" type="checkbox" role="switch"
+                                            <a href="" id="userStatus${account.id}" onclick="handleStatus(${account.id})">
+                                            <input class="form-check-input"   type="checkbox" role="switch"
                                                    id="flexSwitchCheckChecked" ${account.userStatus?"checked":""}>
                                             </a>
 
@@ -132,6 +132,15 @@
     </div>
 </section>
 <!--END BODY-->
+
+<script>
+
+
+    function handleStatus(a){
+        console.log(a)
+        document.getElementById("userStatus"+a).href ="/HNQTFood/admin/block_account?id=" + a;
+    }
+</script>
 
 
 <!--START FOOTER-->
