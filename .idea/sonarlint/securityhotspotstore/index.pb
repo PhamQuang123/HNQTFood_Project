@@ -57,3 +57,7 @@ S
 #src/main/webapp/css/editProfile.css,0\8\081e0eda08243e51a78da7e69848150e62de67ac
 Z
 *src/main/webapp/views/user/profileUser.jsp,1\7\17f3e2db9d0c88735b80ee466e045d4dbf49fa54
+W
+'src/main/webapp/views/shopping/cart.jsp,f\3\f3237365989ccae516aac37000b3946c1a11933d
+L
+src/main/webapp/css/cart.css,f\f\ffd54bb59d3aa29d4f1f2288ba4e491502ace299
