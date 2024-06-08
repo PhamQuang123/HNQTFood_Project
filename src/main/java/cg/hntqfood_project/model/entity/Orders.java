@@ -13,6 +13,12 @@ public class Orders {
     public Orders() {
     }
 
+    public Orders(double totalPrice, int quantity, Users users) {
+        this.totalPrice = totalPrice;
+        this.quantity = quantity;
+        this.users = users;
+    }
+
     public Orders(int id, String timeOrder, double totalPrice, int quantity, Users users, int orderStatus) {
         this.id = id;
         this.timeOrder = timeOrder;

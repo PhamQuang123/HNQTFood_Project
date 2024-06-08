@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ProductRepository {
     List<Product> findAll();
+    List<Product> findAllProductHome();
     boolean save(Product product);
     boolean update(Product product);
     boolean delete(int id);
