@@ -155,7 +155,7 @@
                 <c:forEach items="${listFood}" var="food">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="${food.image}" class="card-img-top" alt="...">
+                            <img src="/image/${food.image}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${food.productName}</h5>
                                 <p class="card-text">${food.descriptions}</p>

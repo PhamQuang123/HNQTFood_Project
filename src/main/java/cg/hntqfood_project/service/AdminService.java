@@ -18,7 +18,7 @@ public interface AdminService {
     void usersUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
 
-    void renderFormCreateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException;
+    void renderFormCreateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException;
 
     void createProduct(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
