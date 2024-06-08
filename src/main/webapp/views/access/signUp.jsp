@@ -27,7 +27,7 @@
 <section>
     <div class="container bg-primary-emphasis mt-5">
         <div class="row justify-content-center mt-5">
-            <a href="../home.jsp">
+            <a href="/HNQTFood/home/home_page">
                 <div
                         class="img-logo text-center">
                     <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>

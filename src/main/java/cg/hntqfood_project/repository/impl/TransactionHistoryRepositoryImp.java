@@ -57,12 +57,13 @@ public class TransactionHistoryRepositoryImp implements TransactionHistoryReposi
     }
 
     @Override
-    public List<TransactionHistory> findByEmail() {
+    public List<TransactionHistory> findByEmail(String email) {
         CallableStatement callSt = null;
         List<TransactionHistory> transactionHistoryList = null;
         try {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(TransactionHistorySQL.TRANSACTION_HISTORY_FIND_BY_EMAIL);
+            callSt.setString(1,email);
             transactionHistoryList = new ArrayList<>();
             ResultSet rs = callSt.executeQuery();
 

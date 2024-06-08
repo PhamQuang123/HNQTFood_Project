@@ -16,4 +16,5 @@ public class ProductSQL {
     public static String FIND_PRODUCT_BY_ID="call find_product_by_id(?)";
     public static String FIND_PRODUCT_BY_NAME="call find_product_by_name(?)";
     public static String SEARCH_PRODUCT_BY_NAME="call search_product_by_name(%?%)";
+    public static String FIND_ALL_PRODUCT_HOME="call product_find_all_product_home()";
 }

@@ -24,7 +24,7 @@
 <section>
     <div class="login-form mt-5 ">
         <div class="row justify-content-center">
-            <a href="../home.jsp">
+            <a href="/HNQTFood/home/home_page">
                 <div
                         class="img-logo text-center">
                     <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
@@ -63,6 +63,7 @@
                             <div class="d-flex justify-content-center mt-1">
                                 <button type="submit" class="btn btn-danger btn-block " >Đăng nhập</button>
                             </div>
+
                             <div class="d-flex justify-content-center mt-1">
                                 <a  href="/HNQTFood/sign_up" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" >
                                     Đăng Ký Tài Khoản

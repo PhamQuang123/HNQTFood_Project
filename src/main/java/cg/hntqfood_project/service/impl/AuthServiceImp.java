@@ -1,8 +1,11 @@
 package cg.hntqfood_project.service.impl;
 
 import cg.hntqfood_project.exception.MessageError;
+import cg.hntqfood_project.model.entity.Product;
 import cg.hntqfood_project.model.entity.Users;
+import cg.hntqfood_project.repository.ProductRepository;
 import cg.hntqfood_project.repository.UsersRepository;
+import cg.hntqfood_project.repository.impl.ProductRepositoryImp;
 import cg.hntqfood_project.repository.impl.UsersRepositoryImp;
 import cg.hntqfood_project.service.AuthService;
 import cg.hntqfood_project.validation.account.AccountValidate;
@@ -13,14 +16,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 public class AuthServiceImp implements AuthService {
     private UsersRepository usersRepository;
     private AccountValidate accountValidate;
+    private ProductRepository productRepository;
 
     public AuthServiceImp() {
         usersRepository = new UsersRepositoryImp();
         accountValidate = new AccountValidate();
+        productRepository = new ProductRepositoryImp();
     }
 
     @Override
@@ -55,6 +61,13 @@ public class AuthServiceImp implements AuthService {
             request.setAttribute("err", MessageError.errEmailOrPass);
             request.getRequestDispatcher("/views/access/signIn.jsp").forward(request, response);
         }
+        List<Product> listBestSeller = productRepository.findBestSeller();
+        List<Product> listFood = productRepository.findByCategoryId(1);
+        List<Product> listDrink = productRepository.findByCategoryId(2);
+//        request.setAttribute("listProduct", listProduct);
+        request.setAttribute("listFood", listFood);
+        request.setAttribute("listDrink", listDrink);
+        request.setAttribute("listBestSeller",listBestSeller);
 
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }

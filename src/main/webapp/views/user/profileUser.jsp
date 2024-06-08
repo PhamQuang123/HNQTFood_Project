@@ -46,7 +46,7 @@
                 </div>
 
                 <div>
-                    <img id="avt" src="https://nld.mediacdn.vn/zoom/700_438/2016/tag-reuters-com-2016-binary-mt1aci14477582-viewimage-1468189990234.jpg"
+                    <img id="avt" src="../../image/user/${users.avatar}"
                          alt="..." width="200" height="200">
                 </div>
 
@@ -54,41 +54,40 @@
                     <form action="#" class="row">
                         <div class="col-12">
                             <div class="mb-2">
+<<<<<<< HEAD
                                 <label for="name">Họ tên</label>
-                                <input type="text" class="form-control py-2"  id="name" readonly>
+                                <input type="text" class="form-control py-2" value="${users.fullName}" id="name" name="fullName" readonly>
+=======
                             </div>
                         </div>
+
 
                         <div class="col-12 ">
+<<<<<<< HEAD
                             <label for="birthday">Ngày sinh</label>
-                            <input  class="p-2 border rounded col-12" type="text" id="birthday" name="birthday" readonly>
+                            <input  class="p-2 border rounded col-12" type="text" id="birthday" value="${users.birthday}" name="birthday" readonly>
                         </div>
+
 
                         <div class="col-12">
                             <div class="mb-2">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control py-2" id="email" readonly>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="mb-2">
+<<<<<<< HEAD
                                 <label for="gender">Giới tính</label>
-                                <input type="text" class="form-control py-2" id="gender" readonly>
+                                <input type="text" class="form-control py-2" id="gender" value="${users.gender}" name="gender" readonly>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
                                 <label for="phone">Số điện thoại</label>
-                                <input type="text" class="form-control py-2" id="phone" readonly>
+                                <input type="text" class="form-control py-2" id="phone" value="${users.phone}" name="phone" readonly>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
                                 <label for="address">Địa chỉ</label>
-                                <input type="text" class="form-control py-2" id="address" readonly>
+                                <input type="text" class="form-control py-2" id="address" value="${users.address}" name="address" readonly>
                             </div>
                         </div>
 

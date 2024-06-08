@@ -11,8 +11,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<html>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,15 +27,20 @@
     <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
 <header class="fixed-top">
     <div class="container text-center">
         <div class="row">
             <div class="col-2">
                 <div id="logo">
-                    <a><div class="img-logo">
-                        <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
-                    </div></a>
+                    <a>
+                        <div class="img-logo">
+                            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                        </div>
+                    </a>
                     <h4 class="h3-logo">HNQT FOOD</h4>
                 </div>
             </div>
@@ -58,15 +61,18 @@
                     <div class="menu4 col mb-1">
                         <a href="">Hỗ Trợ</a>
                     </div>
+                    <c:if test="${sessionScope.users.roleUser == 0}">
+                        <div class="menu5 col mb-1">
+                            <a href="/HNQTFood/admin/account">Quản Lý</a>
+                        </div>
+                    </c:if>
 
-                    <div class="menu5 col mb-1">
-                        <a href="">Quản Lý</a>
-                    </div>
                 </div>
             </div>
             <div class="col-2">
                 <div class="row">
                     <div class="col-3">
+<<<<<<< HEAD
                        <a><div class="btn-user" onclick="">
                            <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
                        </div></a>
@@ -85,14 +91,90 @@
 
                     </div>
 
+=======
+                        <c:if test="${sessionScope.users != null}">
+                            <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
+                                <div class="btn-user" onclick="">
+                                    <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </c:if>
+                        <c:if test="${sessionScope.users == null}">
+                            <div class="menu3 col mb-1">
+                                <a href="/HNQTFood/sign_in">Đăng nhập/Đăng ký</a>
+                            </div>
+                        </c:if>
+                    </div>
+                    <div class="col-3">
+                        <div class="btn-cart" onclick="">
+                            <a href="/HNQTFood/admin/edit_product?id=${sessionScope.users.id}">
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <c:if test="${sessionScope.users != null}">
+                        <div class="col-3">
+                            <a href="/HNQTFood/home/log_out">
+                                <div class="btn-logout" onclick="">
+                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/></div>
+                            </a>
+                        </div>
+                    </c:if>
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
                 </div>
             </div>
         </div>
     </div>
 
+<<<<<<< HEAD
     </div>
 </header>
 
+=======
+    <div>
+        <div id="mySidebar" class="sidebar">
+            <div id="categoryItems">
+                <div class="logo-menu">
+                    <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>
+            <div class="menu-bar">
+                <h4 class="text-white text-center">Danh Mục</h4>
+                <a href="">Gà rán</a>
+                <a href="">Đồ ăn</a>
+                <a href="">Đồ Uống</a>
+                <a href="">Món tráng miệng</a>
+            </div>
+
+
+            <script>
+                function toggleSidebar() {
+                    let sidebar = document.getElementById("mySidebar");
+                    if (sidebar.style.width === "250px") {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "250px";
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+</header>
+
+<div>
+    <div class="row">
+        <div class="col-12">
+            <div class="search-container ">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+>>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
 
 
 
@@ -108,6 +190,7 @@
             <div class="carousel-item active">
                 <img src="../../image/banner1.jpeg" class="d-block w-100" height="600" width="1280"/>
             </div>
+
             <div class="carousel-item">
                 <img src="../../image/banner2.jpg" class="d-block w-100" height="600" width="1280"/>
             </div>
@@ -118,13 +201,14 @@
                 <img src="../../image/banner4.jpg" class="d-block w-100" height="600 " width="1280"/>
             </div>
 
-
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -164,7 +248,7 @@
                 <c:forEach items="${listFood}" var="food">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="${food.image}" class="card-img-top" alt="...">
+                            <img src="/image/${food.image}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${food.productName}</h5>
                                 <p class="card-text">${food.descriptions}</p>
@@ -179,7 +263,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <a class="nav-link" href="/HNQTFood/sign_up">Xem thêm</a>
+            <a class="nav-link" onclick="load">Xem thêm</a>
         </div>
 
         <div class="category">
@@ -204,7 +288,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <a class="nav-link" href="/HNQTFood/sign_up">Xem thêm</a>
+            <a class="nav-link" onclick="load">Xem thêm</a>
         </div>
     </div>
 </section>
@@ -254,6 +338,10 @@
 <%--END FOOTER--%>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 </html>

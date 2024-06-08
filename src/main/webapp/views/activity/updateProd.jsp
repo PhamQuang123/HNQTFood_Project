@@ -40,53 +40,67 @@
                 </div>
 
                 <div class="p-3">
-                    <div class="form-group mb-3">
-                        <label for="ID">ID món ăn/đồ uống</label>
-                        <input type="text" class="form-control" id="ID" readonly/>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="name">Thay đổi tên</label>
-                        <input type="text" class="form-control" id="name" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="exampleInputPrice">Đơn giá</label>
-                        <input type="text" class="form-control" id="exampleInputPrice" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="exampleInputStatus">Trạng thái</label>
-                        <input type="text" class="form-control" id="exampleInputStatus" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="exampleInputDesc">Mô tả</label>
-                        <textarea class="form-control" id="exampleInputDesc" placeholder="Viết mô tả cho món ăn/ đồ uống"></textarea>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="exampleInputFile">Chọn ảnh</label>
-                        <input type="text" class="form-control" id="exampleInputFile" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <label>Phân loại</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option><th>Chọn danh mục</th></option>
-                            <option value="1">Đồ ăn</option>
-                            <option value="2">Đồ uống</option>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <div class="d-flex justify-content-center text-center">
-                            <div class="col-md-3">
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-danger btn-lg"><i class="fa-solid fa-xmark"></i></button>
-                            </div>
+                    <form action="/HNQTFood/admin/update_product" method="post">
+                        <div class="form-group mb-3">
+                            <label for="exampleInputName">Mã sản phẩm</label>
+                            <input type="text" name="id" value="${product.id}" class="form-control" readonly/>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputName">Tên món mới</label>
+                            <input type="text" name="productName" value="${product.productName}" class="form-control" id="exampleInputName"/>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputPrice">Đơn giá</label>
+                            <input type="text" name="price" value="${product.price}" class="form-control" id="exampleInputPrice"/>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Trạng thái</label>
+                            <%--                            <input type="text" class="form-control" id="exampleInputStatus"/>--%>
+                            <select class="form-select" name="productStatus" aria-label="Default select example">
+                                <option value="${product.productStatus}">
+                                    <th>${product.productStatus == 1?"Còn bán":"Dừng bán"}</th>
+                                </option>
+                                <option value="1">Còn bán</option>
+                                <option value="0">Dừng bán</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputDesc">Mô tả</label>
+                            <textarea class="form-control" name="descriptions" value="${product.descriptions}" id="exampleInputDesc"
+                                      placeholder="Viết mô tả cho món ăn/ đồ uống"></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputFile">Thêm link ảnh</label>
+                            <input type="file" class="form-control" value="${product.image}" name="image" id="exampleInputFile"/>
+                            <img class="image" src="/image/${product.image}" width="100" height="100">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Phân loại</label>
+                            <select class="form-select" name="categoryId" aria-label="Default select example">
+                               <c:forEach items="${listCate}" var="listCate">
+                                   <option value="${listCate.id}">${listCate.categoryName}</option>
+                               </c:forEach>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center text-center">
+                                <div class="col-md-3">
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="/HNQTFood/admin/product">
+                                        <button type="button" class="btn btn-danger btn-lg"><i
+                                                class="fa-solid fa-xmark"></i></button>
+                                    </a>
+                                </div>
 
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-warning btn-lg"><i class="fa-solid fa-pen"></i></button>
-                            </div>
-                            <div class="col-md-3">
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary btn-lg"><i
+                                            class="fa-solid fa-check"></i></button>
+                                </div>
+                                <div class="col-md-3">
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </form>
 
 

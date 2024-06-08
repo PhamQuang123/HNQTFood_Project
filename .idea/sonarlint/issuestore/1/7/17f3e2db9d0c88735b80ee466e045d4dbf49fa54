@@ -1,9 +1,9 @@
 
-‰Web:DoctypePresenceCheck	":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷ÃûÿÿÿÿJ$34d429cd-3614-44de-97be-b39d000e5ff6
-€	Web:S5254	"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷ÃûÿÿÿÿJ$bfb90bf5-37d1-45d8-9264-99b3d19ffc61
+‰Web:DoctypePresenceCheck	":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷ÃûÿÿÿÿJ$abfc0191-e020-4134-abd7-8fec07f361ae
+€	Web:S5254	"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷ÃûÿÿÿÿJ$477b9249-3282-444f-a095-0a8a1c36e26a
 pWeb:PageWithoutTitleCheck
-"Add a <title> tag to this page.(Õ¶¯M8¼† ¹ÿ1J$7390f974-7c2e-44a1-b57c-04de936e44f9
-sWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(ŒÔ†8óÀù½ÿ1J$09a06e47-0985-45c2-bc14-95e0ddbbf4b8
-“	Web:S6827Š"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8è–àÀÿ1J$74761a52-ab2a-4022-962d-bdff8d1caacd
-“	Web:S6827‹"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8ê–àÀÿ1J$049f17ee-8192-4f5a-87af-2b1fd4a496b5
-˜	Web:S6827Œ"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8ê–àÀÿ1J$29be9659-2186-48f6-90aa-f4dada46698d
+"Add a <title> tag to this page.(Õ¶¯M8¼† ¹ÿ1J$87796ff7-2835-4fba-9888-45b0ea3fd77f
+sWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(ŒÔ†8óÀù½ÿ1J$ea7991ab-51e5-4fb6-80ff-a0f6aa120752
+“	Web:S6827‰"PAnchors must have content and the content must be accessible by a screen reader.(Ÿí8è–àÀÿ1J$1a9ef4fa-05fc-47cd-a17f-81095cc58c8f
+“	Web:S6827Š"PAnchors must have content and the content must be accessible by a screen reader.(ª¨Íò8ê–àÀÿ1J$114bc954-755f-461d-9328-70b079a58a65
+˜	Web:S6827‹"PAnchors must have content and the content must be accessible by a screen reader.(—ä‡–ûÿÿÿÿ8ê–àÀÿ1J$cd052dc5-291b-4ee2-9426-5b5a3ff73ed1
