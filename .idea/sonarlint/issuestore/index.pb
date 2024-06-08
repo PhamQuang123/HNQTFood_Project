@@ -65,3 +65,7 @@ X
 (src/main/webapp/views/detail/profile.jsp,4\8\4848fda1555770de72659c79645a1c2279095a37
 Z
 *src/main/webapp/views/shopping/payment.jsp,7\3\7365e70a534a829ceb6dea3151afd65b49b31acc
+W
+'src/main/webapp/views/category/food.jsp,5\9\598d59f06ebe576cd3f9c46f65f6bbcb3cd0d642
+X
+(src/main/webapp/views/category/drink.jsp,4\2\4261ae2761033311c89d361c3ed8d0e9dca9c329

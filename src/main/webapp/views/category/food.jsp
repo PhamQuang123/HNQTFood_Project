@@ -67,9 +67,9 @@
             <div class="col-2">
                 <div class="row">
                     <div class="col-3">
-                       <a><div class="btn-user" onclick="">
-                           <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
-                       </div></a>
+                        <a><div class="btn-user" onclick="">
+                            <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                        </div></a>
                     </div>
 
                     <div class="col-3">
@@ -92,98 +92,13 @@
 
     </div>
 </header>
-
-
-
-
 <%--END HEADER--%>
 
 <%--START MAIN--%>
 <section class="py-5">
 
-    <div class="container-fluid">
-        <div class="row">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../image/banner1.jpeg" class="d-block w-100" height="600" width="1280"/>
-            </div>
-            <div class="carousel-item">
-                <img src="../../image/banner2.jpg" class="d-block w-100" height="600" width="1280"/>
-            </div>
-            <div class="carousel-item">
-                <img src="../../image/banner3.jpg" class="d-block w-100" height="600 " width="1280"/>
-            </div>
-            <div class="carousel-item">
-                <img src="../../image/banner4.jpg" class="d-block w-100" height="600 " width="1280"/>
-            </div>
-
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-        </div>
-    </div>
-
-    <div class="container py-5">
-        <div class="category1">
-            <h1 class="text-center">BÁN CHẠY</h1>
-            <hr>
-            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
-                <c:forEach items="${listBestSeller}" var="bs">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="${bs.image}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${bs.productName}</h5>
-                                <p class="card-text">${bs.descriptions}</p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-5">
-                                <h3>${bs.price} vnđ</h3>
-                                <button type="button" class="btn btn-primary"><i
-                                        class="fa-solid fa-basket-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-
-        <div class="category1">
-            <h1 class="text-center">ĐỒ ĂN</h1>
-            <hr>
-            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
-                <c:forEach items="${listFood}" var="food">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="${food.image}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${food.productName}</h5>
-                                <p class="card-text">${food.descriptions}</p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-5">
-                                <h3>${food.price} vnđ</h3>
-                                <button type="button" class="btn btn-primary"><i
-                                        class="fa-solid fa-basket-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-            <a class="nav-link" href="/HNQTFood/sign_up">Xem thêm</a>
-        </div>
-
         <div class="category">
-            <h1 class="text-center">ĐỒ UỐNG</h1>
+            <h1 class="text-center">ĐỒ ĂN</h1>
             <hr>
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
                 <c:forEach items="${listDrink}" var="drink">

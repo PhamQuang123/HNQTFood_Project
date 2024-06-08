@@ -86,14 +86,8 @@
                         </div>
 
                         <div class="col-12 text-center">
-                            <div class="row">
-                                <div class="col-6">
-                                    <button type="submit" class="btn btn-primary mt-1 px-5">
-                                        Lưu Thông Tin
-                                    </button>
-                                </div>
 
-                                <div class="col-6">
+                                <div class="col-12">
                                     <button type="submit" class="btn btn-danger mt-1 px-5">
                                         Quay Trở Lại
                                     </button>
