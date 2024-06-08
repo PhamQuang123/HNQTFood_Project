@@ -11,7 +11,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -31,7 +30,7 @@
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand -logo fw-bold fs-1" href="#" style="color: #F96222">HNQTFood</a>
+            <a class="navbar-brand -logo fw-bold fs-1" href="/HNQTFood/home/home_page" style="color: #F96222">HNQTFood</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -171,7 +170,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <a class="nav-link" href="/HNQTFood/sign_up">Xem thêm</a>
+            <a class="nav-link" onclick="load" >Xem thêm</a>
         </div>
 
         <div class="category">
@@ -196,7 +195,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <a class="nav-link" href="/HNQTFood/sign_up">Xem thêm</a>
+            <a class="nav-link" onclick="load">Xem thêm</a>
         </div>
     </div>
 </section>
