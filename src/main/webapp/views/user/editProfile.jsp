@@ -18,10 +18,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/editProfile.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
 </head>
 <body>
 <div class="container bg-primary-emphasis">
+    <div>
+
+    </div>
+    <a href="../home.jsp">
+        <div
+                class="img-logo text-center">
+            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+        </div>
+    </a>
+
+    <h1 class=" text-center fw-bold display-1 " style="color: #F96222">HNQTFood</h1>
+    <p class=" text-center fw-bold">Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
     <div class="row justify-content-center">
+
         <div class="col-12 text-center">
         </div>
 
@@ -95,6 +109,50 @@
         </div>
     </div>
 </div>
+
+<footer class="">
+    <div class="footer1">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>HNQTFood</h3>
+                <p>Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Chính sách cửa hàng</h3>
+                <p><a href="#" class="text-reset text-decoration-none">Dịch vụ</a> </p>
+                <p><a href="#" class="text-reset text-decoration-none">Ưu đãi</a></p>
+                <p><a href="#" class="text-reset text-decoration-none">Giải quyết khiếu nại</a></p>
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Liên  hệ với chúng tôi</h3>
+                <ul>
+                    <li><a href="" class="fa-brands fa-facebook"></a> </li>
+                    <li><a href="" class="fa-brands fa-twitter"></a></li>
+                    <li><a href="" class="fa-brands fa-instagram"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-lg-3 text-center">
+                <h3>Địa chỉ cửa hàng</h3>
+                <p>Nhà số 23, Lô TT-01, Khu đô thị MonCity, P. Hàm Nghi, Hà Nội </p>
+                <p>Số điện thoại: 0123456789</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                <p>Copyright © 2022 HNQTFood. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

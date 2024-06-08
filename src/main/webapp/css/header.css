@@ -36,6 +36,7 @@
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
+    display: none;
 }
 
 #categoryItems{
@@ -209,3 +210,4 @@ span{
 #body-menu{
     margin-top: 50px;
 }
+

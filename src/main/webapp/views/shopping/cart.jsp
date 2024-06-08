@@ -15,10 +15,21 @@
     <title>Giỏ Hàng Shopee</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/cart.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 <header></header>
 <section>
+
+    <a href="../home.jsp">
+        <div
+                class="img-logo text-center">
+            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+        </div>
+    </a>
+
+    <h1 class=" text-center fw-bold display-1 " style="color: #F96222">HNQTFood</h1>
+    <p class=" text-center fw-bold">Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
 
 <div class="container mt-4">
     <div class="cart-header">

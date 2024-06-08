@@ -53,7 +53,7 @@ public class AdminServiceImp implements AdminService {
         int id = Integer.parseInt(request.getParameter("id"));
         Users users = usersRepository.findUsersById(id);
         request.setAttribute("users", users);
-        request.getRequestDispatcher("").forward(request, response);
+        request.getRequestDispatcher("/views/user/profileUser.jsp").forward(request, response);
     }
 
     @Override

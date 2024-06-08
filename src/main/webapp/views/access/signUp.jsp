@@ -23,56 +23,16 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<header class="fixed-top">
-    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand -logo" href="/HNQTFood/home_page" style="color: #F96222">HNQTFood</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/HNQTFood/home_page">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đồ Ăn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đồ uống</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-</header>
 
 <section>
     <div class="container bg-primary-emphasis mt-5">
         <div class="row justify-content-center mt-5">
+            <a href="/HNQTFood/home/home_page">
+                <div
+                        class="img-logo text-center">
+                    <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                </div>
+            </a>
 
             <h1 class=" text-center fw-bold display-1 " style="color: #F96222">HNQTFood</h1>
             <p class=" text-center fw-bold">Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
@@ -190,7 +150,7 @@
     </div>
 
 </section>
-<footer class="p-5">
+<footer class="">
     <div class="footer1">
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-lg-3 text-center">

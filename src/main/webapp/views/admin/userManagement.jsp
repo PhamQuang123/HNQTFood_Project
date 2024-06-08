@@ -19,14 +19,19 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="../../css/productManagement.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/productManagement"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
 </head>
 <body>
-<header></header>
 
-
+<a href="/HNQTFood/home/home_page">
+    <div
+            class="img-logo text-center">
+        <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+    </div>
+</a>
 <!--START BODY-->
 <section class="pt-5">
     <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
