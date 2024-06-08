@@ -54,46 +54,61 @@
                     <form action="#" class="row">
                         <div class="col-12">
                             <div class="mb-2">
-                                <input type="text" class="form-control py-2" placeholder="Họ Và Tên">
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="mb-2">
-                                <input type="file" class="form-control py-2" placeholder="Thay đổi ảnh đại diện">
+                                <label for="name">Họ tên</label>
+                                <input type="text" class="form-control py-2"  id="name" readonly>
                             </div>
                         </div>
 
                         <div class="col-12 ">
-                            <input  class="p-2 border rounded col-12" type="date" id="birthday" name="birthday">
+                            <label for="birthday">Ngày sinh</label>
+                            <input  class="p-2 border rounded col-12" type="text" id="birthday" name="birthday" readonly>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Giới Tính</option>
-                                    <option value="1">Nữ</option>
-                                    <option value="2">Nam</option>
-                                    <option value="3">Khác</option>
-                                </select>
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control py-2" id="email" readonly>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
-                                <input type="text" class="form-control py-2" placeholder="Địa Chỉ">
+                                <label for="gender">Giới tính</label>
+                                <input type="text" class="form-control py-2" id="gender" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mb-2">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="text" class="form-control py-2" id="phone" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mb-2">
+                                <label for="address">Địa chỉ</label>
+                                <input type="text" class="form-control py-2" id="address" readonly>
                             </div>
                         </div>
 
                         <div class="col-12 text-center">
 
-                                <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-warning mt-1 px-5">
+                                        Sửa thông tin
+                                    </button>
+                                </div>
+
+                                <div class="col-6">
                                     <button type="submit" class="btn btn-danger mt-1 px-5">
                                         Quay Trở Lại
                                     </button>
                                 </div>
                             </div>
-                        </div>
+
+                            </div>
                     </form>
                 </div>
             </div>
