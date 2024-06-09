@@ -46,20 +46,22 @@ public class HomePageServiceImp implements HomePageService {
         if (cookies != null) {
             for (Cookie c : cookies
             ) {
-                if (c.getName().equals("email")) {
+                if (c.getName().equals("emailCo")) {
                     emailCo = c.getValue();
                     break;
                 }
             }
+            if (emailCo != null) {
+                Users users = usersRepository.findUserByEmail(emailCo);
+                session.setAttribute("users", users);
+                Cookie c = new Cookie("emailCo", emailCo);
+                c.setPath("/");
+                response.addCookie(c);
+                c.setMaxAge(24 * 60 * 60);
+            }
         }
-        if (emailCo != null) {
-            Users users = usersRepository.findUserByEmail(emailCo);
-            session.setAttribute("users", users);
-            Cookie c = new Cookie("email", emailCo);
-            c.setPath("/");
-            response.addCookie(c);
-            c.setMaxAge(24 * 60 * 60);
-        }
+
+
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
 

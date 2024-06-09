@@ -27,82 +27,80 @@
     <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
-
 <header class="fixed-top">
     <div class="container text-center">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-2">
                 <div id="logo">
                     <a>
                         <div class="img-logo">
-                            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                            <img src="../../image/icon/LogoHeader.png" height="50" width="50"/>
                         </div>
                     </a>
                     <h4 class="h3-logo">HNQT FOOD</h4>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="d-flex">
+            <div class="col-6">
+                <div class="d-flex justify-content-around">
                     <div class="menu1 col mb-1">
-                        <a href="">Trang chủ</a>
+                        <a href="/HNQTFood/home/home_page" class="nav-link">Trang chủ</a>
                     </div>
-
                     <div class="menu2 col mb-1">
-                        <a href="#food">Đồ Ăn</a>
+                        <a href="#food" class="nav-link">Đồ Ăn</a>
                     </div>
-
                     <div class="menu3 col mb-1">
-                        <a href="#drink">Đồ Uống</a>
+                        <a href="#drink" class="nav-link">Đồ Uống</a>
                     </div>
-
                     <div class="menu4 col mb-1">
-                        <a href="">Hỗ Trợ</a>
+                        <a href="" class="nav-link">Hỗ Trợ</a>
                     </div>
-                    <c:if test="${sessionScope.users.roleUser == 0}">
+                    <c:if test="${sessionScope.users != null && sessionScope.users.roleUser == 0}">
                         <div class="menu5 col mb-1">
-                            <a href="/HNQTFood/admin/account">Quản Lý</a>
+                            <a href="/HNQTFood/admin/account" class="nav-link">Quản Lý</a>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="d-flex justify-content-end align-items-center">
+                    <c:if test="${sessionScope.users != null}">
+                        <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
+                            <div class="btn-user ">
+                                <span>${sessionScope.users.fullName}</span>
+                                <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"
+                                     width="32" style="border-radius: 20px; margin-left: 4px"/>
+                            </div>
+                        </a>
+                    </c:if>
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/home_page">
+                                <div class="btn-user">
+                                    <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </div>
+                    </c:if>
+                    <div class="btn-wrapper">
+                        <a href="/HNQTFood/cart">
+                            <div class="btn-cart">
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </div>
+                        </a>
+                    </div>
+                    <c:if test="${sessionScope.users != null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/log_out">
+                                <div class="btn-logout">
+                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/>
+                                </div>
+                            </a>
                         </div>
                     </c:if>
 
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-3">
-                        <c:if test="${sessionScope.users != null}">
-                            <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
-                                <div class="btn-user ">
-                                    <span>${sessionScope.users.fullName}</span>
-                                    <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"
-                                         width="32" style="border-radius: 20px"/>
-                                </div>
-                            </a>
-                        </c:if>
-
-                        <c:if test="${sessionScope.users == null}">
-                            <div class="col-3 ">
-                                <a href="/HNQTFood/sign_in">
-                                    <div class="btn-logout">
-                                        <img src="../../image/icon/LogoUser.png" height="32" width="32"/></div>
-                                    <span>Đăng nhập/Đăng ký</span>
-                                </a>
-                            </div>
-                        </c:if>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn-cart" onclick="">
-                            <a href="#">
-                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
-                            </a>
-                        </div>
-                    </div>
-
-                    <c:if test="${sessionScope.users != null}">
-                        <div class="col-3">
-                            <a href="/HNQTFood/home/log_out">
-                                <div class="btn-logout" onclick="">
-                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/></div>
-                            </a>
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/sign_in" class="auth-link">Đăng nhập/Đăng ký</a>
                         </div>
                     </c:if>
                 </div>
@@ -111,15 +109,113 @@
     </div>
 </header>
 
-<div class="row">
-    <div class="col-12">
-        <div class="search-container ">
-            <input type="text" class="search-bar" placeholder="Search...">
-            <button class="search-button">Search</button>
+<!-- Di chuyển thanh tìm kiếm ra ngoài header -->
+<div class="search-bar-container mt-5 pt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="/path/to/search" method="POST">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" name="searchQuery" placeholder="Search...">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
 </div>
+<%--<header class="fixed-top">--%>
+<%--    <div class="container text-center">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-2">--%>
+<%--                <div id="logo">--%>
+<%--                    <a>--%>
+<%--                        <div class="img-logo">--%>
+<%--                            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>--%>
+<%--                        </div>--%>
+<%--                    </a>--%>
+<%--                    <h4 class="h3-logo">HNQT FOOD</h4>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-8">--%>
+<%--                <div class="d-flex">--%>
+<%--                    <div class="menu1 col mb-1">--%>
+<%--                        <a href="">Trang chủ</a>--%>
+<%--                    </div>--%>
+
+<%--                    <div class="menu2 col mb-1">--%>
+<%--                        <a href="#food">Đồ Ăn</a>--%>
+<%--                    </div>--%>
+
+<%--                    <div class="menu3 col mb-1">--%>
+<%--                        <a href="#drink">Đồ Uống</a>--%>
+<%--                    </div>--%>
+
+<%--                    <div class="menu4 col mb-1">--%>
+<%--                        <a href="">Hỗ Trợ</a>--%>
+<%--                    </div>--%>
+<%--                    <c:if test="${sessionScope.users.roleUser == 0}">--%>
+<%--                        <div class="menu5 col mb-1">--%>
+<%--                            <a href="/HNQTFood/admin/account">Quản Lý</a>--%>
+<%--                        </div>--%>
+<%--                    </c:if>--%>
+
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-2">--%>
+<%--                <div class="row">--%>
+<%--                    <div class="col-3">--%>
+<%--                        <c:if test="${sessionScope.users != null}">--%>
+<%--                            <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">--%>
+<%--                                <div class="btn-user ">--%>
+<%--                                    <span>${sessionScope.users.fullName}</span>--%>
+<%--                                    <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"--%>
+<%--                                         width="32" style="border-radius: 20px"/>--%>
+<%--                                </div>--%>
+<%--                            </a>--%>
+<%--                        </c:if>--%>
+
+<%--                        <c:if test="${sessionScope.users == null}">--%>
+<%--                            <div class="col-3 ">--%>
+<%--                                <a href="/HNQTFood/sign_in">--%>
+<%--                                    <div class="btn-logout">--%>
+<%--                                        <img src="../../image/icon/LogoUser.png" height="32" width="32"/></div>--%>
+<%--                                    <span>Đăng nhập/Đăng ký</span>--%>
+<%--                                </a>--%>
+<%--                            </div>--%>
+<%--                        </c:if>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-3">--%>
+<%--                        <div class="btn-cart" onclick="">--%>
+<%--                            <a href="#">--%>
+<%--                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>--%>
+<%--                            </a>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+
+<%--                    <c:if test="${sessionScope.users != null}">--%>
+<%--                        <div class="col-3">--%>
+<%--                            <a href="/HNQTFood/home/log_out">--%>
+<%--                                <div class="btn-logout" onclick="">--%>
+<%--                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/></div>--%>
+<%--                            </a>--%>
+<%--                        </div>--%>
+<%--                    </c:if>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</header>--%>
+
+<%--<div class="row">--%>
+<%--    <div class="col-12">--%>
+<%--        <div class="search-container ">--%>
+<%--            <input type="text" class="search-bar" placeholder="Search...">--%>
+<%--            <button class="search-button">Search</button>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+
+<%--</div>--%>
 
 <%--END HEADER--%>
 
@@ -170,7 +266,7 @@
                             <c:if test="${bs.category.id ==1}">
                                 <img src="../../image/products/${bs.image}" class="card-img-top" alt="...">
                             </c:if>
-                            <c:if test="${bs.category.id == 0}">
+                            <c:if test="${bs.category.id == 2}">
                                 <img src="../../image/products/drinks/${bs.image}" class="card-img-top" alt="...">
                             </c:if>
                             <div class="card-body">

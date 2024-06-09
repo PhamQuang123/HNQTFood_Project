@@ -47,7 +47,7 @@ public class AuthServiceImp implements AuthService {
         Users users = accountValidate.checkEmailAndPAss(email, pass);
         if (users != null && users.isUserStatus()) {
             users.setRememberAccount(rememberAccount);
-            Cookie emailCookie = new Cookie("email", users.getEmail());
+            Cookie emailCookie = new Cookie("emailCo", users.getEmail());
             HttpSession session = request.getSession();
             emailCookie.setPath("/");
             session.setAttribute("users", users);

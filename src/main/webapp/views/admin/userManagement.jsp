@@ -24,33 +24,132 @@
           rel="stylesheet">
     <link rel="stylesheet" href="../../css/productManagement"/>
     <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/header.css"/>
+
 </head>
 <body>
 
-<a href="/HNQTFood/home/home_page">
-    <div
-            class="img-logo text-center">
-        <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
-    </div>
-</a>
-<!--START BODY-->
-<section class="pt-5">
-    <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
+<header class="fixed-top">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <div id="logo">
+                    <a>
+                        <div class="img-logo">
+                            <img src="../../image/icon/LogoHeader.png" height="50" width="50"/>
+                        </div>
+                    </a>
+                    <h4 class="h3-logo">HNQT FOOD</h4>
+                </div>
             </div>
-            <div class="col-md-3 d-flex justify-content-end mx-auto p-2">
-                <form action="#" method="post">
-                    <input type="search" class="search-input  form-check-input mt-0 border border-dark-subtle"
-                           placeholder="Tìm kiếm" >
-                    <button type="submit" name="search" class="btn btn-success ms-2">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+            <div class="col-6">
+                <div class="d-flex justify-content-around">
+                    <div class="menu1 col mb-1">
+                        <a href="/HNQTFood/home/home_page" class="nav-link">Trang chủ</a>
+                    </div>
+<%--                    <div class="menu2 col mb-1">--%>
+<%--                        <a href="#food" class="nav-link">Đồ Ăn</a>--%>
+<%--                    </div>--%>
+<%--                    <div class="menu3 col mb-1">--%>
+<%--                        <a href="#drink" class="nav-link">Đồ Uống</a>--%>
+<%--                    </div>--%>
+                    <div class="menu4 col mb-1">
+                        <a href="" class="nav-link">Hỗ Trợ</a>
+                    </div>
+                    <c:if test="${sessionScope.users != null && sessionScope.users.roleUser == 0}">
+                        <div class="menu5 col mb-1">
+                            <a href="/HNQTFood/admin/account" class="nav-link">Quản Lý</a>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="d-flex justify-content-end align-items-center">
+                    <c:if test="${sessionScope.users != null}">
+                        <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
+                            <div class="btn-user ">
+                                <span>${sessionScope.users.fullName}</span>
+                                <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"
+                                     width="32" style="border-radius: 20px"/>
+                            </div>
+                        </a>
+                    </c:if>
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/home_page">
+                                <div class="btn-user">
+                                    <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </div>
+                    </c:if>
+                    <div class="btn-wrapper">
+                        <a href="/HNQTFood/cart">
+                            <div class="btn-cart">
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </div>
+                        </a>
+                    </div>
+                    <c:if test="${sessionScope.users != null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/log_out">
+                                <div class="btn-logout">
+                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </div>
+                    </c:if>
+
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/sign_in" class="auth-link">Đăng nhập/Đăng ký</a>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Di chuyển thanh tìm kiếm ra ngoài header -->
+<div class="search-bar-container mt-5 pt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="/path/to/search" method="POST">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" name="searchQuery" placeholder="Search...">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
+<!--START BODY-->
+<section class="pt-5">
+    <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
+<%--    <div class="container-fluid">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-md-8">--%>
+<%--            </div>--%>
+<%--            <div class="col-md-3 d-flex justify-content-end mx-auto p-2">--%>
+<%--                <form action="#" method="post">--%>
+<%--                    <input type="search" class="search-input form-check-input mt-0 border border-dark-subtle"--%>
+<%--                           placeholder="Tìm kiếm">--%>
+<%--                    <button type="submit" name="search" class="btn btn-success ms-2">--%>
+<%--                        <i class="fa-solid fa-magnifying-glass"></i>--%>
+<%--                    </button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--            <div class="col-md-1 mx-auto p-2">--%>
+<%--                <button type="button" class="btn btn-success">--%>
+<%--                    <a href="/HNQTFood/admin/new_product"><i class="fa-solid fa-plus"></i>Thêm</a>--%>
+<%--                </button>--%>
+<%--            </div>--%>
+
+<%--        </div>--%>
+<%--    </div>--%>
 
     <!--  SIDEBAR & TABLE-->
     <div class="container-fluid">
@@ -62,10 +161,10 @@
                 <hr>
                 <a href="/HNQTFood/admin/account">Tài khoản</a>
                 <hr>
-                <a href="/HNQTFood/admin/category">Danh mục</a>
-                <hr>
-                <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>
-                <hr>
+<%--                <a href="/HNQTFood/admin/category">Danh mục</a>--%>
+<%--                <hr>--%>
+<%--                <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>--%>
+<%--                <hr>--%>
             </div>
             <!--SIDEBAR &TABLE-->
 
@@ -95,7 +194,9 @@
                             <tr>
                                 <th scope="row">${i}</th>
                                 <td name="name">${account.fullName}</td>
-                                <td name="image"><img class="user-image" src="../../image/user/${account.avatar}" style="width: 150px;height: 150px; border-radius: 12px" alt="avatar"/></td>
+                                <td name="image"><img class="user-image" src="../../image/user/${account.avatar}"
+                                                      style="width: 150px;height: 150px; border-radius: 12px"
+                                                      alt="avatar"/></td>
                                 <td name="address">${account.address}</td>
                                 <td name="gender">${account.isGender() == 1? "Nam":"Nữ"}</td>
                                 <td name="birth">${account.birthday}</td>
@@ -104,8 +205,10 @@
                                 <td name="pass">${account.pass}</td>
                                 <td name="status">
                                     <div class="form-check form-switch">
-                                        <a class="text-decoration" href="/HNQTFood/admin/block_account?id=${account.id}&&status=${account.userStatus}" onclick="handleStatus(1)" id="status${account.id}">
-                                            <span >${account.userStatus?"Hoạt động":"Khoá"}</span>
+                                        <a class="text-decoration"
+                                           href="/HNQTFood/admin/block_account?id=${account.id}&&status=${account.userStatus}"
+                                           onclick="handleStatus(1)" id="status${account.id}">
+                                            <span>${account.userStatus?"Hoạt động":"Khoá"}</span>
                                         </a>
                                     </div>
                                 </td>

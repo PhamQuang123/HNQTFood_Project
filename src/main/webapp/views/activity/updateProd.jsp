@@ -17,20 +17,119 @@
     <link rel="stylesheet" href="FormSingUp.css">
     <link rel="stylesheet" href="../../css/addProduct.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/header.css"/>
+
 
 </head>
 <body>
+<header class="fixed-top">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <div id="logo">
+                    <a>
+                        <div class="img-logo">
+                            <img src="../../image/icon/LogoHeader.png" height="50" width="50"/>
+                        </div>
+                    </a>
+                    <h4 class="h3-logo">HNQT FOOD</h4>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex justify-content-around">
+                    <div class="menu1 col mb-1">
+                        <a href="/HNQTFood/home/home_page" class="nav-link">Trang chủ</a>
+                    </div>
+                    <%--                    <div class="menu2 col mb-1">--%>
+                    <%--                        <a href="" class="nav-link">Đồ Ăn</a>--%>
+                    <%--                    </div>--%>
+                    <%--                    <div class="menu3 col mb-1">--%>
+                    <%--                        <a href="#drink" class="nav-link">Đồ Uống</a>--%>
+                    <%--                    </div>--%>
+                    <div class="menu4 col mb-1">
+                        <a href="" class="nav-link">Hỗ Trợ</a>
+                    </div>
+                    <c:if test="${sessionScope.users != null && sessionScope.users.roleUser == 0}">
+                        <div class="menu5 col mb-1">
+                            <a href="/HNQTFood/admin/account" class="nav-link">Quản Lý</a>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="d-flex justify-content-end align-items-center">
+                    <c:if test="${sessionScope.users != null}">
+                        <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
+                            <div class="btn-user ">
+                                <span>${sessionScope.users.fullName}</span>
+                                <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"
+                                     width="32" style="border-radius: 20px"/>
+                            </div>
+                        </a>
+                    </c:if>
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/home_page">
+                                <div class="btn-user">
+                                    <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </div>
+                    </c:if>
+                    <div class="btn-wrapper">
+                        <a href="/HNQTFood/cart">
+                            <div class="btn-cart">
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </div>
+                        </a>
+                    </div>
+                    <c:if test="${sessionScope.users != null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/home/log_out">
+                                <div class="btn-logout">
+                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/>
+                                </div>
+                            </a>
+                        </div>
+                    </c:if>
+
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/sign_in" class="auth-link">Đăng nhập/Đăng ký</a>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Di chuyển thanh tìm kiếm ra ngoài header -->
+<div class="search-bar-container mt-5 pt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="/path/to/search" method="POST">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" name="searchQuery" placeholder="Search...">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container bg-primary-emphasis">
     <div class="row justify-content-center">
-        <a href="../home.jsp">
-            <div
-                    class="img-logo text-center">
-                <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
-            </div>
-        </a>
+<%--        <a href="../home.jsp">--%>
+<%--            <div--%>
+<%--                    class="img-logo text-center">--%>
+<%--                <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>--%>
+<%--            </div>--%>
+<%--        </a>--%>
 
-        <h1 class=" text-center fw-bold display-1 " style="color: #F96222">HNQTFood</h1>
-        <p class=" text-center fw-bold">Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>
+<%--        <h1 class=" text-center fw-bold display-1 " style="color: #F96222">HNQTFood</h1>--%>
+<%--        <p class=" text-center fw-bold">Nhanh, Ngon, Tiện – Đầy Đủ Hương Vị Mỗi Ngày!</p>--%>
         <div class="col-12 text-center">
         </div>
         <div class="col-12 col-lg-5 p-5">
@@ -58,13 +157,13 @@
                             <%--                            <input type="text" class="form-control" id="exampleInputStatus"/>--%>
                             <select class="form-select" name="productStatus" aria-label="Default select example">
                                 <option value="${product.productStatus}">
-                                    <th>${product.productStatus == 1?"Còn bán":"Dừng bán"}</th>
+                                    <th>${product.productStatus == 0?"Còn bán":"Dừng bán"}</th>
                                 </option>
-                                <c:if test="${product.productStatus != 1}">
-                                    <option value="1">Còn bán</option>
+                                <c:if test="${product.productStatus != 0}">
+                                    <option value="0">Còn bán</option>
 
                                 </c:if>
-                                <option value="0">Dừng bán</option>
+                                <option value="1">Dừng bán</option>
                             </select>
                         </div>
                         <div class="form-group mb-3">
@@ -75,7 +174,14 @@
                         <div class="form-group mb-3">
                             <label for="exampleInputFile">Thêm ảnh</label>
                             <input type="file" class="form-control" value="${product.image}" name="image" id="exampleInputFile"/>
-                            <img class="image" src="../../image/products/${product.image}" width="100" height="100">
+                            <c:if test="${product.category.id ==1}">
+                                <img class="image" src="../../image/products/${product.image}">
+
+                            </c:if>
+                            <c:if test="${product.category.id ==2}">
+                                <img class="image" src="../../image/products/drinks/${product.image}">
+
+                            </c:if>
                         </div>
                         <div class="form-group mb-3">
                             <label>Phân loại</label>
@@ -105,8 +211,6 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
