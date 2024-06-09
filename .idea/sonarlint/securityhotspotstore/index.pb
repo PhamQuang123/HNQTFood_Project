@@ -52,8 +52,6 @@ N
 Z
 *src/main/webapp/views/user/editProfile.jsp,8\9\89c44856a59521d02edfae2056b8dbd831f5dd3e
 S
-#src/main/webapp/css/editProfile.jsp,c\4\c4350538f00e1f8cdfca589a66ba9be18c7110b2
-S
 #src/main/webapp/css/editProfile.css,0\8\081e0eda08243e51a78da7e69848150e62de67ac
 Z
 *src/main/webapp/views/user/profileUser.jsp,1\7\17f3e2db9d0c88735b80ee466e045d4dbf49fa54
@@ -61,8 +59,6 @@ W
 'src/main/webapp/views/shopping/cart.jsp,f\3\f3237365989ccae516aac37000b3946c1a11933d
 L
 src/main/webapp/css/cart.css,f\f\ffd54bb59d3aa29d4f1f2288ba4e491502ace299
-X
-(src/main/webapp/views/detail/profile.jsp,4\8\4848fda1555770de72659c79645a1c2279095a37
 Z
 *src/main/webapp/views/shopping/payment.jsp,7\3\7365e70a534a829ceb6dea3151afd65b49b31acc
 W
