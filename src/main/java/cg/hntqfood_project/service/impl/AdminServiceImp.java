@@ -59,8 +59,10 @@ public class AdminServiceImp implements AdminService {
     @Override
     public void blockAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
+        boolean status = Boolean.parseBoolean(request.getParameter("status"));
         Users users = usersRepository.findUsersById(id);
-        users.setUserStatus(!users.isUserStatus());
+        users.setUserStatus(!status);
+        usersRepository.adminUpdate(users);
         response.sendRedirect("/HNQTFood/admin/account");
     }
 

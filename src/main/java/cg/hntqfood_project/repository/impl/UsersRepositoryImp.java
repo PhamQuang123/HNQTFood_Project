@@ -62,6 +62,7 @@ public class UsersRepositoryImp implements UsersRepository {
             callSt.setString(4, users.getPhoneNumber());
             callSt.setString(5, users.getEmail());
             callSt.setString(6, users.getPass());
+            callSt.setString(7,users.getAvatar());
             callSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -127,14 +128,7 @@ public class UsersRepositoryImp implements UsersRepository {
             conn = ConnectionDB.openConnection();
             callSt = conn.prepareCall(UsersSQL.ADMIN_USERS_UPDATE);
             callSt.setInt(1, users.getId());
-            callSt.setString(2, users.getFullName());
-            callSt.setString(3, users.getAddress());
-            callSt.setInt(4, users.isGender());
-            callSt.setString(5, users.getBirthday());
-            callSt.setString(6, users.getPhoneNumber());
-            callSt.setString(7, users.getPass());
-            callSt.setInt(8, users.getRoleUser());
-            callSt.setString(9, users.getAvatar());
+           callSt.setBoolean(2,users.isUserStatus());
             callSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

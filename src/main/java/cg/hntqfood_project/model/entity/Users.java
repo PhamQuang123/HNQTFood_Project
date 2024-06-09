@@ -1,12 +1,9 @@
 package cg.hntqfood_project.model.entity;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class Users {
     private int id;
     private String fullName;
-    private String avatar;
+    private String avatar ="hinh-nen-bong-da-1.jpg";
     private String address;
     private int gender;
     private String birthday;

@@ -60,7 +60,10 @@
                                 <option value="${product.productStatus}">
                                     <th>${product.productStatus == 1?"Còn bán":"Dừng bán"}</th>
                                 </option>
-                                <option value="1">Còn bán</option>
+                                <c:if test="${product.productStatus != 1}">
+                                    <option value="1">Còn bán</option>
+
+                                </c:if>
                                 <option value="0">Dừng bán</option>
                             </select>
                         </div>
@@ -70,9 +73,9 @@
                                       placeholder="Viết mô tả cho món ăn/ đồ uống"></textarea>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="exampleInputFile">Thêm link ảnh</label>
+                            <label for="exampleInputFile">Thêm ảnh</label>
                             <input type="file" class="form-control" value="${product.image}" name="image" id="exampleInputFile"/>
-                            <img class="image" src="/image/${product.image}" width="100" height="100">
+                            <img class="image" src="../../image/products/${product.image}" width="100" height="100">
                         </div>
                         <div class="form-group mb-3">
                             <label>Phân loại</label>

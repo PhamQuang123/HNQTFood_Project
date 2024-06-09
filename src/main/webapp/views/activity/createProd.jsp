@@ -26,7 +26,6 @@
 <body>
 
 
-
 <div class="container bg-primary-emphasis">
     <div class="row justify-content-center">
         <a href="../home.jsp">
@@ -94,6 +93,7 @@
                                 <div class="col-md-3">
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>

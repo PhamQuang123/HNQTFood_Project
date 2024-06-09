@@ -45,13 +45,11 @@ public class AuthServiceImp implements AuthService {
         String pass = request.getParameter("pass");
         boolean rememberAccount = Boolean.parseBoolean(request.getParameter("rememberAccount"));
         Users users = accountValidate.checkEmailAndPAss(email, pass);
-        if (users != null) {
+        if (users != null && users.isUserStatus()) {
             users.setRememberAccount(rememberAccount);
             Cookie emailCookie = new Cookie("email", users.getEmail());
             HttpSession session = request.getSession();
             emailCookie.setPath("/");
-
-
             session.setAttribute("users", users);
             if (rememberAccount) {
                 emailCookie.setMaxAge(24 * 60 * 60);
@@ -64,7 +62,6 @@ public class AuthServiceImp implements AuthService {
         List<Product> listBestSeller = productRepository.findBestSeller();
         List<Product> listFood = productRepository.findByCategoryId(1);
         List<Product> listDrink = productRepository.findByCategoryId(2);
-//        request.setAttribute("listProduct", listProduct);
         request.setAttribute("listFood", listFood);
         request.setAttribute("listDrink", listDrink);
         request.setAttribute("listBestSeller",listBestSeller);

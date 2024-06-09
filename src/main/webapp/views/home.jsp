@@ -49,11 +49,11 @@
                     </div>
 
                     <div class="menu2 col mb-1">
-                        <a href="">Đồ Ăn</a>
+                        <a href="#food">Đồ Ăn</a>
                     </div>
 
                     <div class="menu3 col mb-1">
-                        <a href="">Đồ Uống</a>
+                        <a href="#drink">Đồ Uống</a>
                     </div>
 
                     <div class="menu4 col mb-1">
@@ -74,14 +74,21 @@
                     <div class="col-3">
                         <c:if test="${sessionScope.users != null}">
                             <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
-                                <div class="btn-user" onclick="">
-                                    <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
+                                <div class="btn-user ">
+                                    <span>${sessionScope.users.fullName}</span>
+                                    <img src="../../image/user/${sessionScope.users.avatar}" alt="#" height="32"
+                                         width="32" style="border-radius: 20px"/>
                                 </div>
                             </a>
                         </c:if>
+
                         <c:if test="${sessionScope.users == null}">
-                            <div class="menu3 col mb-1">
-                                <a href="/HNQTFood/sign_in">Đăng nhập/Đăng ký</a>
+                            <div class="col-3 ">
+                                <a href="/HNQTFood/sign_up" >
+                                    <div class="btn-logout">
+                                        <img src="../../image/icon/LogoUser.png" height="32" width="32"/></div>
+                                    <span>Đăng nhập/Đăng ký</span>
+                                </a>
                             </div>
                         </c:if>
                     </div>
@@ -105,52 +112,15 @@
             </div>
         </div>
     </div>
-
-    <div>
-        <div id="mySidebar" class="sidebar">
-            <div id="categoryItems">
-                <div class="logo-menu">
-                    <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>
-                </div>
-            </div>
-
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>
-            <div class="menu-bar">
-                <h4 class="text-white text-center">Danh Mục</h4>
-                <a href="">Gà rán</a>
-                <a href="">Đồ ăn</a>
-                <a href="">Đồ Uống</a>
-                <a href="">Món tráng miệng</a>
-            </div>
-
-
-            <script>
-                function toggleSidebar() {
-                    let sidebar = document.getElementById("mySidebar");
-                    if (sidebar.style.width === "250px") {
-                        sidebar.style.width = "0";
-                    } else {
-                        sidebar.style.width = "250px";
-                    }
-                }
-            </script>
-
-        </div>
-    </div>
 </header>
-
-<div>
-    <div class="row">
-        <div class="col-12">
-            <div class="search-container ">
-                <input type="text" class="search-bar" placeholder="Search...">
-                <button class="search-button">Search</button>
-            </div>
+<div class="row">
+    <div class="col-12">
+        <div class="search-container ">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <button class="search-button">Search</button>
         </div>
     </div>
-
 </div>
-
 
 <%--END HEADER--%>
 
@@ -185,7 +155,7 @@
         </button>
     </div>
 
-    <div class="container py-5">
+    <div id="food" class="container py-5">
         <div class="category1">
             <h1 class="text-center">BÁN CHẠY</h1>
             <hr>
@@ -235,7 +205,7 @@
             <a class="nav-link" onclick="load">Xem thêm</a>
         </div>
 
-        <div class="category">
+        <div id="drink" class="category">
             <h1 class="text-center">ĐỒ UỐNG</h1>
             <hr>
             <div class="row row-cols-1 row-cols-md-3 g-4 py-5">

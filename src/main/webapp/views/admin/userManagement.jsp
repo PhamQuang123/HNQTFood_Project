@@ -20,7 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../../css/productManagement"/>
     <link rel="stylesheet" href="../../css/style.css"/>
 </head>
@@ -42,20 +43,14 @@
             <div class="col-md-8">
             </div>
             <div class="col-md-3 d-flex justify-content-end mx-auto p-2">
-                <form action="#" method="post">
-                    <input type="search" class="search-input form-check-input mt-0 border border-dark-subtle"
-                           placeholder="Tìm kiếm">
+                <form action="#" method="post" width="400px">
+                    <input type="search" class="search-input  form-check-input mt-0 border border-dark-subtle"
+                           placeholder="Tìm kiếm" width="250px" height="37px" style="border-radius: 10px">
                     <button type="submit" name="search" class="btn btn-success ms-2">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
             </div>
-            <div class="col-md-1 mx-auto p-2">
-                <button type="button" class="btn btn-success">
-                    <i class="fa-solid fa-plus"></i>Thêm
-                </button>
-            </div>
-
         </div>
     </div>
 
@@ -102,7 +97,7 @@
                             <tr>
                                 <th scope="row">${i}</th>
                                 <td name="name">${account.fullName}</td>
-                                <td name="image"><img class="user-image" src="${account.avatar}"/></td>
+                                <td name="image"><img class="user-image" src="../../image/user/${account.avatar}" style="width: 150px;height: 150px; border-radius: 12px" alt="avatar"/></td>
                                 <td name="address">${account.address}</td>
                                 <td name="gender">${account.isGender() == 1? "Nam":"Nữ"}</td>
                                 <td name="birth">${account.birthday}</td>
@@ -110,14 +105,11 @@
                                 <td name="mail">${account.email}</td>
                                 <td name="pass">${account.pass}</td>
                                 <td name="status">
-                                        <div class="form-check form-switch">
-                                            <a href="" id="userStatus${account.id}" onclick="handleStatus(${account.id})">
-                                            <input class="form-check-input"   type="checkbox" role="switch"
-                                                   id="flexSwitchCheckChecked" ${account.userStatus?"checked":""}>
-                                            </a>
-
-                                            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                        </div>
+                                    <div class="form-check form-switch">
+                                        <a class="text-decoration" href="/HNQTFood/admin/block_account?id=${account.id}&&status=${account.userStatus}" onclick="handleStatus(1)" id="status${account.id}">
+                                            <span >${account.userStatus?"Hoạt động":"Khoá"}</span>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                             <c:set var="i" value="${i + 1}"/>
@@ -132,16 +124,6 @@
     </div>
 </section>
 <!--END BODY-->
-
-<script>
-
-
-    function handleStatus(a){
-        console.log(a)
-        document.getElementById("userStatus"+a).href ="/HNQTFood/admin/block_account?id=" + a;
-    }
-</script>
-
 
 <!--START FOOTER-->
 <footer>

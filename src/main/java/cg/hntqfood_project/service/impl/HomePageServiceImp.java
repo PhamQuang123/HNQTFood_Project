@@ -34,11 +34,9 @@ public class HomePageServiceImp implements HomePageService {
 
     @Override
     public void renderHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Product> listProduct = productRepository.findAll();
         List<Product> listBestSeller = productRepository.findBestSeller();
         List<Product> listFood = productRepository.findByCategoryId(1);
         List<Product> listDrink = productRepository.findByCategoryId(2);
-//        request.setAttribute("listProduct", listProduct);
         request.setAttribute("listFood", listFood);
         request.setAttribute("listDrink", listDrink);
         request.setAttribute("listBestSeller",listBestSeller);
