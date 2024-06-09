@@ -53,6 +53,7 @@ public class AuthServiceImp implements AuthService {
             session.setAttribute("users", users);
             if (rememberAccount) {
                 emailCookie.setMaxAge(24 * 60 * 60);
+                session.setMaxInactiveInterval(24*60*60);
             }
             response.addCookie(emailCookie);
         } else {

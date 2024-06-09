@@ -56,11 +56,13 @@ public class HomePageServiceImp implements HomePageService {
                 session.setAttribute("users", users);
                 Cookie c = new Cookie("emailCo", emailCo);
                 c.setPath("/");
-                response.addCookie(c);
                 c.setMaxAge(24 * 60 * 60);
-            }
-        }
+                session.setMaxInactiveInterval(24*60*60);
+                response.addCookie(c);
 
+            }
+
+        }
 
         request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
@@ -78,9 +80,12 @@ public class HomePageServiceImp implements HomePageService {
 
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Cookie emailCookie = new Cookie("email", "");
-        response.addCookie(emailCookie);
+        Cookie emailCookie = new Cookie("emailCo", "");
+        HttpSession session  = request.getSession();
+        session.removeAttribute("users");
+        emailCookie.setPath("/");
         emailCookie.setMaxAge(0);
+        response.addCookie(emailCookie);
         response.sendRedirect("/HNQTFood/sign_in");
 
     }
