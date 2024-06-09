@@ -27,154 +27,100 @@
     <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
-<<<<<<< HEAD
 
-=======
->>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
 <header class="fixed-top">
     <div class="container text-center">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-2">
                 <div id="logo">
                     <a>
                         <div class="img-logo">
-                            <img src="../../image/icon/LogoHeader.png" height="130" width="130"/>
+                            <img src="../../image/icon/LogoHeader.png" height="50" width="50"/>
                         </div>
                     </a>
                     <h4 class="h3-logo">HNQT FOOD</h4>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="d-flex">
+            <div class="col-6">
+                <div class="d-flex justify-content-around">
                     <div class="menu1 col mb-1">
-                        <a href="">Trang chủ</a>
+                        <a href="" class="nav-link">Trang chủ</a>
                     </div>
-
                     <div class="menu2 col mb-1">
-                        <a href="">Đồ Ăn</a>
+                        <a href="" class="nav-link">Đồ Ăn</a>
                     </div>
-
                     <div class="menu3 col mb-1">
-                        <a href="">Đồ Uống</a>
+                        <a href="" class="nav-link">Đồ Uống</a>
                     </div>
-
                     <div class="menu4 col mb-1">
-                        <a href="">Hỗ Trợ</a>
+                        <a href="" class="nav-link">Hỗ Trợ</a>
                     </div>
-                    <c:if test="${sessionScope.users.roleUser == 0}">
+                    <c:if test="${sessionScope.users != null && sessionScope.users.roleUser == 0}">
                         <div class="menu5 col mb-1">
-                            <a href="/HNQTFood/admin/account">Quản Lý</a>
+                            <a href="/HNQTFood/admin/account" class="nav-link">Quản Lý</a>
                         </div>
                     </c:if>
-
                 </div>
             </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-3">
-<<<<<<< HEAD
-                       <a><div class="btn-user" onclick="">
-                           <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
-                       </div></a>
-                    </div>
-
-                    <div class="col-3">
-                        <a><div class="btn-cart" onclick="">
-                            <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
-                        </div></a>
-
-                    </div>
-
-                    <div class="col-3">
-                        <a><div class="btn-logout" onclick="">
-                            <img src="../../image/icon/LogoLogOut.png" height="32    " width="32"/></div></a>
-
-                    </div>
-
-=======
-                        <c:if test="${sessionScope.users != null}">
+            <div class="col-4">
+                <div class="d-flex justify-content-end align-items-center">
+                    <c:if test="${sessionScope.users != null}">
+                        <div class="btn-wrapper">
                             <a href="/HNQTFood/admin/edit_account?id=${sessionScope.users.id}">
-                                <div class="btn-user" onclick="">
+                                <div class="btn-user">
                                     <img src="../../image/icon/LogoUser.png" height="32" width="32"/>
                                 </div>
                             </a>
-                        </c:if>
-                        <c:if test="${sessionScope.users == null}">
-                            <div class="menu3 col mb-1">
-                                <a href="/HNQTFood/sign_in">Đăng nhập/Đăng ký</a>
-                            </div>
-                        </c:if>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn-cart" onclick="">
-                            <a href="/HNQTFood/admin/edit_product?id=${sessionScope.users.id}">
-                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
-                            </a>
                         </div>
+                    </c:if>
+                    <div class="btn-wrapper">
+                        <a href="/HNQTFood/cart">
+                            <div class="btn-cart">
+                                <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
+                            </div>
+                        </a>
                     </div>
-
                     <c:if test="${sessionScope.users != null}">
-                        <div class="col-3">
+                        <div class="btn-wrapper">
                             <a href="/HNQTFood/home/log_out">
-                                <div class="btn-logout" onclick="">
-                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/></div>
+                                <div class="btn-logout">
+                                    <img src="../../image/icon/LogoLogOut.png" height="32" width="32"/>
+                                </div>
                             </a>
                         </div>
                     </c:if>
->>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
+                    <c:if test="${sessionScope.users == null}">
+                        <div class="btn-wrapper">
+                            <a href="/HNQTFood/sign_in" class="auth-link">Đăng nhập/Đăng ký</a>
+                        </div>
+                    </c:if>
                 </div>
             </div>
         </div>
     </div>
-
-<<<<<<< HEAD
-    </div>
 </header>
 
-=======
-    <div>
-        <div id="mySidebar" class="sidebar">
-            <div id="categoryItems">
-                <div class="logo-menu">
-                    <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>
-                </div>
-            </div>
-
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>
-            <div class="menu-bar">
-                <h4 class="text-white text-center">Danh Mục</h4>
-                <a href="">Gà rán</a>
-                <a href="">Đồ ăn</a>
-                <a href="">Đồ Uống</a>
-                <a href="">Món tráng miệng</a>
-            </div>
-
-
-            <script>
-                function toggleSidebar() {
-                    let sidebar = document.getElementById("mySidebar");
-                    if (sidebar.style.width === "250px") {
-                        sidebar.style.width = "0";
-                    } else {
-                        sidebar.style.width = "250px";
-                    }
-                }
-            </script>
-
-        </div>
-    </div>
-</header>
-
-<div>
-    <div class="row">
-        <div class="col-12">
-            <div class="search-container ">
-                <input type="text" class="search-bar" placeholder="Search...">
-                <button class="search-button">Search</button>
+<!-- Di chuyển thanh tìm kiếm ra ngoài header -->
+<div class="search-bar-container mt-5 pt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="/path/to/search" method="POST">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" name="searchQuery" placeholder="Search...">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
->>>>>>> 38ca248853a9116e5256489e329d715d962bdbe8
+</div>
+
+
+
+
+
+
 
 
 

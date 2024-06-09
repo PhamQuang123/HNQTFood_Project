@@ -78,7 +78,7 @@
                             </select>
                         </div>
                         <div class="row">
-                            <div class="d-flex justify-content-center text-center">
+                             <div class="d-flex justify-content-center text-center">
                                 <div class="col-md-3">
                                 </div>
                                 <div class="col-md-3">
@@ -93,6 +93,7 @@
                                 </div>
                                 <div class="col-md-3">
                                 </div>
+                             </div>
                             </div>
                     </form>
                 </div>
