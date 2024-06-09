@@ -91,7 +91,7 @@
                         <div class="col-12 text-center">
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-primary mt-1 px-5">
+                                    <button type="submit" class="btn btn-success mt-1 px-5">
                                         Lưu Thông Tin
                                     </button>
                                 </div>

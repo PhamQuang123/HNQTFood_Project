@@ -27,11 +27,10 @@
     <link rel="stylesheet" href="../../css/header.css"/>
 </head>
 <body>
-<header class="fixed-top">
 
+<header class="fixed-top">
     <div class="container text-center">
         <div class="row">
-
             <div class="col-2">
                 <div id="logo">
                     <a>
@@ -67,8 +66,6 @@
 
                 </div>
             </div>
-
-
             <div class="col-2">
                 <div class="row">
                     <div class="col-3">
@@ -84,7 +81,7 @@
 
                         <c:if test="${sessionScope.users == null}">
                             <div class="col-3 ">
-                                <a href="/HNQTFood/sign_up" >
+                                <a href="/HNQTFood/sign_in">
                                     <div class="btn-logout">
                                         <img src="../../image/icon/LogoUser.png" height="32" width="32"/></div>
                                     <span>Đăng nhập/Đăng ký</span>
@@ -94,7 +91,7 @@
                     </div>
                     <div class="col-3">
                         <div class="btn-cart" onclick="">
-                            <a href="/HNQTFood/admin/edit_product?id=${sessionScope.users.id}">
+                            <a href="#">
                                 <img src="../../image/icon/LogoCart.png" height="35" width="35"/>
                             </a>
                         </div>
@@ -113,6 +110,38 @@
         </div>
     </div>
 </header>
+<%--<div>--%>
+<%--    <div id="mySidebar" class="sidebar">--%>
+<%--        <div id="categoryItems">--%>
+<%--            <div class="logo-menu">--%>
+<%--                <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+
+<%--        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>--%>
+<%--        <div class="menu-bar">--%>
+<%--            <h4 class="text-white text-center">Danh Mục</h4>--%>
+<%--            <a href="">Gà rán</a>--%>
+<%--            <a href="">Đồ ăn</a>--%>
+<%--            <a href="">Đồ Uống</a>--%>
+<%--            <a href="">Món tráng miệng</a>--%>
+<%--        </div>--%>
+
+
+<%--        <script>--%>
+<%--            function toggleSidebar() {--%>
+<%--                let sidebar = document.getElementById("mySidebar");--%>
+<%--                if (sidebar.style.width === "250px") {--%>
+<%--                    sidebar.style.width = "0";--%>
+<%--                } else {--%>
+<%--                    sidebar.style.width = "250px";--%>
+<%--                }--%>
+<%--            }--%>
+<%--        </script>--%>
+
+<%--    </div>--%>
+<%--</div>--%>
+</header>
 <div class="row">
     <div class="col-12">
         <div class="search-container ">
@@ -120,39 +149,45 @@
             <button class="search-button">Search</button>
         </div>
     </div>
+
 </div>
 
 <%--END HEADER--%>
 
 <%--START MAIN--%>
 <section class="py-5">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../image/banner1.jpeg" class="d-block w-100" height="600" width="1280"/>
-            </div>
 
-            <div class="carousel-item">
-                <img src="../../image/banner2.jpg" class="d-block w-100" height="600" width="1280"/>
-            </div>
-            <div class="carousel-item">
-                <img src="../../image/banner3.jpg" class="d-block w-100" height="600 " width="1280"/>
-            </div>
-            <div class="carousel-item">
-                <img src="../../image/banner4.jpg" class="d-block w-100" height="600 " width="1280"/>
-            </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../../image/products/banner1.jpeg" class="d-block w-100" height="600" width="1280"/>
+                    </div>
 
+                    <div class="carousel-item">
+                        <img src="../../image/products/banner2.jpg" class="d-block w-100" height="600" width="1280"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../image/products/banner3.jpg" class="d-block w-100" height="600 " width="1280"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../image/products/banner4.jpg" class="d-block w-100" height="600 " width="1280"/>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
     <div id="food" class="container py-5">
@@ -163,7 +198,12 @@
                 <c:forEach items="${listBestSeller}" var="bs">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="${bs.image}" class="card-img-top" alt="...">
+                            <c:if test="${bs.category.id ==1}">
+                                <img src="../../image/products/${bs.image}" class="card-img-top" alt="...">
+                            </c:if>
+                            <c:if test="${bs.category.id == 0}">
+                                <img src="../../image/products/drinks/${bs.image}" class="card-img-top" alt="...">
+                            </c:if>
                             <div class="card-body">
                                 <h5 class="card-title">${bs.productName}</h5>
                                 <p class="card-text">${bs.descriptions}</p>
@@ -187,7 +227,7 @@
                 <c:forEach items="${listFood}" var="food">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="/image/${food.image}" class="card-img-top" alt="...">
+                            <img src="../../image/products/${food.image}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${food.productName}</h5>
                                 <p class="card-text">${food.descriptions}</p>
@@ -212,7 +252,7 @@
                 <c:forEach items="${listDrink}" var="drink">
                     <div class="col">
                         <div class="card h-100">
-                            <img src="${drink.image}" class="card-img-top" alt="...">
+                            <img src="../../image/products/drinks/${drink.image}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${drink.productName}</h5>
                                 <p class="card-text">${drink.descriptions}</p>

@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="../../css/productManagement.css"/>
 </head>
 <body>
-
 <a href="/HNQTFood/home/home_page">
     <div
             class="img-logo text-center">
@@ -35,8 +34,6 @@
 <!--START BODY-->
 <section class="pt-5">
     <h1 class="text-center">QUẢN LÝ SẢN PHẨM</h1>
-
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">

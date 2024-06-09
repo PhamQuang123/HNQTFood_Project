@@ -54,66 +54,45 @@
                     <form action="#" class="row">
                         <div class="col-12">
                             <div class="mb-2">
-                                <input type="text" class="form-control py-2" value="${users.fullName}" placeholder="Họ Và Tên">
+                                <label for="name">Họ tên</label>
+                                <input type="text" class="form-control py-2" value="${users.fullName}" id="name" name="fullName" readonly>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 ">
+                            <label for="birthday">Ngày sinh</label>
+                            <input  class="p-2 border rounded col-12" type="text" id="birthday" value="${users.birthday}" name="birthday" readonly>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="mb-2">
+                                <label for="gender">Giới tính</label>
+                                <input type="text" class="form-control py-2" id="gender" value="${users.gender}" name="gender" readonly>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
-                                <input type="file" class="form-control py-2" value="${users.avatar}" placeholder="Thay đổi ảnh đại diện">
-                            </div>
-                        </div>
-
-                        <div class="col-12 ">
-                            <input  class="p-2 border rounded col-12" type="date" id="birthday" value="${users.birthday}" name="birthday">
-                        </div>
-
-                        <div class="col-12 ">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="mb-2 d-flex justify-content-between p-2 border rounded">
-                                        <div>
-                                            <p class="m-0">Nữ</p>
-                                        </div>
-                                        <div>
-                                            <input class="form-check-input" value="" ${users.isGender() == 0?"checked":""} type="radio" name="gender">
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="col-4">
-                                    <label class="mb-2 d-flex justify-content-between p-2 border rounded">
-                                        <div>
-                                            <p class="m-0">Nam</p>
-                                        </div>
-                                        <div>
-                                            <input class="form-check-input" value="1" ${users.isGender() == 1?"checked":""} type="radio" name="gender"/>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="col-4">
-                                    <label class="mb-2 d-flex justify-content-between p-2 border rounded">
-                                        <div>
-                                            <p class="m-0">Khác</p>
-                                        </div>
-                                        <div>
-                                            <input class="form-check-input" value="2" ${users.isGender() == 2?"checked":""} type="radio" name="gender"/>
-                                        </div>
-                                    </label>
-                                </div>
+                                <label for="phone">Số điện thoại</label>
+                                <input type="text" class="form-control py-2" id="phone" value="${users.phone}" name="phone" readonly>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="mb-2">
-                                <input type="text" class="form-control py-2" value="${users.address}" placeholder="Địa Chỉ">
+                                <label for="address">Địa chỉ</label>
+                                <input type="text" class="form-control py-2" id="address" value="${users.address}" name="address" readonly>
                             </div>
                         </div>
 
                         <div class="col-12 text-center">
+
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-primary mt-1 px-5">
-                                        Lưu Thông Tin
+                                    <button type="submit" class="btn btn-warning mt-1 px-5">
+                                        Sửa thông tin
                                     </button>
                                 </div>
 
@@ -123,7 +102,8 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+
+                            </div>
                     </form>
                 </div>
             </div>

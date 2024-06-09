@@ -38,7 +38,7 @@
     <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid mx-auto p-5">
         <div class="row">
             <div class="col-md-8">
             </div>
