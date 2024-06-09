@@ -110,38 +110,7 @@
         </div>
     </div>
 </header>
-<%--<div>--%>
-<%--    <div id="mySidebar" class="sidebar">--%>
-<%--        <div id="categoryItems">--%>
-<%--            <div class="logo-menu">--%>
-<%--                <img src="../../image/icon/imageLOGO.png" height="82" width="82"/>--%>
-<%--            </div>--%>
-<%--        </div>--%>
 
-<%--        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">x</a>--%>
-<%--        <div class="menu-bar">--%>
-<%--            <h4 class="text-white text-center">Danh Mục</h4>--%>
-<%--            <a href="">Gà rán</a>--%>
-<%--            <a href="">Đồ ăn</a>--%>
-<%--            <a href="">Đồ Uống</a>--%>
-<%--            <a href="">Món tráng miệng</a>--%>
-<%--        </div>--%>
-
-
-<%--        <script>--%>
-<%--            function toggleSidebar() {--%>
-<%--                let sidebar = document.getElementById("mySidebar");--%>
-<%--                if (sidebar.style.width === "250px") {--%>
-<%--                    sidebar.style.width = "0";--%>
-<%--                } else {--%>
-<%--                    sidebar.style.width = "250px";--%>
-<%--                }--%>
-<%--            }--%>
-<%--        </script>--%>
-
-<%--    </div>--%>
-<%--</div>--%>
-</header>
 <div class="row">
     <div class="col-12">
         <div class="search-container ">

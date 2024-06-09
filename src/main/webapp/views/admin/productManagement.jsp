@@ -61,7 +61,7 @@
         <div class="row">
 
             <!--SIDEBAR-->
-            <div class=" sidebar-manage col-md-2 fw-bold text end">
+<%--            <div class=" sidebar-manage col-md-2 fw-bold text end">--%>
                 <div class=" sidebar-magane col-md-2 p-1 fw-bold text end">
                     <p><a href="/HNQTFood/admin/product">Đồ ăn/ đồ uống</a></p>
                     <hr>
@@ -72,7 +72,7 @@
                     <a href="/HNQTFood/admin/order">Lịch sử đơn hàng</a>
                     <hr>
                 </div>
-            </div>
+<%--            </div>--%>
                 <!-- SIDEBAR-->
 
             <!--MAIN TABLE-->

@@ -87,7 +87,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-3">
-                                    <button type="button" class="btn btn-success btn-lg"><i
+                                    <button type="submit" class="btn btn-success btn-lg"><i
                                             class="fa-solid fa-check"></i></button>
                                 </div>
                                 <div class="col-md-3">

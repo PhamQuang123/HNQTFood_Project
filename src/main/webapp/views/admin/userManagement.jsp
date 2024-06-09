@@ -36,16 +36,14 @@
 <!--START BODY-->
 <section class="pt-5">
     <h1 class="text-center">QUẢN LÝ NGƯỜI DÙNG</h1>
-
-
-    <div class="container-fluid mx-auto p-5">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
             </div>
             <div class="col-md-3 d-flex justify-content-end mx-auto p-2">
-                <form action="#" method="post" width="400px">
+                <form action="#" method="post">
                     <input type="search" class="search-input  form-check-input mt-0 border border-dark-subtle"
-                           placeholder="Tìm kiếm" width="250px" height="37px" style="border-radius: 10px">
+                           placeholder="Tìm kiếm" >
                     <button type="submit" name="search" class="btn btn-success ms-2">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
